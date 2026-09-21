@@ -34,7 +34,7 @@ Preserve upstream collections and unrelated local changes.
 - [x] **M2.3 — Remaining MVP and gallery:** Progress, Table and Scroll Area;
       searchable component index, coverage/token references and original menu,
       settings and inventory compositions; interaction and visual regression checks.
-- [ ] **M3.1 — Registry:** foundation plus component metadata and reproducible
+- [x] **M3.1 — Registry:** foundation plus component metadata and reproducible
       generated payloads from canonical source; schema/export/source checks,
       explicit themed transitive dependencies and retained license notices.
 - [ ] **M3.2 — Consumer validation:** clean Vite and Next.js installs and production
@@ -175,3 +175,15 @@ Preserve upstream collections and unrelated local changes.
   and catalog scans have no violations; inherited menu/Select findings remain.
 - Updated foundation navigation and approval text. No added runtime dependency.
   All components remain prototypes pending installation and release evidence.
+
+### M3.1 — Registry
+
+- Added canonical registry metadata, 21 development items and generated payloads
+  using unchanged shadcn 4.21.0. Foundation installs one CSS file and the full MIT
+  notice; every component has explicit themed transitive dependencies.
+- Source/schema/export/dependency checks pass (4 Vitest checks total). Rebuilding
+  all 22 JSON files, including the catalog, gives byte-identical output. Production
+  preview serves the Dialog payload with the expected foundation/Button edges.
+- Added installation/backup/diff documentation and scoped project conventions.
+  `v0.1.0-dev` is mutable development output, not an immutable public release.
+- Registry installation into fresh/existing consumers is the next verification.

@@ -5,6 +5,7 @@ const appRoot = fileURLToPath(new URL(".", import.meta.url))
 
 export default defineConfig({
   root: `${appRoot}registry/traveler/examples`,
+  publicDir: `${appRoot}registry/traveler/public`,
   resolve: {
     alias: { "@": appRoot },
     dedupe: ["react", "react-dom"],

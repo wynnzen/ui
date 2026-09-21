@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "title": "Progress",
+  "description": "Traveler progress; Radix new-york-v4 API at the pinned upstream baseline.",
+  "dependencies": [
+    "cn@0.2.2",
+    "radix-ui@1.4.3"
+  ],
+  "registryDependencies": [
+    "@traveler/foundation"
+  ],
+  "files": [
+    {
+      "path": "registry/traveler/ui/progress.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { Progress as ProgressPrimitive } from \"radix-ui\"\n\nfunction Progress({\n  className,\n  value,\n  ...props\n}: React.ComponentProps<typeof ProgressPrimitive.Root>) {\n  // Match Radix's validated range when calculating the visual fill.\n  const max = typeof props.max === \"number\" && props.max > 0 ? props.max : 100\n  const percent =\n    typeof value === \"number\" && value >= 0 && value <= max\n      ? (value / max) * 100\n      : 0\n  return (\n    <ProgressPrimitive.Root\n      data-slot=\"progress\"\n      value={value}\n      className={cn(\n        \"relative h-2 w-full overflow-hidden rounded-xs border bg-muted\",\n        className\n      )}\n      {...props}\n    >\n      <ProgressPrimitive.Indicator\n        data-slot=\"progress-indicator\"\n        className=\"h-full w-full bg-primary transition-transform duration-(--trav-duration) data-[state=indeterminate]:w-1/3 data-[state=indeterminate]:!transform-none data-[state=indeterminate]:opacity-70 forced-colors:bg-[CanvasText]!\"\n        style={{ transform: `translateX(-${100 - percent}%)` }}\n      />\n    </ProgressPrimitive.Root>\n  )\n}\n\nexport { Progress }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "meta": {
+    "version": "0.1.0-dev",
+    "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+    "status": "development"
+  },
+  "type": "registry:ui"
+}

@@ -53,7 +53,8 @@
     "traveler:check": "vitest run tests/traveler",
     "traveler:test:browser": "node tests/traveler/browser.mjs",
     "traveler:review": "node tests/traveler/review.mjs",
-    "traveler:review:capture": "node tests/traveler/review.mjs --capture"
+    "traveler:review:capture": "node tests/traveler/review.mjs --capture",
+    "traveler:registry": "node packages/shadcn/dist/index.js build registry/traveler/registry.json --cwd apps/v4 --output registry/traveler/public/r/v0.1.0-dev"
   },
   "packageManager": "pnpm@10.33.4",
   "dependencies": {
