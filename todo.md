@@ -8,7 +8,7 @@ Preserve upstream collections and unrelated local changes.
 ## Plan
 
 - [x] **P0 — Plan:** turn the specification into this tracked implementation plan.
-- [ ] **M0 — Baseline:** pin the checkout, audit canonical/generated ownership,
+- [x] **M0 — Baseline:** pin the checkout, audit canonical/generated ownership,
       choose one primitive/style baseline, record tools and commands, freeze the
       full component inventory, and build a relevant unchanged baseline example.
 - [ ] **M1.1 — First themed component:** implement document-root theme activation,
@@ -70,3 +70,14 @@ Preserve upstream collections and unrelated local changes.
   them without including them in implementation commits.
 - Validation: read all specification milestones and acceptance gates; documentation
   only, so no code test applies.
+
+### M0 — Baseline
+
+- Selected authored Radix `new-york-v4`; froze all 61 component files with source
+  hashes, exports and dependency imports in `docs/traveler/component-coverage.json`.
+- Added `docs/traveler/baseline.md` and a scoped Vite baseline fixture using the
+  unchanged upstream Button and app PostCSS/CSS conventions.
+- Validation passed: frozen dependency install, CLI prerequisite build,
+  `pnpm traveler:build`, `pnpm traveler:typecheck`, `pnpm traveler:check` (1 test).
+- Full upstream Next build and aggregate tests were not run; reasons and existing
+  tool warnings are recorded in the baseline report. No lockfile changes.

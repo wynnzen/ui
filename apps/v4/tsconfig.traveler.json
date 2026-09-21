@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": false,
+    "plugins": []
+  },
+  "include": [
+    "registry/traveler/**/*.ts",
+    "registry/traveler/**/*.tsx",
+    "traveler.vite.config.ts"
+  ]
+}
