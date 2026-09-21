@@ -2,7 +2,12 @@
 
 import * as React from "react"
 import { cn } from "cn"
-import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react"
+import {
+  CheckIcon,
+  ChevronRightIcon,
+  CircleIcon,
+  MinusIcon,
+} from "lucide-react"
 import { DropdownMenu as DropdownMenuPrimitive } from "radix-ui"
 
 function DropdownMenu({
@@ -99,7 +104,11 @@ function DropdownMenuCheckboxItem({
     >
       <span className="pointer-events-none absolute start-2 flex size-3.5 items-center justify-center">
         <DropdownMenuPrimitive.ItemIndicator>
-          <CheckIcon aria-hidden="true" className="size-4" />
+          {checked === "indeterminate" ? (
+            <MinusIcon aria-hidden="true" className="size-4" />
+          ) : (
+            <CheckIcon aria-hidden="true" className="size-4" />
+          )}
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}

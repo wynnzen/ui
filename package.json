@@ -51,7 +51,9 @@
     "traveler:preview": "vite preview --config apps/v4/traveler.vite.config.ts",
     "traveler:typecheck": "tsc --project apps/v4/tsconfig.traveler.json",
     "traveler:check": "vitest run tests/traveler",
-    "traveler:test:browser": "node tests/traveler/browser.mjs"
+    "traveler:test:browser": "node tests/traveler/browser.mjs",
+    "traveler:review": "node tests/traveler/review.mjs",
+    "traveler:review:capture": "node tests/traveler/review.mjs --capture"
   },
   "packageManager": "pnpm@10.33.4",
   "dependencies": {

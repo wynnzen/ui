@@ -62,6 +62,14 @@ createRoot(document.getElementById("root")!).render(
               Original Radix behavior in a separate document.
             </DialogDescription>
           </DialogHeader>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline">Baseline nested menu</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>Choose destination</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <DialogFooter showCloseButton />
         </DialogContent>
       </Dialog>

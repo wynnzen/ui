@@ -1,0 +1,28 @@
+# Upstream maintenance record
+
+Pinned source: `98a1fe67b439324ddc857f47fbdce056600a4329`.
+Canonical baseline files and SHA-256 hashes are frozen in
+[component-coverage.json](component-coverage.json). All upstream collections and
+the official CLI are unchanged.
+
+| Component     | Visual changes                                                                                                          | Preserved contract                                                                                                           |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Button        | Rectangular corners, 40/44 px ordinary targets, complete destructive foreground, restrained hover/pressed/focus recipes | `Button`, `buttonVariants`, six variants/eight sizes, native props, `asChild`, refs                                          |
+| Card          | Dark inset frame, serif title role, wrapping footer                                                                     | All seven exported parts and native div props                                                                                |
+| Input         | Opaque inset field, 16 px entry, clear boundaries, separate focus, readonly/invalid/disabled states                     | Native input, React 19 ref/props, controlled/default values, form behavior                                                   |
+| Dialog        | Fine frame, subtle fade, logical close position, usable close target, viewport-bounded scrollable panel                 | All ten exports, Radix callbacks/portals, client boundary, `showCloseButton`; internal Button import points to Traveler      |
+| Dropdown Menu | Shared row/frame recipes, reserved diamond, checked/mixed/radio cues, logical spacing, restrained fade                  | All fifteen exports, primitive state/portal behavior and callback ownership; mixed glyph changes visually from check to dash |
+
+No custom focus manager, global keyboard handler or extra interaction primitive
+was introduced. The inherited open-menu accessibility finding is tracked in
+[compatibility.md](compatibility.md); do not “fix” it by silently changing the
+baseline's default modal behavior.
+
+For an upstream update, review source and primitive changes before moving the
+pin. Separate behavioral/accessibility fixes from class changes, deliberately
+reapply the visual layer, update the full inventory, then run scoped types,
+interactions, screenshots and both M3 consumers. Do not overwrite themed source
+with unreviewed CLI output. New upstream files enter the backlog explicitly.
+
+Visual approval, installation, versioned registry publication and the remaining
+56 source components are still pending. Existing prototypes are not marked done.

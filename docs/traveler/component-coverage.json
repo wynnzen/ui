@@ -246,12 +246,13 @@
         "invalid",
         "busy (composed)"
       ],
-      "visual": "awaiting-design-review",
-      "interaction": "chromium-check",
-      "accessibility": "contrast-and-keyboard-check; manual review pending",
-      "documentation": "prototype-gallery",
+      "visual": "candidate-screenshots-reviewed; user approval pending",
+      "interaction": "passed Chromium 149.0.7827.55 prototype checks",
+      "accessibility": "automated/keyboard review recorded; screen-reader and cross-browser review pending",
+      "documentation": "prototype gallery and docs/traveler/visual-language.md",
       "installation": "pending-M3",
-      "themedSource": "apps/v4/registry/traveler/ui/button.tsx"
+      "themedSource": "apps/v4/registry/traveler/ui/button.tsx",
+      "reviewEvidence": "docs/traveler/review/evidence.json"
     },
     {
       "name": "calendar",
@@ -293,12 +294,13 @@
       "milestone": "M1",
       "status": "prototype",
       "requiredStates": ["default", "long-content", "consumer-class-override"],
-      "visual": "awaiting-design-review",
-      "interaction": "chromium-check",
-      "accessibility": "contrast-and-keyboard-check; manual review pending",
-      "documentation": "prototype-gallery",
+      "visual": "candidate-screenshots-reviewed; user approval pending",
+      "interaction": "passed Chromium 149.0.7827.55 prototype checks",
+      "accessibility": "automated/keyboard review recorded; screen-reader and cross-browser review pending",
+      "documentation": "prototype gallery and docs/traveler/visual-language.md",
       "installation": "pending-M3",
-      "themedSource": "apps/v4/registry/traveler/ui/card.tsx"
+      "themedSource": "apps/v4/registry/traveler/ui/card.tsx",
+      "reviewEvidence": "docs/traveler/review/evidence.json"
     },
     {
       "name": "carousel",
@@ -524,12 +526,13 @@
         "without-close-icon",
         "nested-menu"
       ],
-      "visual": "awaiting-design-review",
-      "interaction": "chromium-check",
-      "accessibility": "contrast-and-keyboard-check; manual review pending",
-      "documentation": "prototype-gallery",
+      "visual": "candidate-screenshots-reviewed; user approval pending",
+      "interaction": "passed Chromium 149.0.7827.55 prototype checks",
+      "accessibility": "automated/keyboard review recorded; screen-reader and cross-browser review pending",
+      "documentation": "prototype gallery and docs/traveler/visual-language.md",
       "installation": "pending-M3",
-      "themedSource": "apps/v4/registry/traveler/ui/dialog.tsx"
+      "themedSource": "apps/v4/registry/traveler/ui/dialog.tsx",
+      "reviewEvidence": "docs/traveler/review/evidence.json"
     },
     {
       "name": "direction",
@@ -610,12 +613,13 @@
         "submenu-open",
         "destructive"
       ],
-      "visual": "awaiting-design-review",
-      "interaction": "chromium-check",
-      "accessibility": "contrast-and-keyboard-check; manual review pending",
-      "documentation": "prototype-gallery",
+      "visual": "candidate-screenshots-reviewed; user approval pending",
+      "interaction": "passed Chromium 149.0.7827.55 prototype checks",
+      "accessibility": "inherited aria-hidden-focus finding; keyboard containment passed; screen-reader review pending",
+      "documentation": "prototype gallery and docs/traveler/visual-language.md",
       "installation": "pending-M3",
-      "themedSource": "apps/v4/registry/traveler/ui/dropdown-menu.tsx"
+      "themedSource": "apps/v4/registry/traveler/ui/dropdown-menu.tsx",
+      "reviewEvidence": "docs/traveler/review/evidence.json"
     },
     {
       "name": "empty",
@@ -790,12 +794,13 @@
         "controlled",
         "uncontrolled"
       ],
-      "visual": "awaiting-design-review",
-      "interaction": "chromium-check",
-      "accessibility": "contrast-and-keyboard-check; manual review pending",
-      "documentation": "prototype-gallery",
+      "visual": "candidate-screenshots-reviewed; user approval pending",
+      "interaction": "passed Chromium 149.0.7827.55 prototype checks",
+      "accessibility": "automated/keyboard review recorded; screen-reader and cross-browser review pending",
+      "documentation": "prototype gallery and docs/traveler/visual-language.md",
       "installation": "pending-M3",
-      "themedSource": "apps/v4/registry/traveler/ui/input.tsx"
+      "themedSource": "apps/v4/registry/traveler/ui/input.tsx",
+      "reviewEvidence": "docs/traveler/review/evidence.json"
     },
     {
       "name": "item",

@@ -1,0 +1,164 @@
+{
+  "browser": "149.0.7827.55",
+  "playwright": "1.61.0",
+  "platform": "linux x64",
+  "release": "7.0.0-31-generic",
+  "screenshots": [
+    {
+      "name": "gallery-320",
+      "sha256": "2342c5f5bdb08c073646a9b497d0e32a8df46952de48f861f3f8ef9b0ca5a158",
+      "bytes": 243522
+    },
+    {
+      "name": "gallery-768",
+      "sha256": "f57fb925974a6cd05c9665abfbe2cd9ebf7baf55bc0c7f99ec7737c9738ca42e",
+      "bytes": 246819
+    },
+    {
+      "name": "gallery-1440",
+      "sha256": "809c356ac132536b4dee4ad210df495a08050c30ef1636af50f53b8db0166bfc",
+      "bytes": 251316
+    },
+    {
+      "name": "status-panel",
+      "sha256": "fe05289759c27bb4902d4cbe518a4ce896725e93fc376d2330f3c75daa2d4144",
+      "bytes": 25632
+    },
+    {
+      "name": "item-list",
+      "sha256": "06ee5a67cc5ae57c658d34580770becea32154d02c297722b7e1a885f97d19e4",
+      "bytes": 20685
+    },
+    {
+      "name": "button-focus",
+      "sha256": "f847847f7e134a1917134fa153376839bb02ad90547859954cb20888af9493f6",
+      "bytes": 41612
+    },
+    {
+      "name": "menu-highlight",
+      "sha256": "6a8aea9feb28197074ef2c3f49db3af404b816bc3677bd0050a46cb359dc0e42",
+      "bytes": 11702
+    },
+    {
+      "name": "dialog",
+      "sha256": "41f331c0a99a95fd16d8d62430efc200b599c9214da2b9234750ceb4606fa193",
+      "bytes": 21458
+    },
+    {
+      "name": "forced-colors",
+      "sha256": "689291ca93a5568aee7bd4b411fabc63dcbb111b515644c5b7b680daf2f68a38",
+      "bytes": 39089
+    }
+  ],
+  "accessibility": [
+    {
+      "name": "baseline open menu",
+      "violations": [
+        {
+          "id": "aria-hidden-focus",
+          "impact": "serious",
+          "targets": [["#root"]],
+          "surfaces": ["root"]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "targets": [["div[data-highlighted=\"\"]"]],
+          "surfaces": ["menuitem"]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "baseline nested menu",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "plain gallery",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-valid-attr-value",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "open menu",
+      "violations": [
+        {
+          "id": "aria-hidden-focus",
+          "impact": "serious",
+          "targets": [["#root"]],
+          "surfaces": ["root"]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 2
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "count": 1
+        },
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "open dialog",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 3
+        },
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "dialog with nested menu",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 4
+        },
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "checks": [
+    "320px reflow",
+    "768px reflow",
+    "1440px reflow",
+    "Button hover/focus have stable bounds",
+    "320x360 dialog and footer remain reachable",
+    "200% text at 768px",
+    "200% CSS zoom at 1440px (browser-zoom approximation)",
+    "Forced colors retain focus, frames and keyboard menu operation",
+    "Default overlay motion is 140ms and never blocks dismissal",
+    "Separate upstream document receives no Traveler tokens"
+  ],
+  "externalRequests": []
+}

@@ -26,3 +26,10 @@ styles are not part of the distributable foundation.
 The source components retain ordinary names and exports. No `octopath` variant
 or decorative wrapper is needed. This is a design-review prototype; custom
 registry installation and Next.js consumer validation arrive in M3.
+
+Review material: [reference board](../../../../docs/traveler/reference-board.md),
+[visual language](../../../../docs/traveler/visual-language.md), and
+[measured compatibility / known findings](../../../../docs/traveler/compatibility.md).
+With the production preview running, `pnpm traveler:review` compares the recorded
+candidate screenshots and reruns the accessibility/responsive checks. Read the
+review procedure before replacing any candidate images.

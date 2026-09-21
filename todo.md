@@ -19,7 +19,7 @@ Preserve upstream collections and unrelated local changes.
       Menu from the pinned source, retaining every export and primitive contract.
       Include representative states, controlled/uncontrolled examples, forms,
       portal inheritance and an isolated upstream comparison.
-- [ ] **M1.3 — Design review evidence:** document the original reference board and
+- [x] **M1.3 — Design review evidence:** document the original reference board and
       visual language; review keyboard behavior, contrast, 320/768/1440 px layouts,
       zoom, reduced motion and forced colors; capture reproducible screenshots.
       Record provenance, asset licenses, limitations and measured results.
@@ -108,3 +108,23 @@ Preserve upstream collections and unrelated local changes.
   use Playwright's retrying focus assertions for Radix's deferred focus changes.
 - All five components remain classified as prototypes; visual approval and M3
   installation evidence are pending.
+
+### M1.3 — Design review evidence
+
+- Added the original reference board, visual-language proposal, compatibility and
+  accessibility triage, asset/notice manifest and upstream maintenance record.
+- Captured and visually reviewed nine original candidate screenshots; a fresh
+  run matches them byte-for-byte with the pinned Chromium/OS environment.
+- Ten responsive/interaction review checks pass, including 320/768/1440 px
+  reflow, a 320×360 dialog, 200% text, a documented CSS-zoom approximation,
+  reduced/default motion, forced colors and upstream-document isolation.
+- Production fixtures made no external runtime requests. Shared theme source is
+  1,142 gzip bytes; no dependency or lockfile change. Full MIT notice retained.
+- Build, types, lint, 3 Vitest checks, browser interactions and review comparison
+  pass. The inherited serious open-menu `aria-hidden-focus` finding is reproduced
+  against upstream and recorded; it is not represented as a clean scan. Human
+  assistive-technology, real zoom/mobile and other-engine checks remain pending.
+- Clarified the supported mixed menu value with a dash instead of a checkmark.
+- **Next:** user reviews the concrete prototype and approves the direction per
+  specification §§2/9. M2 restyling must wait for that approval. No release or
+  publication has occurred.
