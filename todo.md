@@ -37,7 +37,7 @@ Preserve upstream collections and unrelated local changes.
 - [x] **M3.1 — Registry:** foundation plus component metadata and reproducible
       generated payloads from canonical source; schema/export/source checks,
       explicit themed transitive dependencies and retained license notices.
-- [ ] **M3.2 — Consumer validation:** clean Vite and Next.js installs and production
+- [x] **M3.2 — Consumer validation:** clean Vite and Next.js installs and production
       builds, aliases, CSS activation, portals and SSR/hydration; existing-project
       diff/backup and reinstallation checks without unattended overwrites.
 - [ ] **M4 — Release readiness:** finish installation/state documentation,
@@ -187,3 +187,18 @@ Preserve upstream collections and unrelated local changes.
 - Added installation/backup/diff documentation and scoped project conventions.
   `v0.1.0-dev` is mutable development output, not an immutable public release.
 - Registry installation into fresh/existing consumers is the next verification.
+
+### M3.2 — Consumer validation
+
+- Fresh Vite 7.3.2 and Next.js 16.3.3 projects install all 20 components through
+  the served registry, with exact package versions and nondefault aliases.
+- Development and production browser checks pass for state, document/portal
+  colors and focus return. Next's server Card and hydrated controls render with
+  no page/console errors. Both production builds and type checks pass.
+- Installing Dialog alone resolves themed Button/foundation/license. Identical
+  reinstallation skips 22 files. Dry-run/diff does not mutate files or packages;
+  declining overwrite preserves a customized Button. No overwrite flag used.
+- Retained consumer lockfiles and a measured compatibility report. No external
+  runtime requests, missing CSS or unresolved imports; workspace lock unchanged.
+- Local implementation and delivery gates now pass. M4 human/browser review,
+  final public identity/endpoint and release approval remain outstanding.

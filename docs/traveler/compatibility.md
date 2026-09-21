@@ -1,6 +1,6 @@
 # Prototype compatibility and verification
 
-This records **measured M1/M2 behavior**, not a released support matrix or WCAG
+This records **measured M1–M3 behavior**, not a released support matrix or WCAG
 conformance claim. Full release checks remain in M3/M4 of [todo.md](../../todo.md).
 
 | Area                 | Evidence / status                                                                                                                                                          |
@@ -22,7 +22,7 @@ conformance claim. Full release checks remain in M3/M4 of [todo.md](../../todo.m
 | Network              | No external runtime requests observed for the production fixtures                                                                                                          |
 | Styling size         | Shared theme source: 3,887 bytes / 1,142 gzip bytes. Entire themed preview CSS: about 22.21 kB / 5.40 kB gzip, including Tailwind and gallery utilities                    |
 | Dependencies         | No new package, lockfile change, font request, analytics, canvas or animation runtime                                                                                      |
-| Still pending        | Clean registry consumers, Next.js SSR/hydration, other engines/releases, real Safari/mobile, real browser zoom, assistive technology, RTL support and publication          |
+| Still pending        | Other engines/releases, real Safari/mobile, real browser zoom, assistive technology, RTL support and publication                                                           |
 
 ## Automated accessibility triage
 
@@ -83,8 +83,8 @@ change pixels. The runner records the current kernel/platform and browser; a
 portable pinned OS image is a later release task. Read
 [visual-language.md](visual-language.md) for the approved visual direction.
 
-Full upstream Next build and monorepo tests were not run. This scoped validation
-does not establish registry installability or SSR compatibility.
+Full upstream Next build and monorepo tests were not run. The scoped M3 consumer
+validation below establishes the tested installation and SSR cases only.
 
 ## M2 navigation and overlay evidence
 
@@ -111,3 +111,28 @@ focusable table/scroll regions. Progress accessible values match the rendered
 fill and custom maximum; native keyboard scrolling and source search pass.
 Forced-colors checks cover Progress fill, Switch position and scroll thumbs.
 Catalog token markup was corrected to use valid definition-list grouping.
+
+## M3 clean-consumer validation
+
+Both Vite 7.3.2 and Next.js 16.3.3 (webpack) install all 20 components from the
+served registry using shadcn 4.21.0, with React 19.2.3 and Tailwind 4.3.0.
+Production builds and Chromium development/production interaction checks pass.
+The Next fixture renders Card on the server and exercises client state and
+nested Dialog/Select after hydration with no page/console errors.
+
+Custom `@fixture/*` aliases rewrite correctly for Vite's `src` layout and Next's
+root layout. Installing only Dialog brings in the themed Button, foundation and
+license. Identical reinstallation skips 22 files. A customized Button appears in
+`--diff`, dry-run leaves files/package metadata intact, and answering no to its
+replacement prompt preserves the customization. No overwrite flag is used.
+
+Foundation CSS and license are byte-identical to source. Development and
+production fixtures make no external runtime requests. Package installation
+requires registry network access when local metadata is absent. Consumer
+lockfiles are retained with their SHA-256 hashes in [consumers.json](consumers.json).
+The workspace lockfile and upstream CLI remain unchanged.
+
+Run `pnpm traveler:test:consumers` with the production registry preview running.
+The command uses fresh temporary projects, retains logs under
+`.codex-artifacts/traveler/consumers/`, and shuts down its own browser/server
+processes. It does not modify existing user applications.

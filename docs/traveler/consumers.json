@@ -1,0 +1,93 @@
+{
+  "cli": "4.21.0",
+  "registryUrl": "http://127.0.0.1:4173/r/v0.1.0-dev/{name}.json",
+  "consumers": [
+    {
+      "framework": "vite",
+      "versions": {
+        "name": "traveler-vite-consumer",
+        "version": "0.0.0",
+        "private": true,
+        "type": "module",
+        "packageManager": "pnpm@10.33.4",
+        "scripts": {
+          "build": "tsc --noEmit && vite build"
+        },
+        "dependencies": {
+          "class-variance-authority": "0.7.1",
+          "cn": "0.2.2",
+          "lucide-react": "0.474.0",
+          "radix-ui": "1.4.3",
+          "react": "19.2.3",
+          "react-dom": "19.2.3"
+        },
+        "devDependencies": {
+          "@tailwindcss/postcss": "4.3.0",
+          "@types/node": "20.19.10",
+          "@types/react": "19.2.2",
+          "@types/react-dom": "19.2.2",
+          "postcss": "8.5.23",
+          "tailwindcss": "4.3.0",
+          "typescript": "5.9.2",
+          "vite": "7.3.2"
+        }
+      },
+      "installedComponents": 20,
+      "transitiveDialog": true,
+      "identicalReinstall": true,
+      "customizedFilePreserved": true,
+      "cssSha256": "f56e867caadbb9efb0ec33f312949044a19ec352132bc8c1a45bc21f76549b0f",
+      "lockSha256": "2e09379b88df7612c40417236ff072d8556a74498250e1a58020ec548d9b82ae",
+      "checks": [
+        "development: interaction, portal tokens, focus return, no errors/external requests",
+        "production: interaction, portal tokens, focus return, no errors/external requests"
+      ]
+    },
+    {
+      "framework": "next",
+      "versions": {
+        "name": "traveler-next-consumer",
+        "version": "0.0.0",
+        "private": true,
+        "type": "module",
+        "packageManager": "pnpm@10.33.4",
+        "scripts": {
+          "build": "next build --webpack"
+        },
+        "dependencies": {
+          "class-variance-authority": "0.7.1",
+          "cn": "0.2.2",
+          "lucide-react": "0.474.0",
+          "next": "16.3.3",
+          "radix-ui": "1.4.3",
+          "react": "19.2.3",
+          "react-dom": "19.2.3"
+        },
+        "devDependencies": {
+          "@tailwindcss/postcss": "4.3.0",
+          "@types/node": "20.19.10",
+          "@types/react": "19.2.2",
+          "@types/react-dom": "19.2.2",
+          "postcss": "8.5.23",
+          "tailwindcss": "4.3.0",
+          "typescript": "5.9.2"
+        }
+      },
+      "installedComponents": 20,
+      "transitiveDialog": true,
+      "identicalReinstall": true,
+      "customizedFilePreserved": true,
+      "cssSha256": "f56e867caadbb9efb0ec33f312949044a19ec352132bc8c1a45bc21f76549b0f",
+      "lockSha256": "14bf41fc00d47899bc52486592b3cf9255dfd10a243c11e8c2dd801469cf02fe",
+      "checks": [
+        "development: interaction, portal tokens, focus return, no errors/external requests, SSR/hydration",
+        "production: interaction, portal tokens, focus return, no errors/external requests, SSR/hydration"
+      ]
+    }
+  ],
+  "sourceCommit": "7f257302",
+  "node": "24.15.0",
+  "pnpm": "10.33.4",
+  "browser": "Chromium 149.0.7827.55",
+  "platform": "Linux x64"
+}

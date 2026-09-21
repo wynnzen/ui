@@ -66,7 +66,7 @@
       "interaction": "Chromium keyboard/controlled values/focus/portals passed",
       "accessibility": "axe reports no violations; human AT pending",
       "documentation": "examples/overlays.html and docs/traveler/overlays.md",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "alert",
@@ -174,7 +174,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "breadcrumb",
@@ -264,7 +264,7 @@
       "interaction": "passed Chromium 149.0.7827.55 prototype checks",
       "accessibility": "automated/keyboard review recorded; screen-reader and cross-browser review pending",
       "documentation": "prototype gallery and docs/traveler/visual-language.md",
-      "installation": "pending-M3",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks",
       "themedSource": "apps/v4/registry/traveler/ui/button.tsx",
       "reviewEvidence": "docs/traveler/review/evidence.json"
     },
@@ -312,7 +312,7 @@
       "interaction": "passed Chromium 149.0.7827.55 prototype checks",
       "accessibility": "automated/keyboard review recorded; screen-reader and cross-browser review pending",
       "documentation": "prototype gallery and docs/traveler/visual-language.md",
-      "installation": "pending-M3",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks",
       "themedSource": "apps/v4/registry/traveler/ui/card.tsx",
       "reviewEvidence": "docs/traveler/review/evidence.json"
     },
@@ -393,7 +393,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "collapsible",
@@ -554,7 +554,7 @@
       "interaction": "passed Chromium 149.0.7827.55 prototype checks",
       "accessibility": "automated/keyboard review recorded; screen-reader and cross-browser review pending",
       "documentation": "prototype gallery and docs/traveler/visual-language.md",
-      "installation": "pending-M3",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks",
       "themedSource": "apps/v4/registry/traveler/ui/dialog.tsx",
       "reviewEvidence": "docs/traveler/review/evidence.json"
     },
@@ -641,7 +641,7 @@
       "interaction": "passed Chromium 149.0.7827.55 prototype checks",
       "accessibility": "inherited aria-hidden-focus finding; keyboard containment passed; screen-reader review pending",
       "documentation": "prototype gallery and docs/traveler/visual-language.md",
-      "installation": "pending-M3",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks",
       "themedSource": "apps/v4/registry/traveler/ui/dropdown-menu.tsx",
       "reviewEvidence": "docs/traveler/review/evidence.json"
     },
@@ -822,7 +822,7 @@
       "interaction": "passed Chromium 149.0.7827.55 prototype checks",
       "accessibility": "automated/keyboard review recorded; screen-reader and cross-browser review pending",
       "documentation": "prototype gallery and docs/traveler/visual-language.md",
-      "installation": "pending-M3",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks",
       "themedSource": "apps/v4/registry/traveler/ui/input.tsx",
       "reviewEvidence": "docs/traveler/review/evidence.json"
     },
@@ -894,7 +894,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "marker",
@@ -1105,7 +1105,7 @@
       "interaction": "Chromium keyboard/controlled values/focus/portals passed",
       "accessibility": "axe reports no violations; human AT pending",
       "documentation": "examples/overlays.html and docs/traveler/overlays.md",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "progress",
@@ -1128,7 +1128,7 @@
       "interaction": "Chromium values, fill, selection and keyboard scrolling passed",
       "accessibility": "axe reports no violations; human AT review pending",
       "documentation": "examples/inventory.html and catalog.html",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "radio-group",
@@ -1153,7 +1153,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "resizable",
@@ -1191,7 +1191,7 @@
       "interaction": "Chromium values, fill, selection and keyboard scrolling passed",
       "accessibility": "axe reports no violations; human AT review pending",
       "documentation": "examples/inventory.html and catalog.html",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "select",
@@ -1229,7 +1229,7 @@
       "interaction": "Chromium keyboard/controlled values/focus/portals passed",
       "accessibility": "No new axe findings; Select inherits baseline findings; human AT pending",
       "documentation": "examples/overlays.html and docs/traveler/overlays.md",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "separator",
@@ -1245,7 +1245,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "sheet",
@@ -1412,7 +1412,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "table",
@@ -1442,7 +1442,7 @@
       "interaction": "Chromium values, fill, selection and keyboard scrolling passed",
       "accessibility": "axe reports no violations; human AT review pending",
       "documentation": "examples/inventory.html and catalog.html",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "tabs",
@@ -1471,7 +1471,7 @@
       "interaction": "Chromium keyboard/controlled values/focus/portals passed",
       "accessibility": "axe reports no violations; human AT pending",
       "documentation": "examples/overlays.html and docs/traveler/overlays.md",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "textarea",
@@ -1496,7 +1496,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     },
     {
       "name": "toggle-group",
@@ -1561,7 +1561,7 @@
       "interaction": "Chromium keyboard/controlled values/focus/portals passed",
       "accessibility": "axe reports no violations; human AT pending",
       "documentation": "examples/overlays.html and docs/traveler/overlays.md",
-      "installation": "pending M3"
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
     }
   ]
 }

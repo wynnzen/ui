@@ -14,6 +14,9 @@ Run commands from the repository root:
 - `pnpm traveler:build` builds the scoped gallery and copies registry payloads.
 - `pnpm traveler:preview` serves production fixtures on 127.0.0.1:4173.
 - With that server running, `pnpm traveler:test:browser` and `pnpm traveler:review`.
+- `pnpm traveler:test:consumers` installs into fresh temporary Vite/Next projects
+  and checks builds, portals, SSR, aliases and safe reinstallation. Requires the
+  production registry preview and package-registry access.
 - `pnpm traveler:review:capture` explicitly changes screenshots: inspect changes
   before committing. It is not a substitute for release approval.
 
