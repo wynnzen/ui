@@ -25,7 +25,7 @@ Preserve upstream collections and unrelated local changes.
       Record provenance, asset licenses, limitations and measured results.
 - [x] **M1 approval gate:** user reviews the concrete five-component prototype and
       approves the visual direction before expanding the collection (spec §§2, 9).
-- [ ] **M2.1 — Forms and content:** Badge, Separator, Label, Textarea, Checkbox,
+- [x] **M2.1 — Forms and content:** Badge, Separator, Label, Textarea, Checkbox,
       Radio Group, Switch and required helpers; document and verify applicable
       variants, states, forms, long labels and responsive behavior.
 - [ ] **M2.2 — Navigation and overlays:** Select, Tabs, Alert Dialog, Popover and
@@ -134,3 +134,15 @@ Preserve upstream collections and unrelated local changes.
 - User approved the five-component visual direction in this conversation.
 - Proceed with M2 using the approved palette, geometry, typography and state recipes.
 - Approval is for continued development; publication and release QA remain separate.
+
+### M2.1 — Forms and content
+
+- Added seven components and a settings-form page preserving all exports, both
+  size/variant sets, labels, native form values and controlled/default props.
+- Checked mixed/checked/disabled/invalid controls, CJK textarea entry, horizontal
+  separators, link badges, radio navigation and submitted form data. The radio
+  check holds ArrowDown through Radix's deferred focus before releasing it.
+- TypeScript contracts, ESLint, production build, 3 Vitest checks, Chromium
+  interactions and 12 screenshot comparisons pass. Forms have no axe violations
+  and no document overflow at 320/768/1440 px. No new dependency or theme rule.
+- Sources remain prototypes until installation and release QA are complete.

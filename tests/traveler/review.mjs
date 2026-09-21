@@ -320,6 +320,15 @@ try {
     "Default overlay motion is 140ms and never blocks dismissal"
   )
 
+  await page.goto(new URL("forms.html", url).href, { waitUntil: "networkidle" })
+  await page.addScriptTag({ path: axePath })
+  for (const width of [320, 768, 1440]) {
+    await page.setViewportSize({ width, height: 1000 })
+    await noOverflow(`forms ${width}px reflow`)
+    await screenshot(`forms-${width}`)
+  }
+  await accessibility("forms and content")
+
   await page.goto(new URL("baseline.html", url).href, {
     waitUntil: "networkidle",
   })

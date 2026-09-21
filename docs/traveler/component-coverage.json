@@ -154,13 +154,18 @@
       "exports": ["Badge", "badgeVariants"],
       "dependencies": ["class-variance-authority", "cn", "radix-ui", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "six variants",
+        "asChild link",
+        "long content",
+        "focus-visible on links"
+      ],
+      "visual": "Reviewed forms screenshots at 320/768/1440px; approved M1 recipes",
+      "interaction": "Chromium form values and keyboard checks passed",
+      "accessibility": "axe reports no violations on forms; human AT review pending",
+      "documentation": "examples/forms.html and docs/traveler/forms.md",
+      "installation": "pending M3"
     },
     {
       "name": "breadcrumb",
@@ -363,13 +368,23 @@
       "exports": ["Checkbox"],
       "dependencies": ["cn", "lucide-react", "radix-ui", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "controlled",
+        "uncontrolled",
+        "checked",
+        "unchecked",
+        "indeterminate",
+        "disabled",
+        "invalid",
+        "focus-visible",
+        "form value"
+      ],
+      "visual": "Reviewed forms screenshots at 320/768/1440px; approved M1 recipes",
+      "interaction": "Chromium form values and keyboard checks passed",
+      "accessibility": "axe reports no violations on forms; human AT review pending",
+      "documentation": "examples/forms.html and docs/traveler/forms.md",
+      "installation": "pending M3"
     },
     {
       "name": "collapsible",
@@ -859,13 +874,18 @@
       "exports": ["Label"],
       "dependencies": ["cn", "radix-ui", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "associated labels",
+        "nested controls",
+        "disabled context",
+        "long text"
+      ],
+      "visual": "Reviewed forms screenshots at 320/768/1440px; approved M1 recipes",
+      "interaction": "Chromium form values and keyboard checks passed",
+      "accessibility": "axe reports no violations on forms; human AT review pending",
+      "documentation": "examples/forms.html and docs/traveler/forms.md",
+      "installation": "pending M3"
     },
     {
       "name": "marker",
@@ -1096,13 +1116,22 @@
       "exports": ["RadioGroup", "RadioGroupItem"],
       "dependencies": ["cn", "lucide-react", "radix-ui", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "controlled",
+        "uncontrolled",
+        "selected",
+        "unselected",
+        "disabled",
+        "vertical/horizontal navigation",
+        "focus-visible",
+        "form value"
+      ],
+      "visual": "Reviewed forms screenshots at 320/768/1440px; approved M1 recipes",
+      "interaction": "Chromium form values and keyboard checks passed",
+      "accessibility": "axe reports no violations on forms; human AT review pending",
+      "documentation": "examples/forms.html and docs/traveler/forms.md",
+      "installation": "pending M3"
     },
     {
       "name": "resizable",
@@ -1171,13 +1200,13 @@
       "exports": ["Separator"],
       "dependencies": ["cn", "radix-ui", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": ["horizontal", "vertical", "decorative", "semantic"],
+      "visual": "Reviewed forms screenshots at 320/768/1440px; approved M1 recipes",
+      "interaction": "Chromium form values and keyboard checks passed",
+      "accessibility": "axe reports no violations on forms; human AT review pending",
+      "documentation": "examples/forms.html and docs/traveler/forms.md",
+      "installation": "pending M3"
     },
     {
       "name": "sheet",
@@ -1330,13 +1359,21 @@
       "exports": ["Switch"],
       "dependencies": ["cn", "radix-ui", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "controlled",
+        "uncontrolled",
+        "on/off",
+        "disabled",
+        "default/sm sizes",
+        "focus-visible",
+        "form value"
+      ],
+      "visual": "Reviewed forms screenshots at 320/768/1440px; approved M1 recipes",
+      "interaction": "Chromium form values and keyboard checks passed",
+      "accessibility": "axe reports no violations on forms; human AT review pending",
+      "documentation": "examples/forms.html and docs/traveler/forms.md",
+      "installation": "pending M3"
     },
     {
       "name": "table",
@@ -1393,13 +1430,22 @@
       "exports": ["Textarea"],
       "dependencies": ["cn", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "controlled",
+        "uncontrolled",
+        "required",
+        "read-only",
+        "disabled",
+        "invalid",
+        "focus-visible",
+        "native resizing"
+      ],
+      "visual": "Reviewed forms screenshots at 320/768/1440px; approved M1 recipes",
+      "interaction": "Chromium form values and keyboard checks passed",
+      "accessibility": "axe reports no violations on forms; human AT review pending",
+      "documentation": "examples/forms.html and docs/traveler/forms.md",
+      "installation": "pending M3"
     },
     {
       "name": "toggle-group",

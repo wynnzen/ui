@@ -216,9 +216,57 @@ try {
   await noticeDialog.getByRole("button", { name: "Close", exact: true }).click()
   await noticeDialog.waitFor({ state: "hidden" })
   await expect(notice).toBeFocused()
+  await page.goto(
+    new URL("forms.html", process.env.TRAVELER_URL || "http://127.0.0.1:4173/")
+      .href
+  )
+  const mixed = page.getByRole("checkbox", {
+    name: "Partly packed",
+    exact: true,
+  })
+  await expect(mixed).toHaveAttribute("aria-checked", "mixed")
+  await mixed.focus()
+  await page.keyboard.press("Space")
+  await expect(mixed).toBeChecked()
+  const steady = page.getByRole("radio", { name: "Steady pace", exact: true })
+  await steady.focus()
+  // Radix selects on deferred focus while the arrow key is held.
+  await page.keyboard.down("ArrowDown")
+  await expect(
+    page.getByRole("radio", { name: "Swift pace", exact: true })
+  ).toBeChecked()
+  await page.keyboard.up("ArrowDown")
+  await page
+    .getByRole("switch", { name: "Share itinerary", exact: true })
+    .click()
+  await page
+    .getByLabel("Journey notes", { exact: true })
+    .fill("旅の記録 / River road")
+  await page
+    .getByRole("button", { name: "Apply journey settings", exact: true })
+    .click()
+  const values = JSON.parse(await page.getByRole("status").textContent())
+  assert.deepEqual(values, {
+    notes: "旅の記録 / River road",
+    provisions: "packed",
+    pace: "swift",
+    share: "on",
+  })
+  await expect(
+    page.getByRole("checkbox", { name: "Archived supplies", exact: true })
+  ).toBeDisabled()
+  await expect(
+    page.getByRole("switch", { name: "Cloud sharing unavailable", exact: true })
+  ).toBeDisabled()
+  await expect(
+    page.getByRole("separator", { name: "Vertical rule", exact: true })
+  ).toHaveAttribute("aria-orientation", "vertical")
+  await expect(
+    page.getByRole("link", { name: "Open settings", exact: true })
+  ).toHaveAttribute("href", "#settings")
   assert.deepEqual(errors, [])
   console.log(
-    `Traveler five-component contracts, forms, keyboard menus, nested portals and focus restoration passed (${await browser.version()}).`
+    `Traveler component contracts, forms, keyboard menus, nested portals and focus restoration passed (${await browser.version()}).`
   )
 } finally {
   await browser.close()

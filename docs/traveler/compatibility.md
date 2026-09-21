@@ -1,6 +1,6 @@
 # Prototype compatibility and verification
 
-This records **measured M1 behavior**, not a released support matrix or WCAG
+This records **measured M1/M2 behavior**, not a released support matrix or WCAG
 conformance claim. Full release checks remain in M3/M4 of [todo.md](../../todo.md).
 
 | Area                 | Evidence / status                                                                                                                                                          |
@@ -72,7 +72,8 @@ pnpm traveler:review
 `traveler:review` compares screenshots byte-for-byte with the committed review
 candidates, checks browser/platform identity, and repeats accessibility,
 responsive, portal, motion and network checks. Candidate images are original
-prototype evidence, **not user-approved design baselines**. Actual comparison
+prototype evidence. The user approved the M1 visual direction; subsequent
+screenshots document implementation checks, not release certification. Actual comparison
 images are written to ignored `.codex-artifacts/traveler/` for inspection.
 
 `pnpm traveler:review:capture` explicitly replaces candidate images and their
@@ -80,7 +81,7 @@ images are written to ignored `.codex-artifacts/traveler/` for inspection.
 regressions. A different browser build, OS font set or rendering environment can
 change pixels. The runner records the current kernel/platform and browser; a
 portable pinned OS image is a later release task. Read
-[visual-language.md](visual-language.md) for the pending approval gate.
+[visual-language.md](visual-language.md) for the approved visual direction.
 
 Full upstream Next build and monorepo tests were not run. This scoped validation
 does not establish registry installability or SSR compatibility.
