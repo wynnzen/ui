@@ -291,13 +291,14 @@
       ],
       "dependencies": ["cn", "react"],
       "milestone": "M1",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": ["default", "long-content", "consumer-class-override"],
+      "visual": "awaiting-design-review",
+      "interaction": "chromium-check",
+      "accessibility": "contrast-and-keyboard-check; manual review pending",
+      "documentation": "prototype-gallery",
+      "installation": "pending-M3",
+      "themedSource": "apps/v4/registry/traveler/ui/card.tsx"
     },
     {
       "name": "carousel",
@@ -513,13 +514,22 @@
         "react"
       ],
       "milestone": "M1",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "closed",
+        "open",
+        "focus-contained",
+        "controlled",
+        "uncontrolled",
+        "without-close-icon",
+        "nested-menu"
+      ],
+      "visual": "awaiting-design-review",
+      "interaction": "chromium-check",
+      "accessibility": "contrast-and-keyboard-check; manual review pending",
+      "documentation": "prototype-gallery",
+      "installation": "pending-M3",
+      "themedSource": "apps/v4/registry/traveler/ui/dialog.tsx"
     },
     {
       "name": "direction",
@@ -588,13 +598,24 @@
       ],
       "dependencies": ["cn", "lucide-react", "radix-ui", "react"],
       "milestone": "M1",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "closed",
+        "open",
+        "highlighted",
+        "disabled",
+        "checked",
+        "unchecked",
+        "indeterminate",
+        "submenu-open",
+        "destructive"
+      ],
+      "visual": "awaiting-design-review",
+      "interaction": "chromium-check",
+      "accessibility": "contrast-and-keyboard-check; manual review pending",
+      "documentation": "prototype-gallery",
+      "installation": "pending-M3",
+      "themedSource": "apps/v4/registry/traveler/ui/dropdown-menu.tsx"
     },
     {
       "name": "empty",
@@ -759,13 +780,22 @@
       "exports": ["Input"],
       "dependencies": ["cn", "react"],
       "milestone": "M1",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "default",
+        "focus-visible",
+        "disabled",
+        "invalid",
+        "read-only",
+        "controlled",
+        "uncontrolled"
+      ],
+      "visual": "awaiting-design-review",
+      "interaction": "chromium-check",
+      "accessibility": "contrast-and-keyboard-check; manual review pending",
+      "documentation": "prototype-gallery",
+      "installation": "pending-M3",
+      "themedSource": "apps/v4/registry/traveler/ui/input.tsx"
     },
     {
       "name": "item",

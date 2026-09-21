@@ -15,7 +15,7 @@ Preserve upstream collections and unrelated local changes.
       semantic tokens and shared CSS recipes; expose a working Button page with
       its existing variants, sizes and composition contract. Verify imports,
       styling, types, production build and representative keyboard behavior.
-- [ ] **M1.2 — Five-component prototype:** add Card, Input, Dialog and Dropdown
+- [x] **M1.2 — Five-component prototype:** add Card, Input, Dialog and Dropdown
       Menu from the pinned source, retaining every export and primitive contract.
       Include representative states, controlled/uncontrolled examples, forms,
       portal inheritance and an isolated upstream comparison.
@@ -93,3 +93,18 @@ Preserve upstream collections and unrelated local changes.
   disabled/link, computed-theme and utility-override checks. Visually inspected
   the rendered page. Installation and final visual approval remain pending.
 - Preview: `pnpm traveler:dev`, then `http://127.0.0.1:4173/`.
+
+### M1.2 — Five-component prototype
+
+- Added Card, Input, Dialog and Dropdown Menu with all baseline exports, parts,
+  native props and Radix behavior. Extended the separate upstream comparison.
+- Added fictional journal panels, a controlled/uncontrolled settings form,
+  disabled/read-only/invalid fields, checked/mixed/radio menu items, a submenu,
+  controlled and uncontrolled dialogs, and a nested menu inside a dialog.
+- Validation passed: production build, TypeScript contracts in both directions
+  for every export, ESLint, 3 Vitest checks, and Chromium forms/refs/CJK entry,
+  keyboard navigation, nested portal tokens and focus-restoration checks.
+- Corrected a utility overriding the shared menu focus outline. Browser tests
+  use Playwright's retrying focus assertions for Radix's deferred focus changes.
+- All five components remain classified as prototypes; visual approval and M3
+  installation evidence are pending.

@@ -28,9 +28,9 @@
   --trav-ornament: #baa680;
   --trav-success: #b9ceac;
   --trav-success-foreground: #182014;
-  --trav-panel-shadow:
-    0 4px 16px #00000030, inset 0 0 0 3px var(--card), inset 0 0 0 4px #66676160;
+  --trav-panel-shadow: 0 4px 16px #00000030;
   --trav-duration: 140ms;
+  --trav-marker-size: 0.3rem;
 }
 
 @theme inline {
@@ -57,7 +57,10 @@
   }
 
   :where(:root[data-ui-theme="traveler"]) .trav-panel {
-    box-shadow: var(--trav-panel-shadow);
+    box-shadow:
+      var(--trav-panel-shadow),
+      inset 0 0 0 3px var(--trav-panel-background, var(--card)),
+      inset 0 0 0 4px color-mix(in srgb, var(--border) 38%, transparent);
   }
 }
 
@@ -76,6 +79,67 @@
     :where(:root[data-ui-theme="traveler"]) .trav-panel {
       box-shadow: none;
       border-color: CanvasText;
+    }
+  }
+}
+
+@layer components {
+  :where(:root[data-ui-theme="traveler"]) .trav-menu-surface {
+    --trav-panel-background: var(--popover);
+  }
+
+  :where(:root[data-ui-theme="traveler"]) .trav-menu-item {
+    outline: 1px solid transparent;
+    outline-offset: -2px;
+    transition: background-color var(--trav-duration);
+  }
+
+  :where(:root[data-ui-theme="traveler"]) .trav-menu-item[data-highlighted] {
+    background-color: var(--accent);
+    outline: 1px solid var(--ring);
+    outline-offset: -2px;
+  }
+
+  :where(:root[data-ui-theme="traveler"]) .trav-menu-item[data-disabled] {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  :where(:root[data-ui-theme="traveler"]) .trav-menu-pointer::before {
+    position: absolute;
+    inset-inline-start: 0.65rem;
+    width: var(--trav-marker-size);
+    height: var(--trav-marker-size);
+    content: "";
+    background: currentColor;
+    transform: rotate(45deg);
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  :where(:root[data-ui-theme="traveler"])
+    .trav-menu-pointer[data-highlighted]::before {
+    visibility: visible;
+  }
+
+  :where(:root[data-ui-theme="traveler"]) .trav-overlay[data-state="open"] {
+    animation: trav-enter var(--trav-duration) ease-out;
+  }
+
+  @keyframes trav-enter {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@media (forced-colors: active) {
+  @layer components {
+    :where(:root[data-ui-theme="traveler"]) .trav-menu-item[data-highlighted] {
+      outline-color: Highlight;
     }
   }
 }

@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client"
 
 import { ButtonExamples } from "./button-examples"
+import { FoundationExamples } from "./foundation-examples"
 
 import "./preview.css"
 
@@ -24,7 +25,22 @@ createRoot(document.getElementById("root")!).render(
         Open the unchanged shadcn comparison
       </a>
     </header>
+    <nav
+      aria-label="Components"
+      className="flex flex-wrap gap-x-6 gap-y-3 text-sm"
+    >
+      {["button", "card", "input", "dropdown-menu", "dialog"].map((name) => (
+        <a
+          key={name}
+          href={`#${name}`}
+          className="trav-control underline underline-offset-4"
+        >
+          {name.replaceAll("-", " ")}
+        </a>
+      ))}
+    </nav>
     <ButtonExamples />
+    <FoundationExamples />
     <footer className="border-t pt-6 text-sm text-muted-foreground">
       Foundation prototype · Radix / React 19 / Tailwind 4 · Visual approval
       pending
