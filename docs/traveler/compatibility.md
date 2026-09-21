@@ -36,7 +36,7 @@ fixtures; Escape restores trigger focus. This comparison explains the finding,
 but does not establish screen-reader correctness or waive human review.
 
 The review command reruns the matching upstream fixtures. It permits only that
-specific inherited rule and matching affected surface, preserving it in the
+specific inherited rules and matching affected surfaces, preserving it in the
 report; every other themed violation fails the command. The baseline comparison
 also reports an upstream highlighted-row contrast finding that is not present in
 the themed menu. No accessibility rule is globally disabled.
@@ -85,3 +85,20 @@ portable pinned OS image is a later release task. Read
 
 Full upstream Next build and monorepo tests were not run. This scoped validation
 does not establish registry installability or SSR compatibility.
+
+## M2 navigation and overlay evidence
+
+The forms and navigation pages plus open Alert Dialog, Popover and Tooltip scans
+have no axe violations. A scrolling Select reproduces two serious upstream
+findings: `aria-hidden-focus` on `#root`, and `scrollable-region-focusable` on
+Radix's presentation viewport. Options use managed focus with `tabIndex=-1`;
+End moves focus to the last option and scrolls it into view in both fixtures.
+The comparison permits these exact rules only when reproduced on the same
+surfaces in the corresponding upstream Select scan. Findings remain recorded;
+keyboard success is not a substitute for assistive-technology review.
+
+All 17 modules retain their export/prop contracts. The browser suite exercises
+Select form submission/typeahead/nested portals, both Tabs activation modes,
+Alert Dialog cancellation/action/focus containment and outside interaction,
+Popover editing/Escape, and Tooltip keyboard focus/Escape. All screenshots use
+the same approved recipes. There are still no added runtime packages or assets.

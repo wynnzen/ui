@@ -51,13 +51,22 @@
         "react"
       ],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "controlled/uncontrolled",
+        "default/sm",
+        "media/header/footer",
+        "cancel/action variants",
+        "initial focus",
+        "Tab containment",
+        "Escape/focus return",
+        "outside pointer"
+      ],
+      "visual": "Reviewed overlays/screenshots; M1 recipes",
+      "interaction": "Chromium keyboard/controlled values/focus/portals passed",
+      "accessibility": "axe reports no violations; human AT pending",
+      "documentation": "examples/overlays.html and docs/traveler/overlays.md",
+      "installation": "pending M3"
     },
     {
       "name": "alert",
@@ -1084,13 +1093,19 @@
       ],
       "dependencies": ["cn", "radix-ui", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "controlled/uncontrolled",
+        "anchor",
+        "alignment/side/collision",
+        "editable content",
+        "Escape/focus return"
+      ],
+      "visual": "Reviewed overlays/screenshots; M1 recipes",
+      "interaction": "Chromium keyboard/controlled values/focus/portals passed",
+      "accessibility": "axe reports no violations; human AT pending",
+      "documentation": "examples/overlays.html and docs/traveler/overlays.md",
+      "installation": "pending M3"
     },
     {
       "name": "progress",
@@ -1184,13 +1199,24 @@
       ],
       "dependencies": ["cn", "lucide-react", "radix-ui", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "controlled/uncontrolled",
+        "form values",
+        "default/sm",
+        "placeholder",
+        "disabled/invalid",
+        "both popup positions",
+        "highlighted/selected",
+        "groups/separators",
+        "long values/scrolling",
+        "nested dialog"
+      ],
+      "visual": "Reviewed overlays/screenshots; M1 recipes",
+      "interaction": "Chromium keyboard/controlled values/focus/portals passed",
+      "accessibility": "No new axe findings; Select inherits baseline findings; human AT pending",
+      "documentation": "examples/overlays.html and docs/traveler/overlays.md",
+      "installation": "pending M3"
     },
     {
       "name": "separator",
@@ -1414,13 +1440,20 @@
       ],
       "dependencies": ["class-variance-authority", "cn", "radix-ui", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "controlled/uncontrolled",
+        "default/line",
+        "horizontal/vertical",
+        "automatic/manual activation",
+        "active/inactive/disabled",
+        "focus-visible"
+      ],
+      "visual": "Reviewed overlays/screenshots; M1 recipes",
+      "interaction": "Chromium keyboard/controlled values/focus/portals passed",
+      "accessibility": "axe reports no violations; human AT pending",
+      "documentation": "examples/overlays.html and docs/traveler/overlays.md",
+      "installation": "pending M3"
     },
     {
       "name": "textarea",
@@ -1498,13 +1531,19 @@
       ],
       "dependencies": ["cn", "radix-ui", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "provider",
+        "asChild",
+        "pointer/focus",
+        "Escape",
+        "side/offset"
+      ],
+      "visual": "Reviewed overlays/screenshots; M1 recipes",
+      "interaction": "Chromium keyboard/controlled values/focus/portals passed",
+      "accessibility": "axe reports no violations; human AT pending",
+      "documentation": "examples/overlays.html and docs/traveler/overlays.md",
+      "installation": "pending M3"
     }
   ]
 }

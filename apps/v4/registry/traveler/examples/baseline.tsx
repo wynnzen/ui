@@ -23,6 +23,13 @@ import {
   DropdownMenuTrigger,
 } from "@/registry/new-york-v4/ui/dropdown-menu"
 import { Input } from "@/registry/new-york-v4/ui/input"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/registry/new-york-v4/ui/select"
 
 import "@/app/globals.css"
 
@@ -83,6 +90,18 @@ createRoot(document.getElementById("root")!).render(
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
+    <Select defaultValue="route-0">
+      <SelectTrigger aria-label="Baseline destination">
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent position="popper">
+        {Array.from({ length: 24 }, (_, index) => (
+          <SelectItem key={index} value={`route-${index}`}>
+            Route {index + 1}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
     <p id="notes">
       This document imports the pinned upstream source unchanged.
     </p>

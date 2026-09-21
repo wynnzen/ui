@@ -264,6 +264,124 @@ try {
   await expect(
     page.getByRole("link", { name: "Open settings", exact: true })
   ).toHaveAttribute("href", "#settings")
+  await page.goto(
+    new URL(
+      "overlays.html",
+      process.env.TRAVELER_URL || "http://127.0.0.1:4173/"
+    ).href
+  )
+  const select = page.getByRole("combobox", {
+    name: "Destination",
+    exact: true,
+  })
+  await select.focus()
+  await page.keyboard.press("Space")
+  await expect(
+    page.getByRole("option", { name: "Northreach", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("w")
+  await expect(
+    page.getByRole("option", { name: "Willowmere", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("Enter")
+  await expect(select).toHaveText("Willowmere")
+  await expect(select).toBeFocused()
+  await page
+    .getByRole("button", { name: "Save destination", exact: true })
+    .click()
+  await expect(page.getByRole("status")).toHaveText(
+    "Destination submitted: willowmere."
+  )
+  await page
+    .getByRole("button", { name: "Plan destination in dialog", exact: true })
+    .click()
+  const nestedSelect = page.getByRole("combobox", {
+    name: "Dialog destination",
+    exact: true,
+  })
+  await nestedSelect.click()
+  await expect(page.getByRole("listbox")).toHaveCSS(
+    "background-color",
+    "rgb(36, 40, 45)"
+  )
+  await page.getByRole("option", { name: "Eastbank", exact: true }).click()
+  await expect(nestedSelect).toHaveText("Eastbank")
+  await expect(nestedSelect).toBeFocused()
+  await page.keyboard.press("Escape")
+  await expect(
+    page.getByRole("button", {
+      name: "Plan destination in dialog",
+      exact: true,
+    })
+  ).toBeFocused()
+  const journal = page.getByRole("tab", { name: "Journal", exact: true })
+  await journal.focus()
+  await page.keyboard.press("ArrowRight")
+  await expect(
+    page.getByRole("tab", { name: "Supplies", exact: true })
+  ).toHaveAttribute("aria-selected", "true")
+  await page.keyboard.press("ArrowRight")
+  await expect(journal).toBeFocused()
+  const riverTab = page.getByRole("tab", { name: "River", exact: true })
+  const ridgeTab = page.getByRole("tab", { name: "Ridge", exact: true })
+  await riverTab.focus()
+  await page.keyboard.press("ArrowDown")
+  await expect(ridgeTab).toBeFocused()
+  await expect(riverTab).toHaveAttribute("aria-selected", "true")
+  await page.keyboard.press("Enter")
+  await expect(ridgeTab).toHaveAttribute("aria-selected", "true")
+  const archive = page.getByRole("button", {
+    name: "Archive journey",
+    exact: true,
+  })
+  await archive.click()
+  await expect(
+    page.getByRole("button", { name: "Keep journey", exact: true })
+  ).toBeFocused()
+  await page
+    .locator("[data-slot=alert-dialog-overlay]")
+    .click({ position: { x: 1, y: 1 } })
+  await expect(page.getByRole("alertdialog")).toBeVisible()
+  // Outside pointer interaction may blur to body; Tab re-enters the focus trap.
+  await page.keyboard.press("Tab")
+  await expect(
+    page.getByRole("button", { name: "Keep journey", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("Tab")
+  await page.keyboard.press("Tab")
+  await expect(
+    page.getByRole("button", { name: "Keep journey", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("Escape")
+  await expect(page.getByRole("alertdialog")).toBeHidden()
+  await expect(archive).toBeFocused()
+  await archive.click()
+  await page
+    .getByRole("button", { name: "Confirm archive", exact: true })
+    .click()
+  await expect(page.getByRole("status")).toHaveText("Journey archived.")
+  await page
+    .getByRole("button", { name: "Open small alert", exact: true })
+    .click()
+  await page.getByRole("button", { name: "Rest", exact: true }).click()
+  await expect(page.getByRole("status")).toHaveText("Camp prepared.")
+  const edit = page.getByRole("button", { name: "Edit waypoint", exact: true })
+  await edit.click()
+  await expect(page.getByLabel("Waypoint name", { exact: true })).toBeFocused()
+  await page.getByLabel("Waypoint name", { exact: true }).fill("Eastbank ferry")
+  await page.getByRole("button", { name: "Save waypoint", exact: true }).click()
+  await expect(edit).toBeFocused()
+  await edit.click()
+  await page.keyboard.press("Escape")
+  await expect(edit).toBeFocused()
+  const tip = page.getByRole("button", { name: "Travel note", exact: true })
+  await tip.focus()
+  await expect(page.getByRole("tooltip")).toHaveText(
+    "The old ferry takes foot passengers."
+  )
+  await page.keyboard.press("Escape")
+  await expect(page.getByRole("tooltip")).toBeHidden()
+  await expect(tip).toBeFocused()
   assert.deepEqual(errors, [])
   console.log(
     `Traveler component contracts, forms, keyboard menus, nested portals and focus restoration passed (${await browser.version()}).`

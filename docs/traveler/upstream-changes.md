@@ -24,5 +24,11 @@ reapply the visual layer, update the full inventory, then run scoped types,
 interactions, screenshots and both M3 consumers. Do not overwrite themed source
 with unreviewed CLI output. New upstream files enter the backlog explicitly.
 
-Visual approval, installation, versioned registry publication and the remaining
-56 source components are still pending. Existing prototypes are not marked done.
+The user approved the M1 direction. M2 adds Badge, Separator, Label, Textarea,
+Checkbox, Radio Group, Switch, Select, Tabs, Alert Dialog, Popover and Tooltip.
+Exports, state ownership, client directives and primitives are retained. Visual
+changes reuse control/panel/menu recipes, logical spacing, opaque surfaces and
+visible mixed/selected states. No event-handler rewrite was needed.
+
+Installation, versioned registry publication and the remaining 44 source
+components are pending. Existing prototypes are not marked complete.

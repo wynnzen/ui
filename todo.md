@@ -28,7 +28,7 @@ Preserve upstream collections and unrelated local changes.
 - [x] **M2.1 — Forms and content:** Badge, Separator, Label, Textarea, Checkbox,
       Radio Group, Switch and required helpers; document and verify applicable
       variants, states, forms, long labels and responsive behavior.
-- [ ] **M2.2 — Navigation and overlays:** Select, Tabs, Alert Dialog, Popover and
+- [x] **M2.2 — Navigation and overlays:** Select, Tabs, Alert Dialog, Popover and
       Tooltip; verify keyboard operation, focus restoration, nested overlays,
       controlled/uncontrolled use and portal styling.
 - [ ] **M2.3 — Remaining MVP and gallery:** Progress, Table and Scroll Area;
@@ -146,3 +146,18 @@ Preserve upstream collections and unrelated local changes.
   interactions and 12 screenshot comparisons pass. Forms have no axe violations
   and no document overflow at 320/768/1440 px. No new dependency or theme rule.
 - Sources remain prototypes until installation and release QA are complete.
+
+### M2.2 — Navigation and overlays
+
+- Added Select, Tabs, Alert Dialog, Popover and Tooltip with every pinned export,
+  variant/size/orientation, native callbacks and scoped themed dependencies.
+- Verified Select typeahead/forms/scrolling and nesting inside Dialog, automatic
+  and manual Tabs, alert focus/dismissal/action rules, editable Popover and
+  keyboard Tooltip. Small alerts and long Select values work at 320px.
+- Build, types, lint, 3 Vitest checks, browser interactions and 19 screenshot
+  comparisons pass; 20 responsive/interaction review checks pass. New screenshots
+  were visually inspected. Captures park the mouse to prevent stale hover states.
+- Upstream and themed scrolling Select reproduce `aria-hidden-focus` and
+  `scrollable-region-focusable`; both support End-to-last-option scrolling.
+  Findings are retained and require human review. Other new scans are clean.
+- No new dependency, styling runtime or asset; installation and human QA pending.

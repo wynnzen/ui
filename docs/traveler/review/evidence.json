@@ -16,8 +16,8 @@
     },
     {
       "name": "gallery-1440",
-      "sha256": "809c356ac132536b4dee4ad210df495a08050c30ef1636af50f53b8db0166bfc",
-      "bytes": 251316
+      "sha256": "9d28212df5f3945cccdde83ceb3a22479dd3e2ac5844e27e6a3c540775ea5522",
+      "bytes": 251307
     },
     {
       "name": "status-panel",
@@ -63,6 +63,41 @@
       "name": "forms-1440",
       "sha256": "1b534c471f6c8da265a210ef5f3c6acbb4e351b6a42cdad80339c501994c5e0c",
       "bytes": 135095
+    },
+    {
+      "name": "overlays-320",
+      "sha256": "bfb20b6b9cb28580a6f8bce061cfb8832e58519375d2675824541e97d79931ce",
+      "bytes": 108114
+    },
+    {
+      "name": "overlays-768",
+      "sha256": "cc1eeee8c9d1450745dd2ea71e5c76a2963f496ed3ae2948b2b678bd422494e8",
+      "bytes": 105806
+    },
+    {
+      "name": "overlays-1440",
+      "sha256": "5033f59ece66e50c7e449582bcfefe27647ff971623b1c50df3f3513abd51420",
+      "bytes": 109693
+    },
+    {
+      "name": "select",
+      "sha256": "1034c726fb9219dd224d32b3a2e7eb5deddbcc765cfec4f725efb16b878046c1",
+      "bytes": 28379
+    },
+    {
+      "name": "alert-dialog",
+      "sha256": "0fbacc9248548b2e07fc9f6e6080e73cc410ebca17789199b92e19386b612256",
+      "bytes": 19555
+    },
+    {
+      "name": "popover",
+      "sha256": "d3ebf6d14bf1bf9172435656f4aab6b7ec3f3c6284529390251beb37371b1f3c",
+      "bytes": 12595
+    },
+    {
+      "name": "tooltip",
+      "sha256": "faaae6fa42c50015ff707662fc855d2ed47264afcc84da5483afc74118929404",
+      "bytes": 3846
     }
   ],
   "accessibility": [
@@ -108,6 +143,41 @@
         {
           "id": "aria-hidden-focus",
           "count": 4
+        }
+      ]
+    },
+    {
+      "name": "baseline open select",
+      "violations": [
+        {
+          "id": "aria-hidden-focus",
+          "impact": "serious",
+          "targets": [
+            [
+              "#root"
+            ]
+          ],
+          "surfaces": [
+            "root"
+          ]
+        },
+        {
+          "id": "scrollable-region-focusable",
+          "impact": "serious",
+          "targets": [
+            [
+              ".p-1"
+            ]
+          ],
+          "surfaces": [
+            "presentation"
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 2
         }
       ]
     },
@@ -189,6 +259,97 @@
           "count": 3
         }
       ]
+    },
+    {
+      "name": "navigation and overlays",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-valid-attr-value",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "open select",
+      "violations": [
+        {
+          "id": "aria-hidden-focus",
+          "impact": "serious",
+          "targets": [
+            [
+              "#root"
+            ]
+          ],
+          "surfaces": [
+            "root"
+          ]
+        },
+        {
+          "id": "scrollable-region-focusable",
+          "impact": "serious",
+          "targets": [
+            [
+              ".h-\\[var\\(--radix-select-trigger-height\\)\\]"
+            ]
+          ],
+          "surfaces": [
+            "presentation"
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 2
+        },
+        {
+          "id": "bypass",
+          "count": 1
+        },
+        {
+          "id": "color-contrast",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "open alert dialog",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 3
+        },
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "open popover",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-valid-attr-value",
+          "count": 5
+        },
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "open tooltip",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-valid-attr-value",
+          "count": 5
+        }
+      ]
     }
   ],
   "checks": [
@@ -204,6 +365,13 @@
     "forms 320px reflow",
     "forms 768px reflow",
     "forms 1440px reflow",
+    "overlays 320px reflow",
+    "overlays 768px reflow",
+    "overlays 1440px reflow",
+    "Themed and upstream Select scroll to End with the keyboard",
+    "Both alert sizes fit a 320x360 viewport with reachable actions",
+    "Long Select value at 320px",
+    "Navigation at 200% text / 768px",
     "Separate upstream document receives no Traveler tokens"
   ],
   "externalRequests": []

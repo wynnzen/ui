@@ -104,10 +104,37 @@ try {
     "baseline nested menu",
     "baseline"
   )
+  await page.keyboard.press("Escape")
+  await expect(
+    page.getByRole("button", { name: "Baseline nested menu", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("Escape")
+  await expect(page.getByRole("dialog")).toBeHidden()
+  await page
+    .getByRole("combobox", { name: "Baseline destination", exact: true })
+    .click()
+  await expect(
+    page.getByRole("option", { name: "Route 1", exact: true })
+  ).toBeFocused()
+  const inheritedSelect = await accessibility(
+    "baseline open select",
+    "baseline"
+  )
+  await page.keyboard.press("End")
+  await expect(
+    page.getByRole("option", { name: "Route 24", exact: true })
+  ).toBeFocused()
+  assert.ok(
+    (await page
+      .locator("[data-radix-select-viewport]")
+      .evaluate((el) => el.scrollTop)) > 0
+  )
   await page.goto(url, { waitUntil: "networkidle" })
   await page.addScriptTag({ path: axePath })
 
   async function screenshot(name, locator = page) {
+    // Avoid inheriting hover from an earlier page or viewport.
+    await page.mouse.move(0, 0)
     const bytes = await locator.screenshot({
       animations: "disabled",
       caret: "hide",
@@ -159,7 +186,9 @@ try {
         (finding) =>
           !inherited.some(
             (baseline) =>
-              baseline.id === "aria-hidden-focus" &&
+              ["aria-hidden-focus", "scrollable-region-focusable"].includes(
+                baseline.id
+              ) &&
               finding.id === baseline.id &&
               JSON.stringify(finding.surfaces) ===
                 JSON.stringify(baseline.surfaces)
@@ -328,6 +357,87 @@ try {
     await screenshot(`forms-${width}`)
   }
   await accessibility("forms and content")
+
+  await page.emulateMedia({ reducedMotion: "reduce" })
+  await page.goto(new URL("overlays.html", url).href, {
+    waitUntil: "networkidle",
+  })
+  await page.addScriptTag({ path: axePath })
+  for (const width of [320, 768, 1440]) {
+    await page.setViewportSize({ width, height: 1000 })
+    await noOverflow(`overlays ${width}px reflow`)
+    await screenshot(`overlays-${width}`)
+  }
+  await accessibility("navigation and overlays")
+  await page.getByRole("combobox", { name: "Destination", exact: true }).click()
+  await expect(
+    page.getByRole("option", { name: "Northreach", exact: true })
+  ).toBeFocused()
+  await screenshot("select", page.getByRole("listbox"))
+  await accessibility("open select", inheritedSelect)
+  await page.keyboard.press("End")
+  await expect(
+    page.getByRole("option", { name: "Waypoint 12", exact: true })
+  ).toBeFocused()
+  assert.ok(
+    (await page
+      .locator("[data-radix-select-viewport]")
+      .evaluate((el) => el.scrollTop)) > 0
+  )
+  report.checks.push(
+    "Themed and upstream Select scroll to End with the keyboard"
+  )
+  await page.keyboard.press("Escape")
+  await page
+    .getByRole("button", { name: "Archive journey", exact: true })
+    .click()
+  await expect(
+    page.getByRole("button", { name: "Keep journey", exact: true })
+  ).toBeFocused()
+  await screenshot("alert-dialog", page.getByRole("alertdialog"))
+  await accessibility("open alert dialog")
+  await page.keyboard.press("Escape")
+  await page.getByRole("button", { name: "Edit waypoint", exact: true }).click()
+  await expect(page.getByLabel("Waypoint name", { exact: true })).toBeFocused()
+  await screenshot("popover", page.locator("[data-slot=popover-content]"))
+  await accessibility("open popover")
+  await page.keyboard.press("Escape")
+  await page.getByRole("button", { name: "Travel note", exact: true }).focus()
+  await expect(page.getByRole("tooltip")).toBeVisible()
+  await screenshot("tooltip", page.locator("[data-slot=tooltip-content]"))
+  await accessibility("open tooltip")
+  await page.keyboard.press("Escape")
+
+  await page.setViewportSize({ width: 320, height: 360 })
+  for (const name of ["Archive journey", "Open small alert"]) {
+    await page.getByRole("button", { name, exact: true }).click()
+    const alert = page.getByRole("alertdialog")
+    const bounds = await alert.boundingBox()
+    assert.ok(
+      bounds.x >= 0 &&
+        bounds.y >= 0 &&
+        bounds.x + bounds.width <= 320 &&
+        bounds.y + bounds.height <= 360
+    )
+    await alert.getByRole("button").first().click()
+    await expect(alert).toBeHidden()
+  }
+  report.checks.push(
+    "Both alert sizes fit a 320x360 viewport with reachable actions"
+  )
+  await page.getByRole("combobox", { name: "Destination", exact: true }).click()
+  await page
+    .getByRole("option", {
+      name: "The old observatory beyond the eastern ridge",
+      exact: true,
+    })
+    .click()
+  await noOverflow("Long Select value at 320px")
+  await page.setViewportSize({ width: 768, height: 1000 })
+  await page.evaluate(() => {
+    document.documentElement.style.fontSize = "200%"
+  })
+  await noOverflow("Navigation at 200% text / 768px")
 
   await page.goto(new URL("baseline.html", url).href, {
     waitUntil: "networkidle",
