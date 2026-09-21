@@ -11,7 +11,7 @@ Preserve upstream collections and unrelated local changes.
 - [x] **M0 — Baseline:** pin the checkout, audit canonical/generated ownership,
       choose one primitive/style baseline, record tools and commands, freeze the
       full component inventory, and build a relevant unchanged baseline example.
-- [ ] **M1.1 — First themed component:** implement document-root theme activation,
+- [x] **M1.1 — First themed component:** implement document-root theme activation,
       semantic tokens and shared CSS recipes; expose a working Button page with
       its existing variants, sizes and composition contract. Verify imports,
       styling, types, production build and representative keyboard behavior.
@@ -81,3 +81,15 @@ Preserve upstream collections and unrelated local changes.
   `pnpm traveler:build`, `pnpm traveler:typecheck`, `pnpm traveler:check` (1 test).
 - Full upstream Next build and aggregate tests were not run; reasons and existing
   tool warnings are recorded in the baseline report. No lockfile changes.
+
+### M1.1 — First themed component
+
+- Added document-root tokens and layered control/panel recipes, a themed Button
+  retaining six variants/eight sizes and `asChild`, and a plain-background page.
+- Theme activation is explicit on `<html class="dark" data-ui-theme="traveler">`;
+  consumer utility overrides and reduced-motion/forced-colors foundations remain.
+- Validation passed: production build, scoped TypeScript (bidirectional Button
+  contracts), ESLint, 3 Vitest checks, and Chromium 149.0.7827.55 keyboard,
+  disabled/link, computed-theme and utility-override checks. Visually inspected
+  the rendered page. Installation and final visual approval remain pending.
+- Preview: `pnpm traveler:dev`, then `http://127.0.0.1:4173/`.

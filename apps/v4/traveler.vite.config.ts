@@ -17,6 +17,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
+        traveler: `${appRoot}registry/traveler/examples/index.html`,
         baseline: `${appRoot}registry/traveler/examples/baseline.html`,
       },
     },

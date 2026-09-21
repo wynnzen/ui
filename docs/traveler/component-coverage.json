@@ -236,13 +236,22 @@
       "exports": ["Button", "buttonVariants"],
       "dependencies": ["class-variance-authority", "cn", "radix-ui", "react"],
       "milestone": "M1",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "default",
+        "hover",
+        "focus-visible",
+        "active",
+        "disabled",
+        "invalid",
+        "busy (composed)"
+      ],
+      "visual": "awaiting-design-review",
+      "interaction": "chromium-check",
+      "accessibility": "contrast-and-keyboard-check; manual review pending",
+      "documentation": "prototype-gallery",
+      "installation": "pending-M3",
+      "themedSource": "apps/v4/registry/traveler/ui/button.tsx"
     },
     {
       "name": "calendar",

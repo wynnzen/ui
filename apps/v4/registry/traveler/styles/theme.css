@@ -1,0 +1,81 @@
+/* Import after the host shadcn stylesheet. Activate on <html>, with .dark. */
+:root[data-ui-theme="traveler"] {
+  color-scheme: dark;
+  --background: #111315;
+  --foreground: #f2eee5;
+  --card: #1b1e21;
+  --card-foreground: #f2eee5;
+  --popover: #24282d;
+  --popover-foreground: #f2eee5;
+  --primary: #e4dccb;
+  --primary-foreground: #1a1c1f;
+  --secondary: #30363d;
+  --secondary-foreground: #f2eee5;
+  --muted: #24282d;
+  --muted-foreground: #b9b3a7;
+  --accent: #30363d;
+  --accent-foreground: #f2eee5;
+  --destructive: #e6a19a;
+  --destructive-foreground: #261513;
+  --border: #666761;
+  --input: #96968d;
+  --ring: #c2d7e8;
+  --radius: 0.125rem;
+  --font-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+  --trav-rule: #96968d;
+  --trav-ornament: #baa680;
+  --trav-success: #b9ceac;
+  --trav-success-foreground: #182014;
+  --trav-panel-shadow:
+    0 4px 16px #00000030, inset 0 0 0 3px var(--card), inset 0 0 0 4px #66676160;
+  --trav-duration: 140ms;
+}
+
+@theme inline {
+  --font-heading: var(--font-heading);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-trav-ornament: var(--trav-ornament);
+  --color-trav-success: var(--trav-success);
+  --color-trav-success-foreground: var(--trav-success-foreground);
+  --shadow-trav-panel: var(--trav-panel-shadow);
+}
+
+@layer components {
+  :where(:root[data-ui-theme="traveler"]) .trav-control {
+    outline: 2px solid transparent;
+    outline-offset: 3px;
+    transition:
+      color var(--trav-duration),
+      background-color var(--trav-duration),
+      border-color var(--trav-duration);
+  }
+
+  :where(:root[data-ui-theme="traveler"]) .trav-control:focus-visible {
+    outline-color: var(--ring);
+  }
+
+  :where(:root[data-ui-theme="traveler"]) .trav-panel {
+    box-shadow: var(--trav-panel-shadow);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-ui-theme="traveler"] {
+    --trav-duration: 0ms;
+  }
+}
+
+@media (forced-colors: active) {
+  @layer components {
+    :where(:root[data-ui-theme="traveler"]) .trav-control:focus-visible {
+      outline-color: Highlight;
+    }
+
+    :where(:root[data-ui-theme="traveler"]) .trav-panel {
+      box-shadow: none;
+      border-color: CanvasText;
+    }
+  }
+}
