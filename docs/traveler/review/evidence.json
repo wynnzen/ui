@@ -6,33 +6,33 @@
   "screenshots": [
     {
       "name": "gallery-320",
-      "sha256": "2342c5f5bdb08c073646a9b497d0e32a8df46952de48f861f3f8ef9b0ca5a158",
-      "bytes": 243522
+      "sha256": "af75032bcf6f7e4752c7f0e977487cf62a4351bfe3afd9109c8498ff1ba0dfe0",
+      "bytes": 253311
     },
     {
       "name": "gallery-768",
-      "sha256": "f57fb925974a6cd05c9665abfbe2cd9ebf7baf55bc0c7f99ec7737c9738ca42e",
-      "bytes": 246819
+      "sha256": "ff39f77c36ff93d203514b21289d1c91493ed4da1fcc2d3a507b06e861eb3c04",
+      "bytes": 254833
     },
     {
       "name": "gallery-1440",
-      "sha256": "9d28212df5f3945cccdde83ceb3a22479dd3e2ac5844e27e6a3c540775ea5522",
-      "bytes": 251307
+      "sha256": "cbe048aa5a674e08a2dc992fdffcfb3f5d1ecb85f03ef8a4c098e2737d414681",
+      "bytes": 260321
     },
     {
       "name": "status-panel",
-      "sha256": "fe05289759c27bb4902d4cbe518a4ce896725e93fc376d2330f3c75daa2d4144",
-      "bytes": 25632
+      "sha256": "fc43312683e5788a2f2314299dddd1c3f862ce6f9156e7287f7ed04cdf1e015e",
+      "bytes": 25646
     },
     {
       "name": "item-list",
-      "sha256": "06ee5a67cc5ae57c658d34580770becea32154d02c297722b7e1a885f97d19e4",
-      "bytes": 20685
+      "sha256": "527fd8a1e91044dc54616e731f72e831a02a414f290b2e43a8968a005b5e3a2e",
+      "bytes": 20700
     },
     {
       "name": "button-focus",
-      "sha256": "f847847f7e134a1917134fa153376839bb02ad90547859954cb20888af9493f6",
-      "bytes": 41612
+      "sha256": "c50ce1a1643a04fb6eb7c6048696056f8615e252a10957bfa52ea157fdf4e20a",
+      "bytes": 41611
     },
     {
       "name": "menu-highlight",
@@ -46,8 +46,8 @@
     },
     {
       "name": "forced-colors",
-      "sha256": "689291ca93a5568aee7bd4b411fabc63dcbb111b515644c5b7b680daf2f68a38",
-      "bytes": 39089
+      "sha256": "f716fe4b781a34cd5ad909f38bf7eb87e13b3112d189d6aed052f7c36dc294aa",
+      "bytes": 39086
     },
     {
       "name": "forms-320",
@@ -98,6 +98,26 @@
       "name": "tooltip",
       "sha256": "faaae6fa42c50015ff707662fc855d2ed47264afcc84da5483afc74118929404",
       "bytes": 3846
+    },
+    {
+      "name": "inventory-320",
+      "sha256": "2aed51bc909cfe00ca800b0c5cb091111803728f87c1302ac0fd8c93420fae89",
+      "bytes": 109587
+    },
+    {
+      "name": "inventory-768",
+      "sha256": "1bfce11a1409841c24e464af75a83bb73d6ab474d8256343bd8f404c402529d4",
+      "bytes": 122019
+    },
+    {
+      "name": "inventory-1440",
+      "sha256": "cf2e5f961bbce68150eb5665e13c48b85f6a6170c216e01d29172b8dcdd43624",
+      "bytes": 131092
+    },
+    {
+      "name": "catalog-search",
+      "sha256": "bc5a5c09573d824945bae905ae6d627293fb07d46fde86bbc590dc60c2bec865",
+      "bytes": 189539
     }
   ],
   "accessibility": [
@@ -350,6 +370,21 @@
           "count": 5
         }
       ]
+    },
+    {
+      "name": "inventory",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 26
+        }
+      ]
+    },
+    {
+      "name": "catalog",
+      "violations": [],
+      "incomplete": []
     }
   ],
   "checks": [
@@ -372,6 +407,13 @@
     "Both alert sizes fit a 320x360 viewport with reachable actions",
     "Long Select value at 320px",
     "Navigation at 200% text / 768px",
+    "inventory 320px reflow",
+    "inventory 768px reflow",
+    "inventory 1440px reflow",
+    "catalog 320px reflow",
+    "catalog 768px reflow",
+    "catalog 1440px reflow",
+    "Progress, Switch and Scroll Area state indicators survive forced colors",
     "Separate upstream document receives no Traveler tokens"
   ],
   "externalRequests": []

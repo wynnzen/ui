@@ -30,5 +30,12 @@ Exports, state ownership, client directives and primitives are retained. Visual
 changes reuse control/panel/menu recipes, logical spacing, opaque surfaces and
 visible mixed/selected states. No event-handler rewrite was needed.
 
-Installation, versioned registry publication and the remaining 44 source
+Installation, versioned registry publication and the remaining 41 source
 components are pending. Existing prototypes are not marked complete.
+
+M2.3 adds Progress, Table and Scroll Area. Progress now forwards its value to
+Radix and computes fill relative to max, fixing the upstream wrapper's missing
+value semantics. Table's named scrolling region and Scroll Area's viewport are
+keyboard-focusable; scrolling stays native. Scroll Area's minimum width permits
+grid reflow. Progress fill, Switch thumb and Scroll Area thumb use system colors
+in forced-colors mode, after measured default backgrounds lost their state cues.

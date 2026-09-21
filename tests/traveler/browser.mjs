@@ -382,6 +382,94 @@ try {
   await page.keyboard.press("Escape")
   await expect(page.getByRole("tooltip")).toBeHidden()
   await expect(tip).toBeFocused()
+  await page.goto(
+    new URL(
+      "inventory.html",
+      process.env.TRAVELER_URL || "http://127.0.0.1:4173/"
+    ).href
+  )
+  const meter = page.getByRole("progressbar", {
+    name: "Supplies packed",
+    exact: true,
+  })
+  await expect(meter).toHaveAttribute("aria-valuenow", "2")
+  await expect(meter).toHaveAttribute("aria-valuemax", "4")
+  const fill = meter.locator("[data-slot=progress-indicator]")
+  assert.ok(
+    await fill.evaluate(
+      (el) =>
+        Math.abs(
+          new DOMMatrix(getComputedStyle(el).transform).m41 / el.clientWidth +
+            0.5
+        ) < 0.01
+    )
+  )
+  await page
+    .getByRole("checkbox", { name: "Pack Dried orchard fruit", exact: true })
+    .click()
+  await expect(meter).toHaveAttribute("aria-valuenow", "3")
+  await page
+    .getByRole("checkbox", { name: "Pack Wool travelling cloak", exact: true })
+    .click()
+  await expect(meter).toHaveAttribute("data-state", "complete")
+  await expect(
+    page.getByRole("progressbar", { name: "Empty meter", exact: true })
+  ).toHaveAttribute("aria-valuenow", "0")
+  const pending = page.getByRole("progressbar", {
+    name: "Weather report loading",
+    exact: true,
+  })
+  await expect(pending).toHaveAttribute("data-state", "indeterminate")
+  assert.equal(await pending.getAttribute("aria-valuenow"), null)
+  const vertical = page
+    .getByRole("region", { name: "Route log", exact: true })
+    .locator("[data-slot=scroll-area-viewport]")
+  await vertical.focus()
+  await page.keyboard.press("End")
+  await expect
+    .poll(() => vertical.evaluate((el) => el.scrollTop))
+    .toBeGreaterThan(0)
+  await page.setViewportSize({ width: 320, height: 800 })
+  const tableRegion = page.getByRole("region", {
+    name: "Supply ledger scrolling area",
+    exact: true,
+  })
+  await tableRegion.focus()
+  await page.keyboard.press("ArrowRight")
+  await expect
+    .poll(() => tableRegion.evaluate((el) => el.scrollLeft))
+    .toBeGreaterThan(0)
+  const horizontal = page
+    .getByRole("region", { name: "Horizontal route", exact: true })
+    .locator("[data-slot=scroll-area-viewport]")
+  await horizontal.focus()
+  await page.keyboard.press("ArrowRight")
+  await expect
+    .poll(() => horizontal.evaluate((el) => el.scrollLeft))
+    .toBeGreaterThan(0)
+  await page.goto(
+    new URL(
+      "catalog.html",
+      process.env.TRAVELER_URL || "http://127.0.0.1:4173/"
+    ).href
+  )
+  await page
+    .getByLabel("Find a component or export", { exact: true })
+    .fill("CardTitle")
+  await expect(page.getByRole("status")).toHaveText("1 of 61 components")
+  await expect(
+    page.getByRole("link", { name: "Open examples", exact: true })
+  ).toHaveAttribute("href", "./index.html#card")
+  await page.getByText("Exact component source", { exact: true }).click()
+  await expect(page.getByLabel("card source", { exact: true })).toContainText(
+    "function CardTitle"
+  )
+  await page
+    .getByLabel("Find a component or export", { exact: true })
+    .fill("does-not-exist")
+  await expect(
+    page.getByText("No matching components. Try a shorter name.")
+  ).toBeVisible()
   assert.deepEqual(errors, [])
   console.log(
     `Traveler component contracts, forms, keyboard menus, nested portals and focus restoration passed (${await browser.version()}).`

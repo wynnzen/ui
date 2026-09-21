@@ -1115,13 +1115,20 @@
       "exports": ["Progress"],
       "dependencies": ["cn", "radix-ui", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "zero",
+        "complete",
+        "controlled value",
+        "custom maximum",
+        "indeterminate",
+        "accessible labels"
+      ],
+      "visual": "Reviewed inventory at 320/768/1440px; M1 recipes",
+      "interaction": "Chromium values, fill, selection and keyboard scrolling passed",
+      "accessibility": "axe reports no violations; human AT review pending",
+      "documentation": "examples/inventory.html and catalog.html",
+      "installation": "pending M3"
     },
     {
       "name": "radio-group",
@@ -1172,13 +1179,19 @@
       "exports": ["ScrollArea", "ScrollBar"],
       "dependencies": ["cn", "radix-ui", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "vertical/horizontal",
+        "always/hover scrollbars",
+        "keyboard scrolling",
+        "focus-visible",
+        "thumb/track/corner"
+      ],
+      "visual": "Reviewed inventory at 320/768/1440px; M1 recipes",
+      "interaction": "Chromium values, fill, selection and keyboard scrolling passed",
+      "accessibility": "axe reports no violations; human AT review pending",
+      "documentation": "examples/inventory.html and catalog.html",
+      "installation": "pending M3"
     },
     {
       "name": "select",
@@ -1418,13 +1431,18 @@
       ],
       "dependencies": ["cn", "react"],
       "milestone": "M2",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "header/body/footer/caption",
+        "selected/hover rows",
+        "numeric alignment",
+        "keyboard horizontal scroll"
+      ],
+      "visual": "Reviewed inventory at 320/768/1440px; M1 recipes",
+      "interaction": "Chromium values, fill, selection and keyboard scrolling passed",
+      "accessibility": "axe reports no violations; human AT review pending",
+      "documentation": "examples/inventory.html and catalog.html",
+      "installation": "pending M3"
     },
     {
       "name": "tabs",

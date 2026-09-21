@@ -31,7 +31,7 @@ Preserve upstream collections and unrelated local changes.
 - [x] **M2.2 — Navigation and overlays:** Select, Tabs, Alert Dialog, Popover and
       Tooltip; verify keyboard operation, focus restoration, nested overlays,
       controlled/uncontrolled use and portal styling.
-- [ ] **M2.3 — Remaining MVP and gallery:** Progress, Table and Scroll Area;
+- [x] **M2.3 — Remaining MVP and gallery:** Progress, Table and Scroll Area;
       searchable component index, coverage/token references and original menu,
       settings and inventory compositions; interaction and visual regression checks.
 - [ ] **M3.1 — Registry:** foundation plus component metadata and reproducible
@@ -161,3 +161,17 @@ Preserve upstream collections and unrelated local changes.
   `scrollable-region-focusable`; both support End-to-last-option scrolling.
   Findings are retained and require human review. Other new scans are clean.
 - No new dependency, styling runtime or asset; installation and human QA pending.
+
+### M2.3 — Remaining MVP and gallery
+
+- Added Progress, Table and Scroll Area plus a fictional inventory composition.
+  The catalog searches all 61 pinned entries and displays exact source, coverage
+  and tokens; all 20 MVP components now have themed sources and examples.
+- Corrected Progress value forwarding/custom-max fill, made scrolling regions
+  keyboard-focusable, and fixed grid shrinkage at the Scroll Area root. Forced
+  colors preserve meter and thumb cues. Recorded these changes separately.
+- Build, type contracts, lint, 3 Vitest checks, browser interactions, 23 reviewed
+  screenshot comparisons and 27 responsive/state review checks pass. Inventory
+  and catalog scans have no violations; inherited menu/Select findings remain.
+- Updated foundation navigation and approval text. No added runtime dependency.
+  All components remain prototypes pending installation and release evidence.

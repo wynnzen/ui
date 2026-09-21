@@ -39,11 +39,28 @@ createRoot(document.getElementById("root")!).render(
         </a>
       ))}
     </nav>
+    <nav
+      aria-label="Collection"
+      className="flex flex-wrap gap-x-6 gap-y-3 text-sm"
+    >
+      <a className="trav-control underline" href="./catalog.html">
+        Search components, coverage and tokens
+      </a>
+      <a className="trav-control underline" href="./forms.html">
+        Settings form
+      </a>
+      <a className="trav-control underline" href="./overlays.html">
+        Navigation and overlays
+      </a>
+      <a className="trav-control underline" href="./inventory.html">
+        Inventory
+      </a>
+    </nav>
     <ButtonExamples />
     <FoundationExamples />
     <footer className="border-t pt-6 text-sm text-muted-foreground">
-      Foundation prototype · Radix / React 19 / Tailwind 4 · Visual approval
-      pending
+      MVP development · Radix / React 19 / Tailwind 4 · Visual direction
+      approved; release QA pending
     </footer>
   </main>
 )

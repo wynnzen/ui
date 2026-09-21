@@ -97,8 +97,17 @@ The comparison permits these exact rules only when reproduced on the same
 surfaces in the corresponding upstream Select scan. Findings remain recorded;
 keyboard success is not a substitute for assistive-technology review.
 
-All 17 modules retain their export/prop contracts. The browser suite exercises
+All 20 modules retain their export/prop contracts. The browser suite exercises
 Select form submission/typeahead/nested portals, both Tabs activation modes,
 Alert Dialog cancellation/action/focus containment and outside interaction,
 Popover editing/Escape, and Tooltip keyboard focus/Escape. All screenshots use
 the same approved recipes. There are still no added runtime packages or assets.
+
+## M2 inventory and catalog evidence
+
+The inventory and searchable catalog have no axe violations at the recorded
+scan state. 320/768/1440px layouts keep horizontal overflow inside explicitly
+focusable table/scroll regions. Progress accessible values match the rendered
+fill and custom maximum; native keyboard scrolling and source search pass.
+Forced-colors checks cover Progress fill, Switch position and scroll thumbs.
+Catalog token markup was corrected to use valid definition-list grouping.

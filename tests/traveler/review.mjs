@@ -204,13 +204,16 @@ try {
   }
 
   async function noOverflow(name) {
-    assert.equal(
-      await page.evaluate(
-        () => document.documentElement.scrollWidth <= innerWidth
-      ),
-      true,
-      `${name}: horizontal document overflow`
-    )
+    // Radix scrollbars recalculate their dimensions after a ResizeObserver tick.
+    await expect
+      .poll(
+        () =>
+          page.evaluate(
+            () => document.documentElement.scrollWidth <= innerWidth
+          ),
+        { message: `${name}: horizontal document overflow` }
+      )
+      .toBe(true)
     report.checks.push(name)
   }
 
@@ -438,6 +441,56 @@ try {
     document.documentElement.style.fontSize = "200%"
   })
   await noOverflow("Navigation at 200% text / 768px")
+
+  for (const name of ["inventory", "catalog"]) {
+    await page.goto(new URL(`${name}.html`, url).href, {
+      waitUntil: "networkidle",
+    })
+    await page.addScriptTag({ path: axePath })
+    for (const width of [320, 768, 1440]) {
+      await page.setViewportSize({ width, height: 1000 })
+      await noOverflow(`${name} ${width}px reflow`)
+      if (name === "inventory") await screenshot(`${name}-${width}`)
+    }
+    await accessibility(name)
+    if (name === "catalog") {
+      await page
+        .getByLabel("Find a component or export", { exact: true })
+        .fill("select")
+      await screenshot("catalog-search")
+    }
+  }
+
+  await page.emulateMedia({ forcedColors: "active" })
+  for (const [name, selector] of [
+    ["forms", "[data-slot=switch-thumb]"],
+    [
+      "inventory",
+      "[data-slot=progress-indicator], [data-slot=scroll-area-thumb]",
+    ],
+  ]) {
+    await page.goto(new URL(`${name}.html`, url).href, {
+      waitUntil: "networkidle",
+    })
+    const visibility = await page
+      .locator(selector)
+      .evaluateAll((elements) =>
+        elements.every(
+          (el) =>
+            getComputedStyle(el).backgroundColor !==
+            getComputedStyle(el.parentElement).backgroundColor
+        )
+      )
+    assert.equal(
+      visibility,
+      true,
+      `${name}: state indicators must remain visible in forced colors`
+    )
+  }
+  report.checks.push(
+    "Progress, Switch and Scroll Area state indicators survive forced colors"
+  )
+  await page.emulateMedia({ forcedColors: "none" })
 
   await page.goto(new URL("baseline.html", url).href, {
     waitUntil: "networkidle",

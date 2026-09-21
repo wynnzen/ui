@@ -17,6 +17,8 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
+        catalog: `${appRoot}registry/traveler/examples/catalog.html`,
+        inventory: `${appRoot}registry/traveler/examples/inventory.html`,
         overlays: `${appRoot}registry/traveler/examples/overlays.html`,
         forms: `${appRoot}registry/traveler/examples/forms.html`,
         traveler: `${appRoot}registry/traveler/examples/index.html`,

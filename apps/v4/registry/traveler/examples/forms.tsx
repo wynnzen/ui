@@ -21,7 +21,7 @@ function Forms() {
   return (
     <main className="mx-auto grid max-w-5xl gap-10 px-5 py-12 sm:px-10">
       <header className="grid gap-3">
-        <a className="trav-control w-fit underline" href="./">
+        <a className="trav-control w-fit underline" href="./catalog.html">
           Traveler UI / Component index
         </a>
         <h1 className="font-heading text-4xl">Prepare for the road.</h1>
