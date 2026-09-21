@@ -1,0 +1,72 @@
+# Traveler UI development
+
+Source: [development specification v0.1](octopath-inspired-shadcn-ui-development-spec-v0.1.md).
+Follow the specification's M0–M5 sequence. Check off a step only after its
+implementation and relevant verification, then make a scoped git commit.
+Preserve upstream collections and unrelated local changes.
+
+## Plan
+
+- [x] **P0 — Plan:** turn the specification into this tracked implementation plan.
+- [ ] **M0 — Baseline:** pin the checkout, audit canonical/generated ownership,
+      choose one primitive/style baseline, record tools and commands, freeze the
+      full component inventory, and build a relevant unchanged baseline example.
+- [ ] **M1.1 — First themed component:** implement document-root theme activation,
+      semantic tokens and shared CSS recipes; expose a working Button page with
+      its existing variants, sizes and composition contract. Verify imports,
+      styling, types, production build and representative keyboard behavior.
+- [ ] **M1.2 — Five-component prototype:** add Card, Input, Dialog and Dropdown
+      Menu from the pinned source, retaining every export and primitive contract.
+      Include representative states, controlled/uncontrolled examples, forms,
+      portal inheritance and an isolated upstream comparison.
+- [ ] **M1.3 — Design review evidence:** document the original reference board and
+      visual language; review keyboard behavior, contrast, 320/768/1440 px layouts,
+      zoom, reduced motion and forced colors; capture reproducible screenshots.
+      Record provenance, asset licenses, limitations and measured results.
+- [ ] **M1 approval gate:** user reviews the concrete five-component prototype and
+      approves the visual direction before expanding the collection (spec §§2, 9).
+- [ ] **M2.1 — Forms and content:** Badge, Separator, Label, Textarea, Checkbox,
+      Radio Group, Switch and required helpers; document and verify applicable
+      variants, states, forms, long labels and responsive behavior.
+- [ ] **M2.2 — Navigation and overlays:** Select, Tabs, Alert Dialog, Popover and
+      Tooltip; verify keyboard operation, focus restoration, nested overlays,
+      controlled/uncontrolled use and portal styling.
+- [ ] **M2.3 — Remaining MVP and gallery:** Progress, Table and Scroll Area;
+      searchable component index, coverage/token references and original menu,
+      settings and inventory compositions; interaction and visual regression checks.
+- [ ] **M3.1 — Registry:** foundation plus component metadata and reproducible
+      generated payloads from canonical source; schema/export/source checks,
+      explicit themed transitive dependencies and retained license notices.
+- [ ] **M3.2 — Consumer validation:** clean Vite and Next.js installs and production
+      builds, aliases, CSS activation, portals and SSR/hydration; existing-project
+      diff/backup and reinstallation checks without unattended overwrites.
+- [ ] **M4 — Release readiness:** finish installation/state documentation,
+      compatibility and upstream-maintenance records; measure CSS/assets/runtime
+      network and bundle impact; manual keyboard/screen-reader/browser QA, reviewed
+      screenshot baselines, rights review and immutable versioned payloads.
+      Resolve the public name/namespace/host before any authorized publication.
+- [ ] **M5 — Completeness:** process every remaining component in the frozen
+      inventory, including advanced compositions; record completed, deferred and
+      no-visible-surface entries explicitly with all applicable evidence.
+
+## Working rules
+
+- Components are prototypes until their visual, interaction, accessibility,
+  documentation and installation evidence satisfies the definition of done.
+- Reuse the selected shadcn source, `cn`, variant mechanism and existing tooling.
+  No new styling provider, primitive family, CLI or documentation framework.
+- Use scoped checks/builds; do not invoke monorepo-wide formatting or unrelated
+  generator writes. Commit only files belonging to the completed step.
+- Local commits are authorized. Publication, deployment and release claims are
+  separate from local development and require their stated gates.
+
+## Execution record
+
+### P0 — Plan
+
+- Created the milestone checklist from the complete specification.
+- Initial checkout: `98a1fe67b439324ddc857f47fbdce056600a4329`.
+- Pre-existing untracked files: the input specification and `.serena/`; preserve
+  them without including them in implementation commits.
+- Validation: read all specification milestones and acceptance gates; documentation
+  only, so no code test applies.
