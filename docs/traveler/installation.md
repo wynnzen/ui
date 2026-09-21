@@ -2,7 +2,7 @@
 
 This is a local development registry, not a published release. Public name,
 namespace and host are provisional. React 19 and Tailwind 4 are required for the
-selected source baseline. M3.2 records the clean-consumer results separately.
+selected source baseline. Both clean-consumer matrices pass; see [compatibility](compatibility.md).
 
 ## Build and inspect
 
@@ -94,3 +94,17 @@ Changing a registry URL does not update copied source. Updates require another
 reviewed installation and a compatible foundation. Keep component and foundation
 versions together. Local validation does not authorize deployment, certify
 accessibility, or establish support for untested browsers/framework versions.
+
+## Pinned local snapshot
+
+[release-candidate.json](release-candidate.json) records a content-addressed copy
+of all 22 JSON files. Use its `path` in the namespace URL to pin components and
+foundation together. Both consumers resolve its Dialog/Button/foundation payloads
+as byte-identical to their verified installs. `pnpm traveler:freeze` creates a
+new content-addressed directory if payloads change and refuses to overwrite
+existing pinned bytes. Rebuild the preview afterward to serve the new snapshot.
+
+This is a local immutable candidate, not a published service or approved release.
+The development URL remains useful during implementation; do not describe it as
+immutable. Consumer fixture lockfiles are retained under `tests/traveler/fixtures`
+for inspection of the dependency graph that was actually built.

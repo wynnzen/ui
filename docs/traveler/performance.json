@@ -1,0 +1,39 @@
+{
+  "tool": "Vite 7.3.2 / production minification, hidden source maps excluded",
+  "foundation": {
+    "bytes": 3887,
+    "gzipBytes": 1142
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "js": {
+        "bytes": 224360,
+        "gzipBytes": 73286
+      },
+      "css": {
+        "bytes": 12623,
+        "gzipBytes": 2971
+      },
+      "sourceModules": 19,
+      "otherComponentsBundled": false
+    },
+    {
+      "name": "traveler",
+      "js": {
+        "bytes": 224182,
+        "gzipBytes": 73234
+      },
+      "css": {
+        "bytes": 11895,
+        "gzipBytes": 3195
+      },
+      "sourceModules": 19,
+      "otherComponentsBundled": false
+    }
+  ],
+  "delta": {
+    "jsGzipBytes": -52,
+    "cssGzipBytes": 224
+  }
+}

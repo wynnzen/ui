@@ -30,4 +30,4 @@ the test explicitly models keydown → focus/selection → keyup.
 
 Three viewport screenshots and axe 4.10.3 scans pass on recorded Chromium. See
 [compatibility](compatibility.md) for human QA and installation limitations.
-Installation commands and public endpoints await M3; do not use placeholder hosts.
+Local registry installation is verified in Vite and Next; follow [installation](installation.md). A public endpoint remains a separate release decision.

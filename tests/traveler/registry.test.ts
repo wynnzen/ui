@@ -80,3 +80,28 @@ it("ships schema-valid, source-exact payloads with only explicit themed dependen
     readFileSync("LICENSE.md", "utf8")
   )
 })
+
+it("verifies every byte of the pinned local registry snapshot", async () => {
+  const { createHash } = await import("node:crypto")
+  const manifest = JSON.parse(
+    readFileSync("docs/traveler/release-candidate.json", "utf8")
+  )
+  const names = Object.keys(manifest.files).sort()
+  const hashes = Object.fromEntries(
+    names.map((name) => [
+      name,
+      createHash("sha256")
+        .update(
+          readFileSync(
+            `apps/v4/registry/traveler/public/${manifest.path.replace("{name}.json", name)}`
+          )
+        )
+        .digest("hex"),
+    ])
+  )
+  expect(hashes).toEqual(manifest.files)
+  expect(
+    createHash("sha256").update(JSON.stringify(hashes)).digest("hex")
+  ).toBe(manifest.digest)
+  expect(manifest.path).toBe(`r/sha256-${manifest.digest}/{name}.json`)
+})

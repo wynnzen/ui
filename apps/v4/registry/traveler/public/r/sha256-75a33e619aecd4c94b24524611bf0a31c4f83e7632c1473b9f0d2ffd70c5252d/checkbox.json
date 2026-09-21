@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox",
+  "title": "Checkbox",
+  "description": "Traveler checkbox; Radix new-york-v4 API at the pinned upstream baseline.",
+  "dependencies": [
+    "cn@0.2.2",
+    "lucide-react@0.474.0",
+    "radix-ui@1.4.3"
+  ],
+  "registryDependencies": [
+    "@traveler/foundation"
+  ],
+  "files": [
+    {
+      "path": "registry/traveler/ui/checkbox.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { CheckIcon, MinusIcon } from \"lucide-react\"\nimport { Checkbox as CheckboxPrimitive } from \"radix-ui\"\n\nfunction Checkbox({\n  className,\n  ...props\n}: React.ComponentProps<typeof CheckboxPrimitive.Root>) {\n  return (\n    <CheckboxPrimitive.Root\n      data-slot=\"checkbox\"\n      className={cn(\n        \"trav-control peer group/checkbox size-6 shrink-0 rounded-xs border border-input bg-background disabled:cursor-not-allowed disabled:opacity-60 aria-invalid:border-destructive data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=indeterminate]:border-primary data-[state=indeterminate]:bg-primary data-[state=indeterminate]:text-primary-foreground\",\n        className\n      )}\n      {...props}\n    >\n      <CheckboxPrimitive.Indicator\n        data-slot=\"checkbox-indicator\"\n        className=\"grid place-content-center text-current transition-none\"\n      >\n        <CheckIcon\n          aria-hidden=\"true\"\n          className=\"size-4 group-data-[state=indeterminate]/checkbox:hidden\"\n        />\n        <MinusIcon\n          aria-hidden=\"true\"\n          className=\"hidden size-4 group-data-[state=indeterminate]/checkbox:block\"\n        />\n      </CheckboxPrimitive.Indicator>\n    </CheckboxPrimitive.Root>\n  )\n}\n\nexport { Checkbox }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "meta": {
+    "version": "0.1.0-dev",
+    "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+    "status": "development"
+  },
+  "type": "registry:ui"
+}

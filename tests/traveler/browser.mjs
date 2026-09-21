@@ -5,9 +5,17 @@ import { createRequire } from "node:module"
 const require = createRequire(
   new URL("../../packages/react/package.json", import.meta.url)
 )
-const { chromium } = require("playwright")
+const engines = require("playwright")
+const browserName = process.env.TRAVELER_BROWSER || "chromium"
+assert.ok(
+  ["chromium", "firefox", "webkit"].includes(browserName),
+  "Choose a supported Playwright engine"
+)
 const { expect } = require("playwright/test")
-const browser = await chromium.launch({ headless: true })
+const browser = await engines[browserName].launch({
+  headless: true,
+  executablePath: process.env.TRAVELER_BROWSER_EXECUTABLE,
+})
 try {
   const page = await browser.newPage({
     viewport: { width: 1440, height: 1000 },
@@ -472,7 +480,7 @@ try {
   ).toBeVisible()
   assert.deepEqual(errors, [])
   console.log(
-    `Traveler component contracts, forms, keyboard menus, nested portals and focus restoration passed (${await browser.version()}).`
+    `Traveler component contracts, forms, keyboard menus, nested portals and focus restoration passed (${browserName} ${await browser.version()}).`
   )
 } finally {
   await browser.close()

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "title": "Textarea",
+  "description": "Traveler textarea; Radix new-york-v4 API at the pinned upstream baseline.",
+  "dependencies": [
+    "cn@0.2.2"
+  ],
+  "registryDependencies": [
+    "@traveler/foundation"
+  ],
+  "files": [
+    {
+      "path": "registry/traveler/ui/textarea.tsx",
+      "content": "import * as React from \"react\"\nimport { cn } from \"cn\"\n\nfunction Textarea({ className, ...props }: React.ComponentProps<\"textarea\">) {\n  return (\n    <textarea\n      data-slot=\"textarea\"\n      className={cn(\n        \"trav-control flex field-sizing-content min-h-24 w-full min-w-0 rounded-xs border border-input bg-background px-3 py-2 text-base placeholder:text-muted-foreground read-only:bg-muted disabled:cursor-not-allowed disabled:opacity-60 aria-invalid:border-destructive\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Textarea }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "meta": {
+    "version": "0.1.0-dev",
+    "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+    "status": "development"
+  },
+  "type": "registry:ui"
+}

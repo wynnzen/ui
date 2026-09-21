@@ -3,7 +3,7 @@
 These are original DOM studies of the restrained menu direction described in the
 v0.1 brief. They are **not game screenshots**, traced artwork, or a claim of
 pixel fidelity to Octopath Traveler. All images come from the canonical prototype.
-The palette and system-font approach remain proposals awaiting user approval.
+The user approved the palette and system-font approach at the M1 gate.
 
 | Reference area                | Traits adapted from the brief                                                       | Original study                                                                                                               |
 | ----------------------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |

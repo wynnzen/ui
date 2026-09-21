@@ -7,6 +7,7 @@ import { Input } from "@/registry/traveler/ui/input"
 import { Label } from "@/registry/traveler/ui/label"
 
 import coverage from "../../../../../docs/traveler/component-coverage.json"
+import releaseCandidate from "../../../../../docs/traveler/release-candidate.json"
 import themeSource from "../styles/theme.css?raw"
 
 import "./preview.css"
@@ -61,6 +62,9 @@ function Catalog() {
         >
           <a className="trav-control underline" href="#components">
             Components and coverage
+          </a>
+          <a className="trav-control underline" href="#installation">
+            Installation
           </a>
           <a className="trav-control underline" href="#tokens">
             Theme tokens
@@ -173,6 +177,62 @@ function Catalog() {
         )}
       </section>
       <section
+        id="installation"
+        className="grid gap-5"
+        aria-labelledby="installation-heading"
+      >
+        <h2 id="installation-heading" className="font-heading text-2xl">
+          Install the local snapshot
+        </h2>
+        <p className="max-w-3xl text-muted-foreground">
+          Clean Vite and Next.js consumers pass. Start the repository preview,
+          then merge this namespace into your existing components.json. The
+          snapshot is pinned by its contents; the public name and host remain
+          provisional.
+        </p>
+        <pre
+          className="overflow-x-auto border bg-card p-4 text-sm"
+          tabIndex={0}
+          aria-label="Registry configuration"
+        >
+          <code>
+            {JSON.stringify(
+              {
+                registries: {
+                  "@traveler": `http://127.0.0.1:4173/${releaseCandidate.path}`,
+                },
+              },
+              null,
+              2
+            )}
+          </code>
+        </pre>
+        <p className="text-sm text-muted-foreground">
+          Set TRAVELER_CHECKOUT to the absolute path of this repository. From
+          your consumer directory, inspect the diff and retain a backup before
+          installation:
+        </p>
+        <pre
+          className="overflow-x-auto border bg-card p-4 text-sm"
+          tabIndex={0}
+          aria-label="Installation commands"
+        >
+          <code>{`node "$TRAVELER_CHECKOUT/packages/shadcn/dist/index.js" add @traveler/dialog --dry-run
+node "$TRAVELER_CHECKOUT/packages/shadcn/dist/index.js" add @traveler/dialog --diff
+node "$TRAVELER_CHECKOUT/packages/shadcn/dist/index.js" add @traveler/dialog`}</code>
+        </pre>
+        <p className="max-w-3xl text-sm text-muted-foreground">
+          Replace dialog with any prototype name above. Internal dependencies
+          resolve to the same Traveler snapshot. Foundation installs
+          styles/traveler.css and licenses/traveler/LICENSE.md at your project
+          root. Import that CSS after your Tailwind/shadcn imports, retain your
+          host semantic token mappings, and activate the html element with the
+          attributes below. An existing button.tsx can conflict even when the
+          registry namespace is different; do not use unattended overwrite
+          flags.
+        </p>
+      </section>
+      <section
         id="tokens"
         className="grid gap-6"
         aria-labelledby="tokens-heading"
@@ -220,9 +280,9 @@ function Catalog() {
       </section>
       <footer className="border-t pt-6 text-sm text-muted-foreground">
         Radix / React 19 / Tailwind 4. Dark theme only. No required image or
-        font request. Human assistive-technology and cross-browser release
-        checks remain pending. Local registry instructions will accompany
-        distribution.
+        font request. Automated Chromium, Firefox and WebKit interactions pass.
+        Human assistive-technology, real Safari/mobile and full release-browser
+        checks remain pending.
       </footer>
     </main>
   )

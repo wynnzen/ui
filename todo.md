@@ -40,11 +40,13 @@ Preserve upstream collections and unrelated local changes.
 - [x] **M3.2 — Consumer validation:** clean Vite and Next.js installs and production
       builds, aliases, CSS activation, portals and SSR/hydration; existing-project
       diff/backup and reinstallation checks without unattended overwrites.
-- [ ] **M4 — Release readiness:** finish installation/state documentation,
-      compatibility and upstream-maintenance records; measure CSS/assets/runtime
-      network and bundle impact; manual keyboard/screen-reader/browser QA, reviewed
-      screenshot baselines, rights review and immutable versioned payloads.
-      Resolve the public name/namespace/host before any authorized publication.
+- [x] **M4.1 — Release preparation:** installation/state documentation,
+      compatibility/provenance records, measured CSS/assets/runtime/bundle budgets,
+      cross-engine automation and a verified immutable local payload snapshot.
+- [ ] **M4.2 — Human/release QA gate:** manual keyboard/screen-reader review,
+      real Safari/mobile and browser zoom, current/previous stable browser matrix,
+      final rights review, public name/namespace/host and publication authorization.
+      See `docs/traveler/release-readiness.md`; no public release is claimed.
 - [ ] **M5 — Completeness:** process every remaining component in the frozen
       inventory, including advanced compositions; record completed, deferred and
       no-visible-surface entries explicitly with all applicable evidence.
@@ -202,3 +204,23 @@ Preserve upstream collections and unrelated local changes.
   runtime requests, missing CSS or unresolved imports; workspace lock unchanged.
 - Local implementation and delivery gates now pass. M4 human/browser review,
   final public identity/endpoint and release approval remain outstanding.
+
+### M4.1 — Release preparation
+
+- Prepared an immutable content-addressed copy of the 22 registry JSON files and
+  checksum verification. Both consumers resolve its transitive Dialog payloads
+  as identical. The development address remains explicitly mutable.
+- Added local install instructions to the source-backed catalog and reconciled
+  approval/compatibility/asset documentation. Reviewed the new catalog screenshot.
+- The full interaction suite passes in Chromium 149.0.7827.55, Firefox 151.0 and
+  Playwright WebKit 26.5. WebKit used extracted temporary libraries, with no system
+  package changes. No Safari or full stable-browser-matrix claim is made.
+- Isolated Button measurement: foundation 1,142 gzip bytes; JavaScript −52 gzip
+  bytes and CSS +224 gzip bytes versus upstream. No other component/gallery
+  modules in that bundle, no styling runtime, required font/decorative asset or
+  external runtime request in tested fixtures.
+- Types, lint, 5 Vitest checks, production build and 23 screenshot comparisons
+  pass. Human QA worksheet and outstanding release gates are concrete and linked.
+- **M4.2 remains open:** requested human AT/Safari/mobile/real-zoom results. Final
+  public identity, rights review and publication authorization are not supplied.
+  M5 remains queued; all 41 remaining sources are visible in the backlog.

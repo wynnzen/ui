@@ -17,6 +17,13 @@ Run commands from the repository root:
 - `pnpm traveler:test:consumers` installs into fresh temporary Vite/Next projects
   and checks builds, portals, SSR, aliases and safe reinstallation. Requires the
   production registry preview and package-registry access.
+- `pnpm traveler:performance` measures an isolated Button build versus upstream.
+- `pnpm traveler:freeze` creates a content-addressed local registry snapshot;
+  existing pinned payload bytes must never be changed. Record the candidate
+  manifest in `docs/traveler/release-candidate.json` after review.
+- `TRAVELER_BROWSER=firefox pnpm traveler:test:browser` selects another installed
+  Playwright engine; `webkit` is also supported. `TRAVELER_BROWSER_EXECUTABLE`
+  optionally supplies a compatible local browser launcher.
 - `pnpm traveler:review:capture` explicitly changes screenshots: inspect changes
   before committing. It is not a substitute for release approval.
 

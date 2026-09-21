@@ -55,7 +55,9 @@
     "traveler:review": "node tests/traveler/review.mjs",
     "traveler:review:capture": "node tests/traveler/review.mjs --capture",
     "traveler:registry": "node packages/shadcn/dist/index.js build registry/traveler/registry.json --cwd apps/v4 --output registry/traveler/public/r/v0.1.0-dev",
-    "traveler:test:consumers": "node tests/traveler/consumers.mjs"
+    "traveler:test:consumers": "node tests/traveler/consumers.mjs",
+    "traveler:performance": "node tests/traveler/performance.mjs",
+    "traveler:freeze": "node tests/traveler/freeze.mjs"
   },
   "packageManager": "pnpm@10.33.4",
   "dependencies": {

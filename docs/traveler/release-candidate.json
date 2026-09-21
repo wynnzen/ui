@@ -1,0 +1,29 @@
+{
+  "status": "local development snapshot; release approval pending",
+  "digest": "75a33e619aecd4c94b24524611bf0a31c4f83e7632c1473b9f0d2ffd70c5252d",
+  "path": "r/sha256-75a33e619aecd4c94b24524611bf0a31c4f83e7632c1473b9f0d2ffd70c5252d/{name}.json",
+  "files": {
+    "alert-dialog.json": "150681dd2b5e7f9fe9a292e43879852c6b86795ef39ebb916f906aa2e794a05e",
+    "badge.json": "af18148db268afa76fe6afa6d42fae78d1928abe5d75ac05f07b1f8d9dd43a8b",
+    "button.json": "9df4e4e20e5fec5ff83904f1cca108a81c2cee623775c2c23c9b175526c2375a",
+    "card.json": "42ab6f862db896fe233183a9367ed18401de8919c034a0997ad57443171eb83f",
+    "checkbox.json": "3085de98734478e5a264b75de9f1bc143570af476ca1961409a4cdb7d537995c",
+    "dialog.json": "987c27a35744a3db27838d5e44d3becdfb2b83a837880f90ab3431ac43cf505f",
+    "dropdown-menu.json": "1a55ad4cfa5dca3c44b2c63ccf75d9112b4556a738523c8bbb1f7e01d77bbd47",
+    "foundation.json": "55d7785b1a8a9bb7f636a5992b546c77fc6a7d12610afa7f6bfb00caff010855",
+    "input.json": "10e1384b113d93e1a032393332bb1f0fb31a9354b0f37c052393d672485cf10f",
+    "label.json": "45b1f2237c36e9f9710267353b6c6d6d51847f49ed910d6f43667541e6353093",
+    "popover.json": "f4c5ea4537911fb0dbc8bd6f8a8971cf350c2cade08331d6ac669aa03284117e",
+    "progress.json": "a8d1bf9b8d6f6276e917789e665ad09685d3d4a2c14953bdbfb9434e1977c183",
+    "radio-group.json": "0ae34326358de60d3cb531c4ec3a1440b46e33b933d0d5a1f7d684f339ab691c",
+    "registry.json": "a165be6214a067f13d51acdbdb055add953eef9fee73eb6b9fffe3e735e69ff1",
+    "scroll-area.json": "e5894d47a74d5ff545dff144273dba4f4a03a3bb52908ccaecb38d5d256c3cb0",
+    "select.json": "49a7929a5995bdd715299e03aa91808fefef9b52a77a70de76c6eeb693d36ef1",
+    "separator.json": "4ca452bf627a20d8861edf1308784183da05a0e4b4a3143a7bf4fa71c3623a9a",
+    "switch.json": "7ae747c70ca410d2d821eb1cdb0024251f59907ef83b3a408700fe8174f54f60",
+    "table.json": "477f808c9e95fabc24019a226f7db282a99788d5c5c659ead7254bf13c9c4983",
+    "tabs.json": "860fa293a2e7b08875a86fb1319994839439ff0f8780da54aeb615b73ba94248",
+    "textarea.json": "75ca750e3ee49bb5dd5de7ac307f2ed56caf031652ca39be671e58050524716b",
+    "tooltip.json": "72cbb46a48c29568dd2e2a1580446f2dcf14b30c670d86d6cb6d9004fad7d008"
+  }
+}

@@ -1,4 +1,4 @@
-# Visual language — M1 proposal
+# Approved visual language
 
 Status: five-component visual direction **approved by the user**; M2 implementation may proceed. Start with the
 [original reference studies](reference-board.md) and
@@ -32,7 +32,7 @@ and a complete light theme are deferred until those components enter scope.
 
 ## Activation and overrides
 
-Keep the consumer's normal Tailwind 4 semantic bridge. Import `styles/theme.css`
+Keep the consumer's normal Tailwind 4 semantic bridge. Import `styles/traveler.css`
 after its shadcn stylesheet, then activate the document root:
 
 ```html
@@ -79,4 +79,4 @@ are hidden from assistive technology. Inputs have no decorative child wrappers.
 - [Machine-readable evidence](review/evidence.json) records exact browser,
   screenshot hashes, scan findings, responsive checks and network observations.
 
-The source remains a prototype pending installation and release QA. Registry installation, real screen-reader review, other browser engines and real mobile/zoom checks are not claimed complete.
+The 20 MVP sources pass installation and development/production checks in clean Vite and Next consumers. Human screen-reader review, real Safari/mobile/zoom and the full release-browser matrix remain pending; see the release-readiness record.

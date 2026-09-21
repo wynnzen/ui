@@ -116,8 +116,8 @@
     },
     {
       "name": "catalog-search",
-      "sha256": "bc5a5c09573d824945bae905ae6d627293fb07d46fde86bbc590dc60c2bec865",
-      "bytes": 189539
+      "sha256": "e77051b27e7826836ca42ae1413f817095106a7f9730ab59577f09da1ca53e7a",
+      "bytes": 297319
     }
   ],
   "accessibility": [
@@ -134,18 +134,6 @@
           ],
           "surfaces": [
             "root"
-          ]
-        },
-        {
-          "id": "color-contrast",
-          "impact": "serious",
-          "targets": [
-            [
-              "div[data-highlighted=\"\"]"
-            ]
-          ],
-          "surfaces": [
-            "menuitem"
           ]
         }
       ],
@@ -384,7 +372,12 @@
     {
       "name": "catalog",
       "violations": [],
-      "incomplete": []
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "count": 2
+        }
+      ]
     }
   ],
   "checks": [

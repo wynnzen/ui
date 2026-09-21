@@ -1,6 +1,6 @@
 # Prototype compatibility and verification
 
-This records **measured M1–M3 behavior**, not a released support matrix or WCAG
+This records **measured M1–M4.1 behavior**, not a released support matrix or WCAG
 conformance claim. Full release checks remain in M3/M4 of [todo.md](../../todo.md).
 
 | Area                 | Evidence / status                                                                                                                                                          |
@@ -22,7 +22,7 @@ conformance claim. Full release checks remain in M3/M4 of [todo.md](../../todo.m
 | Network              | No external runtime requests observed for the production fixtures                                                                                                          |
 | Styling size         | Shared theme source: 3,887 bytes / 1,142 gzip bytes. Entire themed preview CSS: about 22.21 kB / 5.40 kB gzip, including Tailwind and gallery utilities                    |
 | Dependencies         | No new package, lockfile change, font request, analytics, canvas or animation runtime                                                                                      |
-| Still pending        | Other engines/releases, real Safari/mobile, real browser zoom, assistive technology, RTL support and publication                                                           |
+| Still pending        | Full release-browser matrix, real Safari/mobile, real browser zoom, assistive technology, RTL support and publication                                                      |
 
 ## Automated accessibility triage
 
@@ -136,3 +136,12 @@ Run `pnpm traveler:test:consumers` with the production registry preview running.
 The command uses fresh temporary projects, retains logs under
 `.codex-artifacts/traveler/consumers/`, and shuts down its own browser/server
 processes. It does not modify existing user applications.
+
+## M4.1 additional engines and budgets
+
+The same interaction suite also passes in Firefox 151.0 and Playwright WebKit
+26.5 on Linux. Pixel comparisons, axe scans and the 27 responsive/state checks
+remain recorded for Chromium. The full release-browser matrix, real Safari,
+mobile and assistive-technology review are still open. Environment details,
+measured bundle/CSS budgets and the human worksheet are in
+[release-readiness.md](release-readiness.md).

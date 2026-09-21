@@ -1,0 +1,421 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "traveler-ui",
+  "homepage": "https://github.com/wynnzen/ui",
+  "items": [
+    {
+      "name": "foundation",
+      "type": "registry:item",
+      "title": "Traveler foundation",
+      "description": "Scoped dark theme and retained license. Import styles/traveler.css after your host stylesheet and activate on html.",
+      "files": [
+        {
+          "path": "registry/traveler/styles/theme.css",
+          "type": "registry:file",
+          "target": "~/styles/traveler.css"
+        },
+        {
+          "path": "registry/traveler/LICENSE.md",
+          "type": "registry:file",
+          "target": "~/licenses/traveler/LICENSE.md"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "status": "development"
+      }
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Traveler alert-dialog; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation", "@traveler/button"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Traveler badge; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.2.2",
+        "radix-ui@1.4.3"
+      ],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Traveler button; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.2.2",
+        "radix-ui@1.4.3"
+      ],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Traveler card; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Traveler checkbox; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "lucide-react@0.474.0", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Traveler dialog; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "lucide-react@0.474.0", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation", "@traveler/button"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Traveler dropdown-menu; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "lucide-react@0.474.0", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Traveler input; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Traveler label; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Traveler popover; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Traveler progress; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Traveler radio-group; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "lucide-react@0.474.0", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Traveler scroll-area; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Traveler select; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "lucide-react@0.474.0", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Traveler separator; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Traveler switch; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Traveler table; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Traveler tabs; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.2.2",
+        "radix-ui@1.4.3"
+      ],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Traveler textarea; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Traveler tooltip; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    }
+  ]
+}
