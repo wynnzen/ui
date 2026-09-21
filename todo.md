@@ -23,7 +23,7 @@ Preserve upstream collections and unrelated local changes.
       visual language; review keyboard behavior, contrast, 320/768/1440 px layouts,
       zoom, reduced motion and forced colors; capture reproducible screenshots.
       Record provenance, asset licenses, limitations and measured results.
-- [ ] **M1 approval gate:** user reviews the concrete five-component prototype and
+- [x] **M1 approval gate:** user reviews the concrete five-component prototype and
       approves the visual direction before expanding the collection (spec §§2, 9).
 - [ ] **M2.1 — Forms and content:** Badge, Separator, Label, Textarea, Checkbox,
       Radio Group, Switch and required helpers; document and verify applicable
@@ -128,3 +128,9 @@ Preserve upstream collections and unrelated local changes.
 - **Next:** user reviews the concrete prototype and approves the direction per
   specification §§2/9. M2 restyling must wait for that approval. No release or
   publication has occurred.
+
+### M1 approval
+
+- User approved the five-component visual direction in this conversation.
+- Proceed with M2 using the approved palette, geometry, typography and state recipes.
+- Approval is for continued development; publication and release QA remain separate.

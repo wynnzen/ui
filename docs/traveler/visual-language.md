@@ -1,6 +1,6 @@
 # Visual language — M1 proposal
 
-Status: five-component prototype, **awaiting user approval**. Start with the
+Status: five-component visual direction **approved by the user**; M2 implementation may proceed. Start with the
 [original reference studies](reference-board.md) and
 [desktop gallery](review/gallery-1440.png). The spec's §§2 and 9 require approval
 of this direction before restyling the remaining inventory.
@@ -79,6 +79,4 @@ are hidden from assistive technology. Inputs have no decorative child wrappers.
 - [Machine-readable evidence](review/evidence.json) records exact browser,
   screenshot hashes, scan findings, responsive checks and network observations.
 
-The source remains a prototype. Registry installation, real screen-reader review,
-other browser engines, real mobile/zoom checks and final design approval are not
-claimed complete.
+The source remains a prototype pending installation and release QA. Registry installation, real screen-reader review, other browser engines and real mobile/zoom checks are not claimed complete.
