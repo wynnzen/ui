@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group",
+  "title": "Button Group",
+  "description": "Traveler button-group; Radix new-york-v4 API at the pinned upstream baseline.",
+  "dependencies": [
+    "class-variance-authority@0.7.1",
+    "cn@0.2.2",
+    "radix-ui@1.4.3"
+  ],
+  "registryDependencies": [
+    "@traveler/foundation",
+    "@traveler/separator"
+  ],
+  "files": [
+    {
+      "path": "registry/traveler/ui/button-group.tsx",
+      "content": "import { cva, type VariantProps } from \"class-variance-authority\"\nimport { cn } from \"cn\"\nimport { Slot } from \"radix-ui\"\n\nimport { Separator } from \"@/registry/traveler/ui/separator\"\n\nconst buttonGroupVariants = cva(\n  \"flex w-fit max-w-full items-stretch has-[>[data-slot=button-group]]:gap-2 [&>*]:focus-visible:relative [&>*]:focus-visible:z-10 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-e-xs [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1\",\n  {\n    variants: {\n      orientation: {\n        horizontal:\n          \"[&>*:not(:first-child)]:rounded-s-none [&>*:not(:first-child)]:border-s-0 [&>*:not(:last-child)]:rounded-e-none\",\n        vertical:\n          \"flex-col [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none\",\n      },\n    },\n    defaultVariants: {\n      orientation: \"horizontal\",\n    },\n  }\n)\n\nfunction ButtonGroup({\n  className,\n  orientation,\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof buttonGroupVariants>) {\n  return (\n    <div\n      role=\"group\"\n      data-slot=\"button-group\"\n      data-orientation={orientation}\n      className={cn(buttonGroupVariants({ orientation }), className)}\n      {...props}\n    />\n  )\n}\n\nfunction ButtonGroupText({\n  className,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  asChild?: boolean\n}) {\n  const Comp = asChild ? Slot.Root : \"div\"\n\n  return (\n    <Comp\n      className={cn(\n        \"flex items-center gap-2 rounded-xs border border-input bg-muted px-4 text-sm font-medium [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction ButtonGroupSeparator({\n  className,\n  orientation = \"vertical\",\n  ...props\n}: React.ComponentProps<typeof Separator>) {\n  return (\n    <Separator\n      data-slot=\"button-group-separator\"\n      orientation={orientation}\n      className={cn(\n        \"relative m-0! self-stretch bg-input data-[orientation=vertical]:h-auto\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport {\n  ButtonGroup,\n  ButtonGroupSeparator,\n  ButtonGroupText,\n  buttonGroupVariants,\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "meta": {
+    "version": "0.1.0-dev",
+    "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+    "status": "development"
+  },
+  "type": "registry:ui"
+}

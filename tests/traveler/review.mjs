@@ -485,6 +485,36 @@ try {
     "Disclosure focus and placeholder borders survive forced colors"
   )
   await page.emulateMedia({ forcedColors: "none" })
+  await page.goto(new URL("content.html", url).href, {
+    waitUntil: "networkidle",
+  })
+  await page.addScriptTag({ path: axePath })
+  for (const width of [320, 768, 1440]) {
+    await page.setViewportSize({ width, height: 1000 })
+    await noOverflow(`Content and controls ${width}px reflow`)
+    await screenshot(`content-${width}`)
+  }
+  await accessibility("content and controls")
+  await page.setViewportSize({ width: 768, height: 1000 })
+  await page.evaluate(() => {
+    document.documentElement.style.fontSize = "200%"
+  })
+  await noOverflow("Content and controls at 200% text")
+  await page.evaluate(() => {
+    document.documentElement.style.fontSize = ""
+  })
+  await page.emulateMedia({ forcedColors: "active" })
+  await page
+    .getByRole("slider", { name: "Daily distance", exact: true })
+    .focus()
+  await expect(
+    page.getByRole("slider", { name: "Daily distance", exact: true })
+  ).toHaveCSS("outline-style", "solid")
+  await screenshot("slider-forced-colors", page.locator("#slider"))
+  report.checks.push(
+    "Slider thumb focus and system-color track/range remain visible"
+  )
+  await page.emulateMedia({ forcedColors: "none" })
   await page.emulateMedia({ forcedColors: "active" })
   for (const [name, selector] of [
     ["forms", "[data-slot=switch-thumb]"],

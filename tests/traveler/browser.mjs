@@ -544,6 +544,143 @@ try {
   )
   await page.goto(
     new URL(
+      "content.html",
+      process.env.TRAVELER_URL || "http://127.0.0.1:4173/"
+    ).href
+  )
+  for (const [size, width] of [
+    ["sm", 24],
+    ["default", 32],
+    ["lg", 40],
+  ]) {
+    const avatar = page
+      .locator(`#avatar [data-slot=avatar][data-size=${size}]`)
+      .first()
+    await expect(avatar).toHaveCSS("width", `${width}px`)
+    await expect(avatar.locator("img")).toBeVisible()
+  }
+  await expect(
+    page.locator("[data-slot=avatar-fallback]").filter({ hasText: "MI" })
+  ).toBeVisible()
+  await page
+    .getByRole("button", { name: "Show hidden route levels", exact: true })
+    .click()
+  await expect(page.locator("#breadcrumb [role=status]")).toContainText(
+    "Current season"
+  )
+  await page.getByRole("button", { name: "Add note", exact: true }).click()
+  await expect(page.locator("#button-group output")).toHaveText(
+    "Notes: 1. Facing north."
+  )
+  await page.getByRole("button", { name: "Face east", exact: true }).click()
+  await expect(page.locator("#button-group output")).toHaveText(
+    "Notes: 1. Facing east."
+  )
+  await page
+    .getByRole("button", { name: "Record a route", exact: true })
+    .click()
+  await expect(page.locator("#button-group output")).toHaveText(
+    "Notes: 2. Facing east."
+  )
+  await page
+    .getByRole("button", { name: "Keyboard hint", exact: true })
+    .scrollIntoViewIfNeeded()
+  // Radix dismisses tooltips on scroll; let the explicit scroll finish first.
+  await page.evaluate(
+    () =>
+      new Promise((resolve) =>
+        requestAnimationFrame(() => requestAnimationFrame(resolve))
+      )
+  )
+  await page.getByRole("button", { name: "Keyboard hint", exact: true }).focus()
+  await expect(page.getByRole("tooltip")).toBeVisible()
+  await expect(
+    page.locator("[data-slot=tooltip-content] > [data-slot=kbd]")
+  ).toHaveCSS("color", "rgb(242, 238, 229)")
+  await page.keyboard.press("Escape")
+  await page.getByLabel("Travel pace", { exact: true }).selectOption("swift")
+  await expect(page.getByLabel("Travel pace", { exact: true })).toHaveValue(
+    "swift"
+  )
+  await expect(page.getByLabel("Unavailable", { exact: true })).toBeDisabled()
+  const distanceSlider = page.getByRole("slider", {
+    name: "Daily distance",
+    exact: true,
+  })
+  await distanceSlider.focus()
+  await page.keyboard.press("ArrowRight")
+  await expect(distanceSlider).toHaveAttribute("aria-valuenow", "35")
+  await expect(page.locator("#slider output")).toHaveText(
+    "Distance: 35 km; committed: 35 km."
+  )
+  await page.keyboard.press("End")
+  await expect(distanceSlider).toHaveAttribute("aria-valuenow", "100")
+  await page.keyboard.press("Home")
+  await expect(distanceSlider).toHaveAttribute("aria-valuenow", "0")
+  await page.getByRole("slider", { name: "Range limit 1", exact: true }).focus()
+  await page.keyboard.press("ArrowRight")
+  await expect(
+    page.getByRole("slider", { name: "Range limit 1", exact: true })
+  ).toHaveAttribute("aria-valuenow", "25")
+  await page.getByRole("slider", { name: "Elevation", exact: true }).focus()
+  await page.keyboard.press("ArrowUp")
+  await expect(
+    page.getByRole("slider", { name: "Elevation", exact: true })
+  ).toHaveAttribute("aria-valuenow", "41")
+  await expect(
+    page.getByRole("slider", { name: "Unavailable distance", exact: true })
+  ).not.toHaveAttribute("tabindex", "0")
+  await expect(
+    page.getByRole("slider", { name: "Invalid distance", exact: true })
+  ).toHaveAttribute("aria-invalid", "true")
+  await page
+    .getByRole("button", { name: "Save travel controls", exact: true })
+    .click()
+  const travelValues = JSON.parse(
+    await page.locator("#travel-values").textContent()
+  )
+  assert.ok(
+    travelValues.some(([key, value]) => key === "pace" && value === "swift")
+  )
+  assert.deepEqual(
+    travelValues.filter(([key]) => key === "range[]").map(([, value]) => value),
+    ["25", "70"]
+  )
+  await page
+    .getByRole("button", { name: "Pin journal", exact: true })
+    .press("Space")
+  await expect(
+    page.getByRole("button", { name: "Pin journal", exact: true })
+  ).toHaveAttribute("aria-pressed", "true")
+  await expect(
+    page.getByRole("button", { name: "Unavailable pin", exact: true })
+  ).toBeDisabled()
+  await page.getByRole("button", { name: "Roads", exact: true }).focus()
+  await page.keyboard.press("ArrowRight")
+  await expect(
+    page.getByRole("button", { name: "Rivers", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("Space")
+  await expect(page.locator("#toggle-group output")).toHaveText(
+    "Layers: roads, rivers."
+  )
+  const near = page
+    .locator("#toggle-group [data-slot=toggle-group-item]")
+    .filter({ hasText: /^Near$/ })
+  const far = page
+    .locator("#toggle-group [data-slot=toggle-group-item]")
+    .filter({ hasText: /^Far$/ })
+  await near.focus()
+  await page.keyboard.press("ArrowDown")
+  await expect(far).toBeFocused()
+  assert.ok((await far.boundingBox()).y > (await near.boundingBox()).y)
+  await page.getByRole("link", { name: "Page 2", exact: true }).click()
+  await expect(
+    page.getByRole("link", { name: "Page 2", exact: true })
+  ).toHaveAttribute("aria-current", "page")
+  await expect(page.locator("#pagination output")).toHaveText("Journal page 2.")
+  await page.goto(
+    new URL(
       "catalog.html",
       process.env.TRAVELER_URL || "http://127.0.0.1:4173/"
     ).href

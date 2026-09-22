@@ -49,7 +49,7 @@ Preserve upstream collections and unrelated local changes.
       See `docs/traveler/release-readiness.md`; no public release is claimed.
 - [x] **M5.1 — Disclosure and feedback:** Accordion, Collapsible, Aspect Ratio,
       Direction, Alert, Skeleton and Spinner, with helper classifications.
-- [ ] **M5.2 — Content and controls:** Avatar, Breadcrumb, Button Group, Empty,
+- [x] **M5.2 — Content and controls:** Avatar, Breadcrumb, Button Group, Empty,
       Item, Kbd, Native Select, Pagination, Slider, Toggle and Toggle Group.
 - [ ] **M5.3 — Forms and command:** Field, Form, Input Group, Input OTP,
       Command and Combobox; validate their complete dependency chains.
@@ -258,3 +258,21 @@ Preserve upstream collections and unrelated local changes.
   Next hydration and scoped Alert checks away from its route announcer.
 - M4.2 remains pending by user instruction. Original immutable MVP payloads
   remain unchanged; M5 additions use the documented development registry.
+
+### M5.2 — Content and controls
+
+- Added eleven components, all exported parts and supported variants/states,
+  a composed content/control page, API contracts and explicit registry edges.
+- Slider names/descriptions/invalid state now reach its thumbs; form examples
+  preserve repeated range values. Kbd tooltip colors are readable, Item text
+  wraps fully, and Toggle Group layout follows its primitive orientation.
+- Types, lint, source/schema checks, build, all three engine interaction suites,
+  31 inspected/reproduced screenshots and 37 responsive/state checks pass.
+  Content scan has no violations; inherited menu/Select findings remain.
+- Fresh Vite/Next installs/builds and dev/prod checks pass for all 38 components.
+  Inspected the pinned CLI's stateful non-RSC directive regex: a bulk Dialog diff
+  differs only by its client directive. Tests decline existing-file replacement
+  and verify complete inventory and stable hashes; upstream CLI is unchanged.
+- No new package or shared theme rule. The geometric SVG is original, inline
+  and example-only. Release QA and the original immutable MVP snapshot remain
+  unchanged. 23 pinned entries remain to be processed.

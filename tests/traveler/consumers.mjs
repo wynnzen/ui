@@ -281,12 +281,16 @@ try {
         "utf8"
       ).includes('"@fixture/components/ui/button"')
     )
-    run(root, "remaining-components-install", "node", [
-      cli,
-      "add",
-      ...items,
-      "--yes",
-    ])
+    // CLI 4.21.0 uses a stateful /g regex for removing client directives.
+    // Bulk non-RSC transforms can differ from a single-item install. Decline
+    // replacement of existing files; validate complete install and stable hashes.
+    run(
+      root,
+      "remaining-components-install",
+      "node",
+      [cli, "add", ...items, "--yes"],
+      "n\n".repeat(items.length)
+    )
     const ui = join(root, src, "components/ui")
     assert.equal(
       readdirSync(ui).filter((name) => name.endsWith(".tsx")).length,
@@ -314,7 +318,13 @@ try {
     const before = Object.fromEntries(
       readdirSync(ui).map((name) => [name, hash(readFileSync(join(ui, name)))])
     )
-    run(root, "identical-reinstall", "node", [cli, "add", ...items, "--yes"])
+    run(
+      root,
+      "identical-reinstall",
+      "node",
+      [cli, "add", ...items, "--yes"],
+      "n\n".repeat(items.length)
+    )
     assert.deepEqual(
       Object.fromEntries(
         readdirSync(ui).map((name) => [
@@ -362,6 +372,10 @@ try {
       installedComponents: items.length,
       transitiveDialog: true,
       identicalReinstall: true,
+      clientDirectiveDrift:
+        framework === "vite"
+          ? "CLI 4.21.0 non-RSC regex drift; overwrite declined"
+          : "not applicable",
       customizedFilePreserved: true,
       cssSha256: hash(readFileSync(join(root, "styles/traveler.css"))),
       lockSha256: hash(readFileSync(join(root, "pnpm-lock.yaml"))),
@@ -445,6 +459,23 @@ try {
         await expect(
           page.getByRole("status", { name: "Loading route", exact: true })
         ).toHaveCSS("animation-name", "none")
+        await page.getByLabel("Terrain", { exact: true }).selectOption("river")
+        await expect(page.getByLabel("Terrain", { exact: true })).toHaveValue(
+          "river"
+        )
+        await page
+          .getByRole("slider", { name: "Daily distance", exact: true })
+          .focus()
+        await page.keyboard.press("ArrowRight")
+        await expect(
+          page.getByRole("slider", { name: "Daily distance", exact: true })
+        ).toHaveAttribute("aria-valuenow", "35")
+        await page
+          .getByRole("button", { name: "Pin route", exact: true })
+          .click()
+        await expect(
+          page.getByRole("button", { name: "Pin route", exact: true })
+        ).toHaveAttribute("aria-pressed", "true")
         assert.deepEqual(errors, [])
         assert.deepEqual(external, [])
         results.checks.push(

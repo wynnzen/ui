@@ -18,6 +18,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
+        content: `${appRoot}registry/traveler/examples/content.html`,
         disclosure: `${appRoot}registry/traveler/examples/disclosure.html`,
         catalog: `${appRoot}registry/traveler/examples/catalog.html`,
         inventory: `${appRoot}registry/traveler/examples/inventory.html`,

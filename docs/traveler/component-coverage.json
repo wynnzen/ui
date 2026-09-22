@@ -159,13 +159,17 @@
       ],
       "dependencies": ["cn", "radix-ui", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "default/sm/lg",
+        "image/fallback",
+        "badge/group/count"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-color Slider screenshots; M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
+      "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
+      "documentation": "examples/content.html and docs/traveler/content.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
     },
     {
       "name": "badge",
@@ -204,13 +208,17 @@
       ],
       "dependencies": ["cn", "lucide-react", "radix-ui", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "current/link/asChild",
+        "separator/ellipsis",
+        "long labels"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-color Slider screenshots; M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
+      "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
+      "documentation": "examples/content.html and docs/traveler/content.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
     },
     {
       "name": "bubble",
@@ -246,13 +254,17 @@
         "radix-ui"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "horizontal/vertical",
+        "text/asChild/separator",
+        "input composition"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-color Slider screenshots; M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
+      "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
+      "documentation": "examples/content.html and docs/traveler/content.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
     },
     {
       "name": "button",
@@ -683,13 +695,17 @@
       ],
       "dependencies": ["class-variance-authority", "cn"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "default/icon media",
+        "header/title/description/content",
+        "action composition"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-color Slider screenshots; M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
+      "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
+      "documentation": "examples/content.html and docs/traveler/content.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
     },
     {
       "name": "field",
@@ -874,13 +890,19 @@
         "react"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "default/outline/muted",
+        "default/sm",
+        "default/icon/image media",
+        "asChild",
+        "group/separator/header/footer/actions"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-color Slider screenshots; M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
+      "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
+      "documentation": "examples/content.html and docs/traveler/content.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
     },
     {
       "name": "kbd",
@@ -890,13 +912,13 @@
       "exports": ["Kbd", "KbdGroup"],
       "dependencies": ["cn"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": ["single/group", "tooltip composition"],
+      "visual": "Reviewed 320/768/1440px and forced-color Slider screenshots; M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
+      "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
+      "documentation": "examples/content.html and docs/traveler/content.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
     },
     {
       "name": "label",
@@ -1031,13 +1053,19 @@
       "exports": ["NativeSelect", "NativeSelectOptGroup", "NativeSelectOption"],
       "dependencies": ["cn", "lucide-react", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "default/sm",
+        "controlled/uncontrolled",
+        "disabled/invalid",
+        "options/groups",
+        "form submission"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-color Slider screenshots; M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
+      "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
+      "documentation": "examples/content.html and docs/traveler/content.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
     },
     {
       "name": "navigation-menu",
@@ -1092,13 +1120,17 @@
         "react"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "current/link/previous/next/ellipsis",
+        "responsive",
+        "native anchors"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-color Slider screenshots; M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
+      "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
+      "documentation": "examples/content.html and docs/traveler/content.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
     },
     {
       "name": "popover",
@@ -1377,13 +1409,21 @@
       "exports": ["Slider"],
       "dependencies": ["cn", "radix-ui", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "controlled/uncontrolled",
+        "single/range",
+        "min/max/step",
+        "keyboard/valueCommit",
+        "horizontal/vertical",
+        "disabled/invalid",
+        "forms/labels"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-color Slider screenshots; M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
+      "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
+      "documentation": "examples/content.html and docs/traveler/content.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
     },
     {
       "name": "sonner",
@@ -1543,13 +1583,20 @@
         "react"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "single/multiple",
+        "controlled/uncontrolled",
+        "variants/sizes",
+        "horizontal/vertical",
+        "spacing/disabled",
+        "keyboard"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-color Slider screenshots; M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
+      "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
+      "documentation": "examples/content.html and docs/traveler/content.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
     },
     {
       "name": "toggle",
@@ -1559,13 +1606,18 @@
       "exports": ["Toggle", "toggleVariants"],
       "dependencies": ["class-variance-authority", "cn", "radix-ui", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "default/outline",
+        "sm/default/lg",
+        "controlled/uncontrolled",
+        "on/off/disabled/invalid"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-color Slider screenshots; M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
+      "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
+      "documentation": "examples/content.html and docs/traveler/content.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
     },
     {
       "name": "tooltip",

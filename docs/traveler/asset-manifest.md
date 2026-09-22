@@ -18,3 +18,7 @@ records inspected package metadata and is not a complete future release audit.
 The original shadcn MIT text is copied without modification. The 21 generated items
 contain only component source, foundation CSS and that notice. No gallery PNG,
 font or scenic asset is included. Final public-name/rights review is still required.
+
+M5.2 adds an original inline SVG diamond emblem in `examples/content.tsx` solely
+to exercise Avatar/Item image rendering. No component or registry payload requires
+this example asset; no external image or font request was added.

@@ -18,6 +18,19 @@ const sources = import.meta.glob<string>("../ui/*.tsx", {
   eager: true,
 })
 const pages: Record<string, string[]> = {
+  "content.html": [
+    "avatar",
+    "breadcrumb",
+    "button-group",
+    "empty",
+    "item",
+    "kbd",
+    "native-select",
+    "pagination",
+    "slider",
+    "toggle",
+    "toggle-group",
+  ],
   "index.html": ["button", "card", "input", "dialog", "dropdown-menu"],
   "forms.html": [
     "badge",

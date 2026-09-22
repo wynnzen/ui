@@ -46,3 +46,11 @@ Alert titles wrap instead of truncating; disclosure height animation is removed;
 loading animations respect reduced motion. Collapsible, Aspect Ratio and
 Direction are byte-identical behavior/layout helpers with no built-in chrome.
 No new package, shared CSS rule or state-management layer was introduced.
+
+M5.2 adds eleven content/control sources. Slider forwards accessible thumb names,
+descriptions and invalid state while retaining Radix state, events and hidden
+form inputs. Toggle Group exposes orientation for CSS. Item descriptions wrap;
+Kbd fixes its dark-tooltip foreground. All other changes use existing visual
+recipes and logical geometry. The pinned CLI non-RSC directive regex limitation
+is documented in content.md; consumer tests decline replacement rather than
+patching upstream or enabling unattended overwrites.

@@ -15,8 +15,8 @@ pnpm traveler:preview
 ```
 
 The unchanged workspace CLI is shadcn **4.21.0**. Canonical metadata is
-`apps/v4/registry/traveler/registry.json`. The CLI emits 28 items (foundation plus
-27 components) into `public/r/v0.1.0-dev/`; the Vite preview serves them at
+`apps/v4/registry/traveler/registry.json`. The CLI emits 39 items (foundation plus
+38 components) into `public/r/v0.1.0-dev/`; the Vite preview serves them at
 `http://127.0.0.1:4173/r/v0.1.0-dev/{name}.json`. Development paths are mutable;
 release endpoints must be frozen and verified before publication.
 
@@ -108,3 +108,7 @@ This is a local immutable candidate, not a published service or approved release
 The development URL remains useful during implementation; do not describe it as
 immutable. Consumer fixture lockfiles are retained under `tests/traveler/fixtures`
 for inspection of the dependency graph that was actually built.
+
+The expanded consumer check records a pinned CLI client-directive issue during
+bulk non-RSC installation. Inspect the same requested item set and decline any
+unintended replacement; see [M5.2 installation notes](content.md#pinned-cli-limitation).

@@ -102,6 +102,25 @@
       }
     },
     {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Traveler avatar; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",
@@ -125,6 +144,25 @@
       }
     },
     {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Traveler breadcrumb; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "lucide-react@0.474.0", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
@@ -138,6 +176,29 @@
       "files": [
         {
           "path": "registry/traveler/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Traveler button-group; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.2.2",
+        "radix-ui@1.4.3"
+      ],
+      "registryDependencies": ["@traveler/foundation", "@traveler/separator"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/button-group.tsx",
           "type": "registry:ui"
         }
       ],
@@ -262,6 +323,25 @@
       }
     },
     {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "Traveler empty; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["class-variance-authority@0.7.1", "cn@0.2.2"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
       "name": "input",
       "type": "registry:ui",
       "title": "Input",
@@ -281,6 +361,48 @@
       }
     },
     {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "Traveler item; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.2.2",
+        "radix-ui@1.4.3"
+      ],
+      "registryDependencies": ["@traveler/foundation", "@traveler/separator"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Traveler kbd; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
       "name": "label",
       "type": "registry:ui",
       "title": "Label",
@@ -290,6 +412,44 @@
       "files": [
         {
           "path": "registry/traveler/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "Traveler native-select; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "lucide-react@0.474.0"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Traveler pagination; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "lucide-react@0.474.0"],
+      "registryDependencies": ["@traveler/foundation", "@traveler/button"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/pagination.tsx",
           "type": "registry:ui"
         }
       ],
@@ -433,6 +593,25 @@
       }
     },
     {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Traveler slider; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
       "name": "spinner",
       "type": "registry:ui",
       "title": "Spinner",
@@ -522,6 +701,52 @@
       "files": [
         {
           "path": "registry/traveler/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Traveler toggle; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.2.2",
+        "radix-ui@1.4.3"
+      ],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Traveler toggle-group; Radix new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.2.2",
+        "radix-ui@1.4.3"
+      ],
+      "registryDependencies": ["@traveler/foundation", "@traveler/toggle"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/toggle-group.tsx",
           "type": "registry:ui"
         }
       ],

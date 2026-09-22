@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select",
+  "title": "Native Select",
+  "description": "Traveler native-select; Radix new-york-v4 API at the pinned upstream baseline.",
+  "dependencies": [
+    "cn@0.2.2",
+    "lucide-react@0.474.0"
+  ],
+  "registryDependencies": [
+    "@traveler/foundation"
+  ],
+  "files": [
+    {
+      "path": "registry/traveler/ui/native-select.tsx",
+      "content": "import * as React from \"react\"\nimport { cn } from \"cn\"\nimport { ChevronDownIcon } from \"lucide-react\"\n\nfunction NativeSelect({\n  className,\n  size = \"default\",\n  ...props\n}: Omit<React.ComponentProps<\"select\">, \"size\"> & { size?: \"sm\" | \"default\" }) {\n  return (\n    <div\n      className=\"group/native-select relative w-fit max-w-full has-[select:disabled]:opacity-50\"\n      data-slot=\"native-select-wrapper\"\n    >\n      <select\n        data-slot=\"native-select\"\n        data-size={size}\n        className={cn(\n          \"trav-control h-11 w-full min-w-0 appearance-none rounded-xs border border-input bg-background py-2 ps-3 pe-9 text-base selection:bg-primary selection:text-primary-foreground disabled:pointer-events-none disabled:cursor-not-allowed data-[size=sm]:h-10 data-[size=sm]:py-1\",\n          \"aria-invalid:border-destructive\",\n          className\n        )}\n        {...props}\n      />\n      <ChevronDownIcon\n        className=\"pointer-events-none absolute end-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground select-none\"\n        aria-hidden=\"true\"\n        data-slot=\"native-select-icon\"\n      />\n    </div>\n  )\n}\n\nfunction NativeSelectOption({\n  className,\n  ...props\n}: React.ComponentProps<\"option\">) {\n  return (\n    <option\n      data-slot=\"native-select-option\"\n      className={cn(\"bg-[Canvas] text-[CanvasText]\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction NativeSelectOptGroup({\n  className,\n  ...props\n}: React.ComponentProps<\"optgroup\">) {\n  return (\n    <optgroup\n      data-slot=\"native-select-optgroup\"\n      className={cn(\"bg-[Canvas] text-[CanvasText]\", className)}\n      {...props}\n    />\n  )\n}\n\nexport { NativeSelect, NativeSelectOptGroup, NativeSelectOption }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "meta": {
+    "version": "0.1.0-dev",
+    "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+    "status": "development"
+  },
+  "type": "registry:ui"
+}

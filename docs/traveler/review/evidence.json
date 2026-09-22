@@ -116,8 +116,8 @@
     },
     {
       "name": "catalog-search",
-      "sha256": "94978042a3f9bafd77292bc1239f0a38c490136bdb8bd0d4bc6027de7e386390",
-      "bytes": 305668
+      "sha256": "3fbb7425c02fc06eb42fe299382fa48df7cafa7999cfb3d89a542bf21166457c",
+      "bytes": 310652
     },
     {
       "name": "disclosure-320",
@@ -138,6 +138,26 @@
       "name": "disclosure-forced-colors",
       "sha256": "f6b7b3fe242b985773e9ee715ddd3675bb4644ed28f212129cca751f32bdafcb",
       "bytes": 55855
+    },
+    {
+      "name": "content-320",
+      "sha256": "5ae1df4631363438d1f5475609ddca74a3569d6a63cca4c199798fc6335da30c",
+      "bytes": 408103
+    },
+    {
+      "name": "content-768",
+      "sha256": "47b40f43c123b70c27b9d34bead4f181eac36f196dffd149fcd6ebeb902bb8be",
+      "bytes": 452415
+    },
+    {
+      "name": "content-1440",
+      "sha256": "767464b714cfa3a56705f131594be558bb77ebd1ed4c1cf13e08a43ba33a2755",
+      "bytes": 468119
+    },
+    {
+      "name": "slider-forced-colors",
+      "sha256": "28d7f284bc240b85b43ae27df3671a15722a791145026b819ce7397dc8ee8136",
+      "bytes": 40803
     }
   ],
   "accessibility": [
@@ -420,6 +440,20 @@
           "count": 9
         }
       ]
+    },
+    {
+      "name": "content and controls",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "count": 19
+        },
+        {
+          "id": "color-contrast",
+          "count": 4
+        }
+      ]
     }
   ],
   "checks": [
@@ -453,6 +487,11 @@
     "disclosure 1440px reflow",
     "Disclosure and feedback at 200% text",
     "Disclosure focus and placeholder borders survive forced colors",
+    "Content and controls 320px reflow",
+    "Content and controls 768px reflow",
+    "Content and controls 1440px reflow",
+    "Content and controls at 200% text",
+    "Slider thumb focus and system-color track/range remain visible",
     "Progress, Switch and Scroll Area state indicators survive forced colors",
     "Separate upstream document receives no Traveler tokens"
   ],

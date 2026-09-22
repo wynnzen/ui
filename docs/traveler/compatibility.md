@@ -155,3 +155,12 @@ WebKit 26.5. The new disclosure fixture has no axe findings; its 320/768/1440px
 and forced-colors screenshots were inspected and reproduce. Total review: 27
 screenshots and 32 responsive/state checks. RTL evidence is limited to the basic
 Direction/Tabs fixture; full RTL and all human release checks remain pending.
+
+## M5.2 additions
+
+All 38 development components pass fresh Vite/Next installs, builds and dev/prod
+interactions. Chromium, Firefox and WebKit suites pass, including native form
+values, range-thumb names, Slider commit callbacks, vertical controls and Toggle
+state. Review totals are 31 inspected/reproduced screenshots and 37 responsive
+checks, with no new accessibility findings. The non-RSC CLI directive-only drift
+is reproduced and safely declined; see content.md. Human release QA is pending.

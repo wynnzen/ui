@@ -1,6 +1,17 @@
 "use client"
 
 import { useState } from "react"
+import { Avatar, AvatarFallback } from "@fixture/components/ui/avatar"
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbPage } from "@fixture/components/ui/breadcrumb"
+import { ButtonGroup, ButtonGroupText } from "@fixture/components/ui/button-group"
+import { Empty, EmptyHeader, EmptyTitle, EmptyDescription } from "@fixture/components/ui/empty"
+import { Item, ItemContent, ItemTitle, ItemDescription } from "@fixture/components/ui/item"
+import { Kbd } from "@fixture/components/ui/kbd"
+import { NativeSelect, NativeSelectOption } from "@fixture/components/ui/native-select"
+import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@fixture/components/ui/pagination"
+import { Slider } from "@fixture/components/ui/slider"
+import { Toggle } from "@fixture/components/ui/toggle"
+import { ToggleGroup, ToggleGroupItem } from "@fixture/components/ui/toggle-group"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@fixture/components/ui/accordion"
 import { Alert, AlertTitle, AlertDescription } from "@fixture/components/ui/alert"
 import { AspectRatio } from "@fixture/components/ui/aspect-ratio"
@@ -46,5 +57,15 @@ export default function Consumer() {
   <Alert><AlertTitle>Supplies ready</AlertTitle><AlertDescription>No required decorative assets.</AlertDescription></Alert>
   <AspectRatio ratio={16 / 9} className="border p-4">Reserved map area</AspectRatio>
   <Skeleton aria-hidden="true" className="h-4 w-48"/><Spinner aria-label="Loading route"/>
+  <Avatar aria-label="Ari"><AvatarFallback>AR</AvatarFallback></Avatar>
+  <Breadcrumb><BreadcrumbList><BreadcrumbItem><BreadcrumbPage>Consumer journal</BreadcrumbPage></BreadcrumbItem></BreadcrumbList></Breadcrumb>
+  <ButtonGroup aria-label="Grouped actions"><ButtonGroupText>Notes</ButtonGroupText><Button variant="outline">Add note</Button></ButtonGroup>
+  <Empty><EmptyHeader><EmptyTitle>No archived notes</EmptyTitle><EmptyDescription>Your current notes remain available.</EmptyDescription></EmptyHeader></Empty>
+  <Item variant="outline"><ItemContent><ItemTitle>Old bridge route</ItemTitle><ItemDescription>Follow the stone road. <Kbd>Enter</Kbd> activates a focused control.</ItemDescription></ItemContent></Item>
+  <Label htmlFor="terrain">Terrain</Label><NativeSelect id="terrain" defaultValue="road"><NativeSelectOption value="road">Road</NativeSelectOption><NativeSelectOption value="river">River</NativeSelectOption></NativeSelect>
+  <Slider aria-label="Daily distance" defaultValue={[30]} step={5}/>
+  <Toggle variant="outline">Pin route</Toggle>
+  <ToggleGroup type="multiple" aria-label="Route layers"><ToggleGroupItem value="roads">Roads</ToggleGroupItem><ToggleGroupItem value="rivers">Rivers</ToggleGroupItem></ToggleGroup>
+  <Pagination><PaginationContent><PaginationItem><PaginationLink href="#" isActive aria-label="Page 1">1</PaginationLink></PaginationItem></PaginationContent></Pagination>
   </main></TooltipProvider>
 }

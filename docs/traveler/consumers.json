@@ -32,9 +32,10 @@
           "vite": "7.3.2"
         }
       },
-      "installedComponents": 27,
+      "installedComponents": 38,
       "transitiveDialog": true,
       "identicalReinstall": true,
+      "clientDirectiveDrift": "CLI 4.21.0 non-RSC regex drift; overwrite declined",
       "customizedFilePreserved": true,
       "cssSha256": "f56e867caadbb9efb0ec33f312949044a19ec352132bc8c1a45bc21f76549b0f",
       "lockSha256": "2e09379b88df7612c40417236ff072d8556a74498250e1a58020ec548d9b82ae",
@@ -73,9 +74,10 @@
           "typescript": "5.9.2"
         }
       },
-      "installedComponents": 27,
+      "installedComponents": 38,
       "transitiveDialog": true,
       "identicalReinstall": true,
+      "clientDirectiveDrift": "not applicable",
       "customizedFilePreserved": true,
       "cssSha256": "f56e867caadbb9efb0ec33f312949044a19ec352132bc8c1a45bc21f76549b0f",
       "lockSha256": "14bf41fc00d47899bc52486592b3cf9255dfd10a243c11e8c2dd801469cf02fe",
@@ -85,7 +87,7 @@
       ]
     }
   ],
-  "sourceRevision": "M5.1; canonical sources and this report committed together",
+  "sourceRevision": "M5.2; canonical sources and this report committed together",
   "node": "24.15.0",
   "pnpm": "10.33.4",
   "browser": "Chromium 149.0.7827.55",
