@@ -18,6 +18,14 @@ const sources = import.meta.glob<string>("../ui/*.tsx", {
   eager: true,
 })
 const pages: Record<string, string[]> = {
+  "advanced.html": ["calendar", "carousel", "chart", "resizable", "sonner"],
+  "conversation.html": [
+    "attachment",
+    "bubble",
+    "marker",
+    "message",
+    "message-scroller",
+  ],
   "extended-navigation.html": [
     "context-menu",
     "menubar",

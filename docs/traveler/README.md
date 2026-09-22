@@ -1,7 +1,7 @@
 # Traveler UI development
 
-The 20-component MVP plus thirty M5 additions are implemented and installed
-successfully in clean Vite and Next.js applications. M1 visual direction is approved; M4 human/release QA
+The 20-component MVP plus forty M5 additions are implemented. All 60 pass clean Vite and Next consumer
+validation; Combobox is explicitly deferred. M1 visual direction is approved; M4 human/release QA
 and the M5 completeness milestone remain open. Nothing has been published.
 
 - [Plan and step-by-step execution record](../../todo.md)
@@ -12,7 +12,8 @@ and the M5 completeness milestone remain open. Nothing has been published.
 - [Approved visual language](visual-language.md)
 - [Source provenance](baseline.md), [upstream changes](upstream-changes.md), and [asset notices](asset-manifest.md)
 
-Build with `pnpm traveler:registry` and `pnpm traveler:build`, then run
+Prepare the existing workspace packages with `pnpm --filter=shadcn build` and
+`pnpm --filter=@shadcn/react build`. Build with `pnpm traveler:registry` and `pnpm traveler:build`, then run
 `pnpm traveler:preview`. Open `http://127.0.0.1:4173/catalog.html` to search
 components, review exact sources/tokens and find the local install instructions.
 The gallery has no required scenic image, font request or styling provider.
@@ -28,3 +29,6 @@ deferral and inherited empty-results accessibility triage.
 
 M5.4 [extended navigation](extended-navigation.md) covers responsive overlays,
 Sidebar and its unchanged mobile helper.
+
+M5.5 [advanced and conversational components](advanced.md) includes Date Picker
+and Data Table compositions and the existing Message Scroller primitive.

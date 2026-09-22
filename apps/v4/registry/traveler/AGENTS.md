@@ -7,6 +7,7 @@ all other registry collections and the pinned exports in the coverage manifest.
 Run commands from the repository root:
 
 - `pnpm --filter=shadcn build` prepares the existing CLI/schema prerequisites.
+- `pnpm --filter=@shadcn/react build` prepares the existing Message Scroller package.
 - `pnpm traveler:registry` regenerates the development registry payloads.
 - `pnpm traveler:typecheck` checks bidirectional component API contracts.
 - `pnpm traveler:check` checks source provenance, contrast, CSS budget and registry.

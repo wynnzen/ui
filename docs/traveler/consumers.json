@@ -14,15 +14,22 @@
           "build": "tsc --noEmit && vite build"
         },
         "dependencies": {
+          "@shadcn/react": "0.3.1",
           "class-variance-authority": "0.7.1",
           "cmdk": "1.1.1",
           "cn": "0.2.2",
+          "embla-carousel-react": "8.5.2",
           "input-otp": "1.4.2",
           "lucide-react": "0.474.0",
+          "next-themes": "0.4.6",
           "radix-ui": "1.4.3",
           "react": "19.2.3",
+          "react-day-picker": "9.8.1",
           "react-dom": "19.2.3",
           "react-hook-form": "7.62.0",
+          "react-resizable-panels": "4.5.8",
+          "recharts": "3.8.0",
+          "sonner": "2.0.7",
           "vaul": "1.1.2"
         },
         "devDependencies": {
@@ -36,13 +43,13 @@
           "vite": "7.3.2"
         }
       },
-      "installedComponents": 50,
+      "installedComponents": 60,
       "transitiveDialog": true,
       "identicalReinstall": true,
       "clientDirectiveDrift": "CLI 4.21.0 non-RSC regex drift; overwrite declined",
       "customizedFilePreserved": true,
-      "cssSha256": "f56e867caadbb9efb0ec33f312949044a19ec352132bc8c1a45bc21f76549b0f",
-      "lockSha256": "e590f7438275e4d3187bfbb6e8765110e4b16e7b2bf9e13388240d5c00366077",
+      "cssSha256": "db8e630f2a8807dfa0e989e928bdcaa106292f2d3e03a4b31dffd8c9ddc33e28",
+      "lockSha256": "0a30a339d9f7a91b34afb5ad4a6edf5c38ea01fe9c7d695ef91012b444e97e6e",
       "checks": [
         "development: interaction, portal tokens, focus return, no errors/external requests",
         "production: interaction, portal tokens, focus return, no errors/external requests"
@@ -60,16 +67,23 @@
           "build": "next build --webpack"
         },
         "dependencies": {
+          "@shadcn/react": "0.3.1",
           "class-variance-authority": "0.7.1",
           "cmdk": "1.1.1",
           "cn": "0.2.2",
+          "embla-carousel-react": "8.5.2",
           "input-otp": "1.4.2",
           "lucide-react": "0.474.0",
           "next": "16.3.3",
+          "next-themes": "0.4.6",
           "radix-ui": "1.4.3",
           "react": "19.2.3",
+          "react-day-picker": "9.8.1",
           "react-dom": "19.2.3",
           "react-hook-form": "7.62.0",
+          "react-resizable-panels": "4.5.8",
+          "recharts": "3.8.0",
+          "sonner": "2.0.7",
           "vaul": "1.1.2"
         },
         "devDependencies": {
@@ -82,20 +96,20 @@
           "typescript": "5.9.2"
         }
       },
-      "installedComponents": 50,
+      "installedComponents": 60,
       "transitiveDialog": true,
       "identicalReinstall": true,
       "clientDirectiveDrift": "not applicable",
       "customizedFilePreserved": true,
-      "cssSha256": "f56e867caadbb9efb0ec33f312949044a19ec352132bc8c1a45bc21f76549b0f",
-      "lockSha256": "749d756ed67c82dc7404a6766eacb632706b44074a15e4c723eebbe5d94e23ab",
+      "cssSha256": "db8e630f2a8807dfa0e989e928bdcaa106292f2d3e03a4b31dffd8c9ddc33e28",
+      "lockSha256": "4929e09eae73f9865e4d479953446825efcd2d95f05250a5637336b4293c7a04",
       "checks": [
         "development: interaction, portal tokens, focus return, no errors/external requests, SSR/hydration",
         "production: interaction, portal tokens, focus return, no errors/external requests, SSR/hydration"
       ]
     }
   ],
-  "sourceRevision": "M5.4; canonical sources and this report committed together",
+  "sourceRevision": "M5.5 development payloads; final immutable candidate rechecked in M5.6",
   "node": "24.15.0",
   "pnpm": "10.33.4",
   "browser": "Chromium 149.0.7827.55",

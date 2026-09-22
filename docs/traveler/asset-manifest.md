@@ -28,3 +28,8 @@ react-hook-form 7.62.0. Their original notices remain with the dependencies.
 
 M5.4 uses the already-pinned Vaul 1.1.2 dependency, whose package metadata
 declares MIT. No new visual or font asset is required.
+
+M5.5 also reuses MIT-licensed react-day-picker 9.8.1, embla-carousel-react
+8.5.2, recharts 3.8.0, react-resizable-panels 4.5.8, sonner 2.0.7,
+next-themes 0.4.6 and @shadcn/react 0.3.1. The attachment route sketch is
+original inline SVG authored for the example; it contains no game asset.

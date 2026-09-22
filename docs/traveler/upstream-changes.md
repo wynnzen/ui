@@ -71,3 +71,12 @@ bounded-panel footer actions and drag dismissal working. Sidebar adds inert clos
 its mobile Sheet, stable skeleton markup, right-side spacing and correct
 separator width; icon mode keeps names while hiding unsuitable input/loading
 text. Other changes retain state/callback ownership and reuse semantic recipes.
+
+## M5.5
+
+Added ten sources with unchanged pinned exports and client/server boundaries.
+[Advanced notes](advanced.md) document Carousel keyboard/listener fixes, actual
+Recharts 3 tick selectors and legend icon handling, bounded resizing, native
+conversational scrolling, visible attachment focus and reduced-motion changes.
+Five chart aliases reuse the approved palette. No original collection, CLI,
+workspace lockfile or immutable MVP payload was changed.

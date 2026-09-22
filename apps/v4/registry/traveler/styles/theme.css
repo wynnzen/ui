@@ -20,6 +20,11 @@
   --border: #666761;
   --input: #96968d;
   --ring: #c2d7e8;
+  --chart-1: var(--primary);
+  --chart-2: var(--ring);
+  --chart-3: var(--trav-success);
+  --chart-4: var(--destructive);
+  --chart-5: var(--trav-ornament);
   --radius: 0.125rem;
   --font-sans:
     system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;

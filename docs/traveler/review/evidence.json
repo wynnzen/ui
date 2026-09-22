@@ -116,8 +116,8 @@
     },
     {
       "name": "catalog-search",
-      "sha256": "cc0e64566f91c66822fe154b1a5cbd853192493b634f98d4e9d78fc2410de8d9",
-      "bytes": 310327
+      "sha256": "af6c81591a7c41f8af9941046d3bf119e905b259f9f16a416bd3566d9682ac53",
+      "bytes": 322155
     },
     {
       "name": "disclosure-320",
@@ -248,6 +248,61 @@
       "name": "sidebar-mobile",
       "sha256": "2917ef36c602c29cad815cfb9fba22267ea18b6a5b77acf1d310595f76c8e332",
       "bytes": 18664
+    },
+    {
+      "name": "advanced-320",
+      "sha256": "52c06fa85611fa32094ea165e885004257d901e32dc44e4cfdab1b875b2e2d67",
+      "bytes": 194882
+    },
+    {
+      "name": "advanced-768",
+      "sha256": "2c23cf536c1cb167a624788e5b54405be6f5fe68401b0b3eee83b2adcc8ac3e2",
+      "bytes": 205111
+    },
+    {
+      "name": "advanced-1440",
+      "sha256": "0078d0e39aaca7bf038956a9ed86426e0f61765b539f7f243fd6f523d8f2fbe2",
+      "bytes": 195184
+    },
+    {
+      "name": "conversation-320",
+      "sha256": "29e569003770ccd40cc4eb3abf8ab2548759ad0f40be75a251c02d0d624ead09",
+      "bytes": 170432
+    },
+    {
+      "name": "conversation-768",
+      "sha256": "b4f4aca498bc7f15ca803ddebfded85b351a6f7741833545da47265bdd6f2f48",
+      "bytes": 181089
+    },
+    {
+      "name": "conversation-1440",
+      "sha256": "351eea3f9981ccff318f9271acf116d38bb0cc6c6a7a58aa53913a9220c00170",
+      "bytes": 199462
+    },
+    {
+      "name": "date-picker",
+      "sha256": "040c2792626fc19050dfdaf4a1abd36fdba3c4e77d702208c472d10795ea0f7c",
+      "bytes": 13675
+    },
+    {
+      "name": "chart-keyboard",
+      "sha256": "c004b964ad4750af741301cbf108e994c1838ad00c9560c82f8981691a4710a0",
+      "bytes": 40569
+    },
+    {
+      "name": "toast-action",
+      "sha256": "7af54f9931deadd62fd4b3930cf9bab375756d63b8ebad4be79be0164eee570f",
+      "bytes": 2765
+    },
+    {
+      "name": "advanced-forced-colors",
+      "sha256": "474b667fda864ec88f8afea1a299c7be1591b5f2aa801bcf5cd3347b61a42a3a",
+      "bytes": 50846
+    },
+    {
+      "name": "transcript-mobile",
+      "sha256": "078eb666e9dd666c358de7be1185363fe422c24d6aa274a0b91dbbbe6c560426",
+      "bytes": 47583
     }
   ],
   "accessibility": [
@@ -328,10 +383,6 @@
         {
           "id": "aria-hidden-focus",
           "count": 2
-        },
-        {
-          "id": "color-contrast",
-          "count": 9
         }
       ]
     },
@@ -848,6 +899,118 @@
       "name": "noncollapsible sidebar",
       "violations": [],
       "incomplete": []
+    },
+    {
+      "name": "advanced",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-valid-attr-value",
+          "count": 1
+        },
+        {
+          "id": "color-contrast",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "name": "conversation",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "count": 1
+        },
+        {
+          "id": "color-contrast",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "open date picker",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-valid-attr-value",
+          "count": 1
+        },
+        {
+          "id": "color-contrast",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "name": "empty data table",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-valid-attr-value",
+          "count": 1
+        },
+        {
+          "id": "color-contrast",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "name": "loading data table",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-valid-attr-value",
+          "count": 1
+        },
+        {
+          "id": "color-contrast",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "name": "keyboard chart tooltip",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-valid-attr-value",
+          "count": 1
+        },
+        {
+          "id": "color-contrast",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "name": "toast with action",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-valid-attr-value",
+          "count": 1
+        },
+        {
+          "id": "color-contrast",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "name": "earlier transcript",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "count": 1
+        },
+        {
+          "id": "color-contrast",
+          "count": 7
+        }
+      ]
     }
   ],
   "checks": [
@@ -904,7 +1067,18 @@
     "Sidebar 1440px",
     "Mobile sidebar open at 320px",
     "Sidebar desktop, icon, offcanvas and mobile Sheet semantics and responsive reflow",
-    "Noncollapsible Sidebar host stacks at 320px"
+    "Noncollapsible Sidebar host stacks at 320px",
+    "advanced 320px",
+    "advanced 768px",
+    "advanced 1440px",
+    "advanced at 200% text",
+    "conversation 320px",
+    "conversation 768px",
+    "conversation 1440px",
+    "conversation at 200% text",
+    "Date picker at 320px",
+    "Calendar selection/focus survives forced colors; Sonner loading motion stops with reduced motion; charts have complete table alternatives",
+    "Message transcript is a named keyboard region with native overflow; inactive scroll buttons are inert and reduced motion removes transitions"
   ],
   "externalRequests": []
 }

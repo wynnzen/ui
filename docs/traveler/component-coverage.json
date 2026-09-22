@@ -136,13 +136,21 @@
         "react"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "idle/uploading/processing/error/done",
+        "default/sm/xs",
+        "horizontal/vertical",
+        "icon/image",
+        "button/link trigger",
+        "retry/remove/disabled",
+        "long filenames"
+      ],
+      "visual": "Reviewed 320/768/1440px, 200% text and applicable forced-colors/reduced-motion states",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
+      "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
+      "documentation": "examples/conversation.html and docs/traveler/advanced.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
     },
     {
       "name": "avatar",
@@ -228,13 +236,19 @@
       "exports": ["Bubble", "BubbleContent", "BubbleGroup", "BubbleReactions"],
       "dependencies": ["class-variance-authority", "cn", "radix-ui", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "all seven variants",
+        "start/end",
+        "button/link composition",
+        "CJK and long text",
+        "top/bottom reactions"
+      ],
+      "visual": "Reviewed 320/768/1440px, 200% text and applicable forced-colors/reduced-motion states",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
+      "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
+      "documentation": "examples/conversation.html and docs/traveler/advanced.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
     },
     {
       "name": "button-group",
@@ -306,13 +320,21 @@
         "react-day-picker"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "single/multiple/range",
+        "controlled selection",
+        "disabled/outside/today",
+        "month and year dropdowns",
+        "week numbers",
+        "keyboard/focus",
+        "consumer formatters/components"
+      ],
+      "visual": "Reviewed 320/768/1440px, 200% text and applicable forced-colors/reduced-motion states",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
+      "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
+      "documentation": "examples/advanced.html and docs/traveler/advanced.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
     },
     {
       "name": "card",
@@ -361,13 +383,20 @@
         "react"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "horizontal/vertical",
+        "previous/next and disabled edges",
+        "keyboard and editable targets",
+        "setApi selection",
+        "reduced motion",
+        "options/plugins preserved"
+      ],
+      "visual": "Reviewed 320/768/1440px, 200% text and applicable forced-colors/reduced-motion states",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
+      "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
+      "documentation": "examples/advanced.html and docs/traveler/advanced.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
     },
     {
       "name": "chart",
@@ -385,13 +414,21 @@
       ],
       "dependencies": ["cn", "react", "recharts", "recharts"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "responsive layout",
+        "keyboard tooltip",
+        "dot/line/dashed indicators",
+        "hide label/icon",
+        "theme colors",
+        "complete text/table alternative",
+        "tick contrast and focus"
+      ],
+      "visual": "Reviewed 320/768/1440px, 200% text and applicable forced-colors/reduced-motion states",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
+      "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
+      "documentation": "examples/advanced.html and docs/traveler/advanced.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
     },
     {
       "name": "checkbox",
@@ -1005,13 +1042,18 @@
       "exports": ["Marker", "MarkerContent", "MarkerIcon", "markerVariants"],
       "dependencies": ["class-variance-authority", "cn", "radix-ui", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "default/separator/border",
+        "decorative icon",
+        "wrapping label",
+        "link composition"
+      ],
+      "visual": "Reviewed 320/768/1440px, 200% text and applicable forced-colors/reduced-motion states",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
+      "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
+      "documentation": "examples/conversation.html and docs/traveler/advanced.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
     },
     {
       "name": "menubar",
@@ -1076,13 +1118,23 @@
         "react"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "initial end",
+        "append/follow",
+        "preserve reading position",
+        "prepend",
+        "anchor jump",
+        "start/end buttons",
+        "inactive inert buttons",
+        "three hooks",
+        "native keyboard scroll"
+      ],
+      "visual": "Reviewed 320/768/1440px, 200% text and applicable forced-colors/reduced-motion states",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
+      "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
+      "documentation": "examples/conversation.html and docs/traveler/advanced.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
     },
     {
       "name": "message",
@@ -1099,13 +1151,18 @@
       ],
       "dependencies": ["cn", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "start/end",
+        "avatar/header/content/footer",
+        "composed bubbles",
+        "long text"
+      ],
+      "visual": "Reviewed 320/768/1440px, 200% text and applicable forced-colors/reduced-motion states",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
+      "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
+      "documentation": "examples/conversation.html and docs/traveler/advanced.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
     },
     {
       "name": "native-select",
@@ -1285,13 +1342,19 @@
       "exports": ["ResizableHandle", "ResizablePanel", "ResizablePanelGroup"],
       "dependencies": ["cn", "lucide-react", "react-resizable-panels"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "horizontal/vertical",
+        "pointer/keyboard",
+        "minimum sizes",
+        "handle/no handle",
+        "disabled Group"
+      ],
+      "visual": "Reviewed 320/768/1440px, 200% text and applicable forced-colors/reduced-motion states",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
+      "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
+      "documentation": "examples/advanced.html and docs/traveler/advanced.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
     },
     {
       "name": "scroll-area",
@@ -1516,13 +1579,20 @@
       "exports": ["Toaster"],
       "dependencies": ["lucide-react", "next-themes", "sonner"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "success/info/warning/error",
+        "loading/update",
+        "persistent action",
+        "dismiss/close",
+        "reduced motion",
+        "consumer overrides"
+      ],
+      "visual": "Reviewed 320/768/1440px, 200% text and applicable forced-colors/reduced-motion states",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
+      "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
+      "documentation": "examples/advanced.html and docs/traveler/advanced.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
     },
     {
       "name": "spinner",
@@ -1738,6 +1808,22 @@
       "classification": "Unchanged behavior helper; no built-in visual surface",
       "installation": "@traveler/use-mobile; transitive Sidebar dependency, consumer hook alias checked",
       "documentation": "docs/traveler/extended-navigation.md"
+    }
+  ],
+  "compositions": [
+    {
+      "name": "date-picker",
+      "status": "prototype",
+      "dependencies": ["calendar", "popover", "button"],
+      "example": "examples/advanced.html#date-picker",
+      "evidence": "Controlled local date, hidden form value, keyboard selection and focus return passed in three engines; human QA pending"
+    },
+    {
+      "name": "data-table",
+      "status": "prototype",
+      "dependencies": ["table", "input", "checkbox", "button", "skeleton"],
+      "example": "examples/advanced.html#data-table",
+      "evidence": "Native six-row sort/filter/select/page, empty/loading and responsive checks passed; large datasets need server paging"
     }
   ]
 }

@@ -56,7 +56,7 @@ Preserve upstream collections and unrelated local changes.
       deferred by user decision because it uses Base UI.
 - [x] **M5.4 — Extended navigation and overlays:** Context Menu, Menubar,
       Navigation Menu, Hover Card, Sheet, Drawer and Sidebar.
-- [ ] **M5.5 — Advanced and conversational:** Calendar/Date Picker, Data Table,
+- [x] **M5.5 — Advanced and conversational:** Calendar/Date Picker, Data Table,
       Carousel, Chart, Resizable, Sonner, Attachment, Bubble, Marker, Message
       and Message Scroller; reconcile every pinned entry and composition.
 - [ ] **M5.6 — Completeness review:** every entry explicitly classified, consumer
@@ -314,3 +314,22 @@ Preserve upstream collections and unrelated local changes.
   the pinned 1.1.2 dependency; no upstream or workspace-lock change.
 - Combobox remains explicitly deferred. Ten component sources and advanced
   compositions remain; human release QA and publication gates are still open.
+
+### M5.5 — Advanced and conversational
+
+- Added the final ten sources and registry items, preserving every pinned export.
+  Date Picker and Data Table reuse existing components and native local state.
+  All 61 source entries are now classified: 60 prototypes and one user-deferred
+  Combobox, plus the unchanged mobile helper and two documented compositions.
+- Corrected Carousel keyboard capture/listener cleanup, Recharts 3 tick contrast
+  and legend icon hiding; added visible conversational focus, opaque states,
+  reduced motion, reachable toast targets and separated reaction controls.
+- Type contracts, scoped lint, 5 source/schema/contrast checks and production
+  build pass. All three browser engines pass the extended interaction suite;
+  final mobile spacing/target checks pass. Sixty screenshots were inspected and
+  65 responsive/state checks pass. No new axe finding or external runtime request.
+- Fresh Vite/Next consumers install all 60 components and the mobile hook, use
+  published @shadcn/react 0.3.1, build, hydrate, exercise advanced controls and
+  preserve customized files. M5.6 verifies the final immutable candidate.
+- Combobox stays deferred and M4.2 stays pending. No publication, upstream source
+  change or workspace dependency/lockfile change.

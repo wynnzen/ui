@@ -8,6 +8,18 @@ import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuL
 import { HoverCard, HoverCardTrigger, HoverCardContent } from "@fixture/components/ui/hover-card"
 import { SidebarProvider, Sidebar, SidebarHeader, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarMenuSkeleton, SidebarTrigger } from "@fixture/components/ui/sidebar"
 import { useState } from "react"
+import { Calendar } from "@fixture/components/ui/calendar"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@fixture/components/ui/carousel"
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@fixture/components/ui/chart"
+import { Bar, BarChart, XAxis } from "recharts"
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "@fixture/components/ui/resizable"
+import { Toaster } from "@fixture/components/ui/sonner"
+import { toast } from "sonner"
+import { Attachment, AttachmentContent, AttachmentTitle } from "@fixture/components/ui/attachment"
+import { Bubble, BubbleContent } from "@fixture/components/ui/bubble"
+import { Marker, MarkerContent } from "@fixture/components/ui/marker"
+import { Message, MessageContent } from "@fixture/components/ui/message"
+import { MessageScrollerProvider, MessageScroller, MessageScrollerViewport, MessageScrollerContent, MessageScrollerItem, MessageScrollerButton } from "@fixture/components/ui/message-scroller"
 import { useForm } from "react-hook-form"
 import { Command, CommandDialog, CommandInput, CommandList, CommandItem } from "@fixture/components/ui/command"
 import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@fixture/components/ui/form"
@@ -55,6 +67,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@fixtu
 
 export default function Consumer() {
   const [count, setCount] = useState(0)
+  const [date, setDate] = useState<Date | undefined>(new Date(2026, 8, 21))
   const profileForm = useForm({defaultValues:{nickname:""}})
   const [profile, setProfile] = useState("")
   const [commandsOpen, setCommandsOpen] = useState(false)
@@ -95,5 +108,14 @@ export default function Consumer() {
   <NavigationMenu aria-label="Consumer navigation"><NavigationMenuList><NavigationMenuItem><NavigationMenuLink href="#recorded-progress">Progress</NavigationMenuLink></NavigationMenuItem></NavigationMenuList></NavigationMenu>
   <HoverCard><HoverCardTrigger href="#recorded-progress">Preview progress</HoverCardTrigger><HoverCardContent>Recorded progress remains available.</HoverCardContent></HoverCard>
   <SidebarProvider className="min-h-0"><Sidebar collapsible="none"><SidebarHeader>Consumer sidebar</SidebarHeader><SidebarContent><SidebarMenu><SidebarMenuItem><SidebarMenuButton>Consumer journal</SidebarMenuButton></SidebarMenuItem><SidebarMenuItem><SidebarMenuSkeleton showIcon/></SidebarMenuItem></SidebarMenu></SidebarContent></Sidebar><SidebarTrigger/></SidebarProvider>
+  <Calendar aria-label="Consumer calendar" mode="single" selected={date} onSelect={setDate} defaultMonth={new Date(2026, 8, 21)} today={new Date(2026, 8, 21)}/><output id="consumer-date">{date?.getDate()}</output>
+  <Carousel aria-label="Consumer stops"><CarouselContent>{[1,2,3].map(n=><CarouselItem key={n}><div className="h-24 border p-4">Consumer stop {n}</div></CarouselItem>)}</CarouselContent><CarouselPrevious/><CarouselNext/></Carousel>
+  <ChartContainer className="h-40" config={{distance:{label:"Distance", color:"var(--chart-1)"}}}><BarChart data={[{day:"Mon",distance:8},{day:"Tue",distance:12}]} accessibilityLayer><XAxis dataKey="day"/><ChartTooltip isAnimationActive={false} content={<ChartTooltipContent/>}/><Bar dataKey="distance" fill="var(--color-distance)" isAnimationActive={false}/></BarChart></ChartContainer>
+  <ResizablePanelGroup style={{height:100}}><ResizablePanel defaultSize="50%"><p>Installed map</p></ResizablePanel><ResizableHandle aria-label="Consumer divider" withHandle/><ResizablePanel><p>Installed notes</p></ResizablePanel></ResizablePanelGroup>
+  <Button onClick={()=>toast.success("Consumer map saved")}>Notify consumer</Button><Toaster theme="dark" closeButton/>
+  <Attachment><AttachmentContent><AttachmentTitle>Consumer attachment</AttachmentTitle></AttachmentContent></Attachment>
+  <Marker variant="separator"><MarkerContent>Consumer chapter</MarkerContent></Marker>
+  <Message><MessageContent><Bubble variant="outline"><BubbleContent>Consumer letter</BubbleContent></Bubble></MessageContent></Message>
+  <MessageScrollerProvider defaultScrollPosition="end"><MessageScroller className="h-48 border"><MessageScrollerViewport aria-label="Consumer transcript"><MessageScrollerContent>{Array.from({length:12},(_,i)=><MessageScrollerItem key={i} messageId={String(i)}><p className="min-h-16 p-4">Consumer entry {i+1}</p></MessageScrollerItem>)}</MessageScrollerContent></MessageScrollerViewport><MessageScrollerButton direction="start"/><MessageScrollerButton/></MessageScroller></MessageScrollerProvider>
   </main></TooltipProvider>
 }

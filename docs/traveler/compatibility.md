@@ -193,3 +193,19 @@ remain in the recorded human triage queue; other new scans have no violations.
 Fresh Vite/Next installs of all 50 components and the transitive use-mobile hook
 pass production builds, dev/prod interactions, SSR/hydration, hook aliases and
 safe reinstallation. Exact versions and lock hashes are in consumers.json.
+
+## M5.5 additions
+
+All 60 local sources retain the pinned API contracts. All three browser engine
+suites pass, along with 60 reviewed screenshots and 65 responsive/state checks.
+The new advanced/conversation, Date Picker, empty/loading table, chart tooltip
+and action-toast scans have no axe violations. Existing inherited findings and
+human release QA remain open. New chart aliases reuse the approved palette;
+M5.6 refreshes the isolated performance measurement and immutable candidate.
+
+Fresh Vite and Next consumers install all 60 sources and the unchanged mobile
+hook, resolve the published @shadcn/react 0.3.1 subpath, build, hydrate, exercise
+advanced controls and safely decline customized-file replacement. Exact package
+versions and lock hashes are retained in consumers.json. A separate focused
+transcript capture shows offscreen content that browsers intentionally skip in
+full-page screenshots when content-visibility is auto.

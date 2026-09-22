@@ -1,6 +1,8 @@
 import assert from "node:assert/strict"
 import { createRequire } from "node:module"
 
+import { checkAdvanced } from "./advanced.mjs"
+
 // Reuse the browser dependency already owned by the workspace's React tests.
 const require = createRequire(
   new URL("../../packages/react/package.json", import.meta.url)
@@ -1026,7 +1028,7 @@ try {
     .getByRole("button", { name: "Open drawer bottom", exact: true })
     .click()
   // Vaul preserves selected text and rejects drags for 500ms after opening.
-  await page.getByLabel("Drawer note", {exact:true}).press("End")
+  await page.getByLabel("Drawer note", { exact: true }).press("End")
   await page.waitForTimeout(550)
   const drawerBounds = await page.getByRole("dialog").boundingBox()
   await page.mouse.move(
@@ -1130,6 +1132,7 @@ try {
   await expect(
     page.getByText("No matching components. Try a shorter name.")
   ).toBeVisible()
+  await checkAdvanced(page, expect)
   assert.deepEqual(errors, [])
   console.log(
     `Traveler component contracts, forms, keyboard menus, nested portals and focus restoration passed (${browserName} ${await browser.version()}).`

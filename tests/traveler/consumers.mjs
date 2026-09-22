@@ -547,6 +547,42 @@ try {
         await expect(
           page.getByRole("button", { name: "Consumer journal", exact: true })
         ).toBeVisible()
+        await page
+          .locator('[data-slot=calendar] button[data-day="9/22/2026"]')
+          .click()
+        await expect(page.locator("#consumer-date")).toHaveText("22")
+        const consumerCarousel = page.getByRole("region", {
+          name: "Consumer stops",
+          exact: true,
+        })
+        await consumerCarousel
+          .getByRole("button", { name: "Next slide", exact: true })
+          .click()
+        await expect(
+          consumerCarousel.getByRole("button", {
+            name: "Previous slide",
+            exact: true,
+          })
+        ).toBeEnabled()
+        await page
+          .getByRole("button", { name: "Notify consumer", exact: true })
+          .click()
+        await expect(page.locator("[data-sonner-toast]")).toContainText(
+          "Consumer map saved"
+        )
+        const consumerTranscript = page.getByRole("region", {
+          name: "Consumer transcript",
+          exact: true,
+        })
+        await expect
+          .poll(() => consumerTranscript.evaluate((el) => el.scrollTop))
+          .toBeGreaterThan(0)
+        await page
+          .locator("[data-slot=message-scroller-button][data-direction=start]")
+          .click()
+        await expect
+          .poll(() => consumerTranscript.evaluate((el) => el.scrollTop))
+          .toBe(0)
         assert.deepEqual(errors, [])
         assert.deepEqual(external, [])
         results.checks.push(

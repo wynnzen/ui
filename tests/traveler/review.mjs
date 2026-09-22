@@ -752,6 +752,109 @@ try {
   await page.getByLabel("Collapse mode", { exact: true }).selectOption("none")
   await noOverflow("Noncollapsible Sidebar host stacks at 320px")
   await accessibility("noncollapsible sidebar")
+  for (const fixture of ["advanced", "conversation"]) {
+    await page.goto(new URL(`${fixture}.html`, url).href, {
+      waitUntil: "networkidle",
+    })
+    await page.addScriptTag({ path: axePath })
+    for (const width of [320, 768, 1440]) {
+      await page.setViewportSize({ width, height: 1000 })
+      await noOverflow(`${fixture} ${width}px`)
+      await screenshot(`${fixture}-${width}`)
+      if (fixture === "conversation" && width === 320) {
+        const lower = await page
+          .locator("[data-slot=bubble-reactions][data-side=bottom]")
+          .boundingBox()
+        const upper = await page
+          .locator("[data-slot=bubble-reactions][data-side=top]")
+          .boundingBox()
+        assert.ok(
+          lower.y + lower.height <= upper.y,
+          "Mobile reactions do not overlap"
+        )
+      }
+    }
+    await accessibility(fixture)
+    await page.setViewportSize({ width: 768, height: 1000 })
+    await page.evaluate(
+      () => (document.documentElement.style.fontSize = "200%")
+    )
+    await noOverflow(`${fixture} at 200% text`)
+    await page.evaluate(() => (document.documentElement.style.fontSize = ""))
+  }
+  await page.goto(new URL("advanced.html", url).href, {
+    waitUntil: "networkidle",
+  })
+  await page.addScriptTag({ path: axePath })
+  await page.setViewportSize({ width: 320, height: 640 })
+  await page.locator("#departure").click()
+  await noOverflow("Date picker at 320px")
+  await screenshot("date-picker", page.locator("[data-slot=popover-content]"))
+  await accessibility("open date picker")
+  await page.keyboard.press("Escape")
+  await page.getByLabel("Filter routes", { exact: true }).fill("no-match")
+  await accessibility("empty data table")
+  await page.getByLabel("Filter routes", { exact: true }).fill("")
+  await page
+    .getByRole("button", { name: "Show loading state", exact: true })
+    .click()
+  await accessibility("loading data table")
+  await page
+    .getByRole("button", { name: "Finish loading", exact: true })
+    .click()
+  await page.setViewportSize({ width: 768, height: 1000 })
+  const chartSurface = page.locator("#chart .recharts-surface").first()
+  await chartSurface.scrollIntoViewIfNeeded()
+  await chartSurface.focus()
+  await page.keyboard.press("ArrowRight")
+  await screenshot("chart-keyboard", page.locator("#chart"))
+  await accessibility("keyboard chart tooltip")
+  await page
+    .getByRole("button", { name: "Save with undo", exact: true })
+    .click()
+  await screenshot("toast-action", page.locator("[data-sonner-toast]").first())
+  await accessibility("toast with action")
+  await expect(page.locator("[data-close-button]")).toHaveCSS(
+    "min-height",
+    "40px"
+  )
+  await page.getByRole("button", { name: "Undo save", exact: true }).click()
+  await page.getByRole("button", { name: "Start copying", exact: true }).click()
+  await expect(
+    page.locator("[data-sonner-toast][data-type=loading] svg")
+  ).toHaveCSS("animation-name", "none")
+  await page
+    .getByRole("button", { name: "Dismiss notices", exact: true })
+    .click()
+  await page.emulateMedia({ forcedColors: "active" })
+  const selectedDay = page
+    .locator("#calendar [data-selected-single=true]")
+    .first()
+  await selectedDay.focus()
+  await expect(selectedDay).toHaveCSS("outline-style", "solid")
+  await expect(chartSurface).not.toHaveCSS("display", "none")
+  await screenshot("advanced-forced-colors", page.locator("#calendar"))
+  await page.emulateMedia({ forcedColors: "none" })
+  report.checks.push(
+    "Calendar selection/focus survives forced colors; Sonner loading motion stops with reduced motion; charts have complete table alternatives"
+  )
+  await page.goto(new URL("conversation.html", url).href, {
+    waitUntil: "networkidle",
+  })
+  await page.addScriptTag({ path: axePath })
+  await page.setViewportSize({ width: 320, height: 640 })
+  await page.locator("#message-scroller").scrollIntoViewIfNeeded()
+  await screenshot("transcript-mobile", page.locator("#message-scroller"))
+  await page
+    .locator("[data-slot=message-scroller-button][data-direction=start]")
+    .click()
+  await accessibility("earlier transcript")
+  await expect(
+    page.locator("[data-slot=message-scroller-button][data-direction=end]")
+  ).toHaveCSS("transition-property", "none")
+  report.checks.push(
+    "Message transcript is a named keyboard region with native overflow; inactive scroll buttons are inert and reduced motion removes transitions"
+  )
   assert.deepEqual(errors, [])
   assert.deepEqual(
     report.externalRequests,

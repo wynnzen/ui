@@ -102,6 +102,29 @@
       }
     },
     {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "Traveler attachment; preserves the pinned new-york-v4 API.",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.2.2",
+        "radix-ui@1.4.3"
+      ],
+      "registryDependencies": ["@traveler/foundation", "@traveler/button"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/attachment.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
       "name": "avatar",
       "type": "registry:ui",
       "title": "Avatar",
@@ -163,6 +186,29 @@
       }
     },
     {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "Traveler bubble; preserves the pinned new-york-v4 API.",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.2.2",
+        "radix-ui@1.4.3"
+      ],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/bubble.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
@@ -209,6 +255,29 @@
       }
     },
     {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Traveler calendar; preserves the pinned new-york-v4 API.",
+      "dependencies": [
+        "cn@0.2.2",
+        "lucide-react@0.474.0",
+        "react-day-picker@9.8.1"
+      ],
+      "registryDependencies": ["@traveler/foundation", "@traveler/button"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
       "name": "card",
       "type": "registry:ui",
       "title": "Card",
@@ -218,6 +287,48 @@
       "files": [
         {
           "path": "registry/traveler/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Traveler carousel; preserves the pinned new-york-v4 API.",
+      "dependencies": [
+        "cn@0.2.2",
+        "embla-carousel-react@8.5.2",
+        "lucide-react@0.474.0"
+      ],
+      "registryDependencies": ["@traveler/foundation", "@traveler/button"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Traveler chart; preserves the pinned new-york-v4 API.",
+      "dependencies": ["cn@0.2.2", "recharts@3.8.0"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/chart.tsx",
           "type": "registry:ui"
         }
       ],
@@ -588,6 +699,29 @@
       }
     },
     {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "Traveler marker; preserves the pinned new-york-v4 API.",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.2.2",
+        "radix-ui@1.4.3"
+      ],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/marker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
       "name": "menubar",
       "type": "registry:ui",
       "title": "Menubar",
@@ -597,6 +731,48 @@
       "files": [
         {
           "path": "registry/traveler/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "Traveler message; preserves the pinned new-york-v4 API.",
+      "dependencies": ["cn@0.2.2"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message Scroller",
+      "description": "Traveler message-scroller; preserves the pinned new-york-v4 API.",
+      "dependencies": [
+        "@shadcn/react@0.3.1",
+        "cn@0.2.2",
+        "lucide-react@0.474.0"
+      ],
+      "registryDependencies": ["@traveler/foundation", "@traveler/button"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/message-scroller.tsx",
           "type": "registry:ui"
         }
       ],
@@ -716,6 +892,29 @@
       "files": [
         {
           "path": "registry/traveler/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Traveler resizable; preserves the pinned new-york-v4 API.",
+      "dependencies": [
+        "cn@0.2.2",
+        "lucide-react@0.474.0",
+        "react-resizable-panels@4.5.8"
+      ],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/resizable.tsx",
           "type": "registry:ui"
         }
       ],
@@ -863,6 +1062,29 @@
       "files": [
         {
           "path": "registry/traveler/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "Traveler sonner; preserves the pinned new-york-v4 API.",
+      "dependencies": [
+        "lucide-react@0.474.0",
+        "next-themes@0.4.6",
+        "sonner@2.0.7"
+      ],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/sonner.tsx",
           "type": "registry:ui"
         }
       ],

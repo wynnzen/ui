@@ -43,8 +43,13 @@ it("ships schema-valid, source-exact payloads with only explicit themed dependen
         .flatMap((match) =>
           match[1]
             .split(",")
-            .map((name) => name.trim())
+            .map((name) => name.trim().replace(/^type\s+/, ""))
             .filter(Boolean)
+        )
+        .concat(
+          [...file.content!.matchAll(/export type (\w+)/g)].map(
+            (match) => match[1]
+          )
         )
         .sort()
       expect(exported, item.name).toEqual(upstream.exports)
@@ -64,7 +69,9 @@ it("ships schema-valid, source-exact payloads with only explicit themed dependen
       )) {
         expect(
           item.dependencies?.some((value) =>
-            value.startsWith(`${dependency}@`)
+            value.startsWith(
+              `${dependency.startsWith("@") ? dependency.split("/").slice(0, 2).join("/") : dependency.split("/")[0]}@`
+            )
           ),
           `${item.name}: ${dependency}`
         ).toBe(true)
