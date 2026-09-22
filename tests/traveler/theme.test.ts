@@ -10,18 +10,24 @@ const tokens = Object.fromEntries(
   ])
 )
 
-function luminance(hex: string) {
+const ditherOpacity = Number(css.match(/var\(--foreground\) (\d+)%/)![1]) / 100
+
+function luminance(hex: string, dither = 0) {
   const channels = hex
     .slice(1)
     .match(/../g)!
-    .map((part) => {
-      const value = parseInt(part, 16) / 255
+    .map((part, index) => {
+      const overlay = parseInt(
+        tokens["--foreground"].slice(1 + index * 2, 3 + index * 2),
+        16
+      )
+      const value = (parseInt(part, 16) * (1 - dither) + overlay * dither) / 255
       return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4
     })
   return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722
 }
 
-it("keeps opaque text pairs and required control/focus indicators readable", () => {
+it("keeps text and control/focus indicators readable on flat and dithered surfaces", () => {
   const pairs: [string, string, number][] = [
     ["foreground", "background", 4.5],
     ["card-foreground", "card", 4.5],
@@ -44,14 +50,16 @@ it("keeps opaque text pairs and required control/focus indicators readable", () 
     ["ring", "popover", 3],
   ]
   for (const [foreground, background, minimum] of pairs) {
-    const values = [
-      luminance(tokens[`--${foreground}`]),
-      luminance(tokens[`--${background}`]),
-    ].sort((a, b) => a - b)
-    expect(
-      (values[1] + 0.05) / (values[0] + 0.05),
-      `${foreground} on ${background}`
-    ).toBeGreaterThanOrEqual(minimum)
+    for (const dither of [0, ditherOpacity]) {
+      const values = [
+        luminance(tokens[`--${foreground}`]),
+        luminance(tokens[`--${background}`], dither),
+      ].sort((a, b) => a - b)
+      expect(
+        (values[1] + 0.05) / (values[0] + 0.05),
+        `${foreground} on ${background} (dither ${dither})`
+      ).toBeGreaterThanOrEqual(minimum)
+    }
   }
 })
 

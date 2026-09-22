@@ -1,31 +1,36 @@
-# Approved visual language
+# Traveler visual language
 
-Status: five-component visual direction **approved by the user**; M2 implementation may proceed. Start with the
-[original reference studies](reference-board.md) and
-[desktop gallery](review/gallery-1440.png). The spec's §§2 and 9 require approval
-of this direction before restyling the remaining inventory.
+The original five-component visual direction was approved by the user. This
+revision applies their requested pixel-art refinement across the shared theme:
+stepped frames, dithered surfaces, hard shadows, beveled buttons and pixel menu
+pointers. The original palette and readable typography remain. See the
+[desktop gallery](review/gallery-1440.png); the
+[original reference studies](reference-board.md) document the earlier direction.
 
 ## Palette and typography
 
 Canonical tokens and shared recipes live in
 [`theme.css`](../../apps/v4/registry/traveler/styles/theme.css).
 
-| Role                                 | Value / treatment                                             |
-| ------------------------------------ | ------------------------------------------------------------- |
-| Background / card / raised panel     | `#111315` / `#1B1E21` / `#24282D`                             |
-| Foreground / supporting text         | `#F2EEE5` / `#B9B3A7`                                         |
-| Primary fill / foreground            | `#E4DCCB` / `#1A1C1F`                                         |
-| Secondary and highlight / foreground | `#30363D` / `#F2EEE5`                                         |
-| Destructive fill / foreground        | `#E6A19A` / `#261513`                                         |
-| Success fill / foreground            | `#B9CEAC` / `#182014`                                         |
-| Quiet border / input boundary        | `#666761` / `#96968D`                                         |
-| Keyboard focus / sparse ornament     | `#C2D7E8` / `#BAA680`                                         |
-| Body                                 | System sans; 16 px body and text entry, 14 px supporting copy |
-| Panel headings                       | Georgia/Times/system serif fallback; 20–24 px                 |
-| Geometry                             | Small rectangular corners, thin frame, restrained inset rule  |
-| Motion                               | 140 ms color/opacity; 0 ms with reduced motion                |
+| Role                                 | Value / treatment                                                    |
+| ------------------------------------ | -------------------------------------------------------------------- |
+| Background / card / raised panel     | `#111315` / `#1B1E21` / `#24282D`                                    |
+| Foreground / supporting text         | `#F2EEE5` / `#B9B3A7`                                                |
+| Primary fill / foreground            | `#E4DCCB` / `#1A1C1F`                                                |
+| Secondary and highlight / foreground | `#30363D` / `#F2EEE5`                                                |
+| Destructive fill / foreground        | `#E6A19A` / `#261513`                                                |
+| Success fill / foreground            | `#B9CEAC` / `#182014`                                                |
+| Quiet border / input boundary        | `#666761` / `#96968D`                                                |
+| Keyboard focus / sparse ornament     | `#C2D7E8` / `#BAA680`                                                |
+| Body                                 | System sans; 16 px body and text entry, 14 px supporting copy        |
+| Panel headings                       | Georgia/Times/system serif fallback; 20–24 px                        |
+| Geometry                             | Square controls; two-pixel stepped panel edges and inset rules       |
+| Texture / depth                      | Subtle 4 px checker dithering; hard offset shadows and button bevels |
+| Small accents                        | System monospace badges and keycaps; segmented progress bars         |
+| Motion                               | 140 ms color/opacity; 0 ms with reduced motion                       |
 
-Nineteen opaque text/control/focus pairs pass the applicable 4.5:1 or 3:1 test.
+Text/control/focus pairs pass the applicable 4.5:1 or 3:1 test on both
+flat backgrounds and the lighter dither pixels.
 The quiet divider is decorative; input boundaries and focus use separate,
 higher-contrast tokens. No mandatory font download is made. Chart/sidebar tokens
 and a complete light theme are deferred until those components enter scope.
@@ -60,8 +65,11 @@ styling provider, special variant and wrapper around every control are absent.
 | Dialog        | Controlled/uncontrolled; title/description; default/hidden close icon; optional footer Close; trapped focus; Escape and focus return; nested menu | Original `showCloseButton`, portal and Radix callbacks retained                    |
 | Dropdown Menu | Highlighted, disabled, checked, unchecked, mixed, radio, destructive; labels, separator, shortcut, submenu; Escape/typeahead/arrows               | Checked values remain separate from hover/focus; mixed state uses a dash           |
 
-A leading diamond is decorative and reserves its position, so highlighting
-cannot shift row text. Checkmarks, mixed dashes and radio dots remain value
+A stepped pixel arrow is decorative and reserves its position, so highlighting
+cannot shift row text. It reverses in RTL layouts. Panel frames use offset
+shadows rather than clipping their contents or keyboard focus outlines.
+Dithering and segmented progress decoration disappear in forced-colors mode.
+Checkmarks, mixed dashes and radio dots remain value
 indicators. A highlighted menu row also receives a visible outline. Native
 button focus uses an offset outline independent of its fill. Decorative icons
 are hidden from assistive technology. Inputs have no decorative child wrappers.
@@ -78,5 +86,13 @@ are hidden from assistive technology. Inputs have no decorative child wrappers.
   inherited serious open-menu scan finding and unresolved human review.
 - [Machine-readable evidence](review/evidence.json) records exact browser,
   screenshot hashes, scan findings, responsive checks and network observations.
+  Axe cannot resolve contrast over the dither background image automatically;
+  the token contrast check covers both pixel colors. Its incomplete findings
+  remain recorded for human review. The unchanged upstream comparison also
+  reports contrast findings in its nested menu and select; no new violations
+  were reported for Traveler fixtures.
 
-The 20 MVP sources pass installation and development/production checks in clean Vite and Next consumers. Human screen-reader review, real Safari/mobile/zoom and the full release-browser matrix remain pending; see the release-readiness record.
+All 60 installable component sources pass clean installation, reinstallation,
+production builds and development/production browser checks in Vite and Next
+consumers. Human screen-reader review, real Safari/mobile/zoom and the full
+release-browser matrix remain pending; see the release-readiness record.
