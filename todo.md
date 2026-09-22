@@ -47,9 +47,20 @@ Preserve upstream collections and unrelated local changes.
       real Safari/mobile and browser zoom, current/previous stable browser matrix,
       final rights review, public name/namespace/host and publication authorization.
       See `docs/traveler/release-readiness.md`; no public release is claimed.
-- [ ] **M5 — Completeness:** process every remaining component in the frozen
-      inventory, including advanced compositions; record completed, deferred and
-      no-visible-surface entries explicitly with all applicable evidence.
+- [ ] **M5.1 — Disclosure and feedback:** Accordion, Collapsible, Aspect Ratio,
+      Direction, Alert, Skeleton and Spinner, with helper classifications.
+- [ ] **M5.2 — Content and controls:** Avatar, Breadcrumb, Button Group, Empty,
+      Item, Kbd, Native Select, Pagination, Slider, Toggle and Toggle Group.
+- [ ] **M5.3 — Forms and command:** Field, Form, Input Group, Input OTP,
+      Command and Combobox; validate their complete dependency chains.
+- [ ] **M5.4 — Extended navigation and overlays:** Context Menu, Menubar,
+      Navigation Menu, Hover Card, Sheet, Drawer and Sidebar.
+- [ ] **M5.5 — Advanced and conversational:** Calendar/Date Picker, Data Table,
+      Carousel, Chart, Resizable, Sonner, Attachment, Bubble, Marker, Message
+      and Message Scroller; reconcile every pinned entry and composition.
+- [ ] **M5.6 — Completeness review:** every entry explicitly classified, consumer
+      and cross-engine evidence, documentation and versioned candidate updated.
+      Human/release QA remains separate and pending.
 
 ## Working rules
 
@@ -224,3 +235,10 @@ Preserve upstream collections and unrelated local changes.
 - **M4.2 remains open:** requested human AT/Safari/mobile/real-zoom results. Final
   public identity, rights review and publication authorization are not supplied.
   M5 remains queued; all 41 remaining sources are visible in the backlog.
+
+### M4.2 — User decision
+
+- The user has no human screen-reader, real Safari/mobile or browser-zoom
+  results yet and explicitly requested that release QA remain pending.
+- Keep the M4.2 gate unchecked. Continue authorized local M5 development and
+  per-step commits without publishing or claiming release readiness.

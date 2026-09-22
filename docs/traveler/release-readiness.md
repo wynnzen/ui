@@ -3,7 +3,7 @@
 **Local implementation and delivery pass; release is not approved or published.**
 The user approved the M1 visual direction. M4 still requires human and platform
 review under specification §§14, 17 and 19. The next completeness milestone
-remains queued in `todo.md`; this report does not claim all 61 components are done.
+is tracked independently in `todo.md`; this report does not claim all 61 components are done.
 
 | Gate                   | Current evidence                                                                                                                   |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -47,6 +47,9 @@ Source-map inspection confirms the Button-only build contains no gallery or othe
 component modules. Button hover/focus bounds remain stable. Other interactions
 are covered by the browser fixtures; no broad field-performance or Core Web
 Vitals claim is made.
+
+The user explicitly confirmed that manual results are not available yet and
+requested that release QA stay pending. Local M5 work does not close this gate.
 
 ## Human review worksheet
 
