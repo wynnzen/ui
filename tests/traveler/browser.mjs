@@ -1132,6 +1132,16 @@ try {
   await expect(
     page.getByText("No matching components. Try a shorter name.")
   ).toBeVisible()
+  await page
+    .getByLabel("Find a component or export", { exact: true })
+    .fill("combobox")
+  await expect(page.getByText("deferred", { exact: true })).toBeVisible()
+  await expect(
+    page.getByRole("link", { name: "Open examples", exact: true })
+  ).toHaveCount(0)
+  await expect(
+    page.getByText("Exact component source", { exact: true })
+  ).toHaveCount(0)
   await checkAdvanced(page, expect)
   assert.deepEqual(errors, [])
   console.log(

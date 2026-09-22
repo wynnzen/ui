@@ -2,7 +2,7 @@
   "specVersion": "0.1",
   "baseline": "new-york-v4 (Radix)",
   "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
-  "stateAudit": "null requiredStates means not yet audited; unsupported states will be documented as not applicable.",
+  "stateAudit": "All 61 pinned entries have explicit state and scope classifications. Sixty remain prototypes pending human release QA; Combobox is explicitly deferred by user decision.",
   "components": [
     {
       "name": "accordion",
@@ -30,7 +30,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
       "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
       "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "alert-dialog",
@@ -73,7 +73,7 @@
       "interaction": "Chromium keyboard/controlled values/focus/portals passed",
       "accessibility": "axe reports no violations; human AT pending",
       "documentation": "examples/overlays.html and docs/traveler/overlays.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "alert",
@@ -93,7 +93,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
       "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
       "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "aspect-ratio",
@@ -109,7 +109,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
       "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
       "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall",
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json",
       "classification": "No built-in visual surface; canonical upstream implementation retained unchanged."
     },
     {
@@ -150,7 +150,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
       "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
       "documentation": "examples/conversation.html and docs/traveler/advanced.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "avatar",
@@ -177,7 +177,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
       "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
       "documentation": "examples/content.html and docs/traveler/content.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "badge",
@@ -198,7 +198,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "breadcrumb",
@@ -226,7 +226,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
       "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
       "documentation": "examples/content.html and docs/traveler/content.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "bubble",
@@ -248,7 +248,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
       "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
       "documentation": "examples/conversation.html and docs/traveler/advanced.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "button-group",
@@ -278,7 +278,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
       "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
       "documentation": "examples/content.html and docs/traveler/content.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "button",
@@ -302,7 +302,7 @@
       "interaction": "passed Chromium 149.0.7827.55 prototype checks",
       "accessibility": "automated/keyboard review recorded; screen-reader and cross-browser review pending",
       "documentation": "prototype gallery and docs/traveler/visual-language.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks",
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json",
       "themedSource": "apps/v4/registry/traveler/ui/button.tsx",
       "reviewEvidence": "docs/traveler/review/evidence.json"
     },
@@ -334,7 +334,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
       "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
       "documentation": "examples/advanced.html and docs/traveler/advanced.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "card",
@@ -358,7 +358,7 @@
       "interaction": "passed Chromium 149.0.7827.55 prototype checks",
       "accessibility": "automated/keyboard review recorded; screen-reader and cross-browser review pending",
       "documentation": "prototype gallery and docs/traveler/visual-language.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks",
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json",
       "themedSource": "apps/v4/registry/traveler/ui/card.tsx",
       "reviewEvidence": "docs/traveler/review/evidence.json"
     },
@@ -396,7 +396,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
       "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
       "documentation": "examples/advanced.html and docs/traveler/advanced.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "chart",
@@ -428,7 +428,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
       "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
       "documentation": "examples/advanced.html and docs/traveler/advanced.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "checkbox",
@@ -454,7 +454,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "collapsible",
@@ -475,7 +475,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
       "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
       "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall",
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json",
       "classification": "No built-in visual surface; canonical upstream implementation retained unchanged."
     },
     {
@@ -559,7 +559,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 validation, native forms, synthetic paste, filtering and modal focus passed",
       "accessibility": "No new axe violations; upstream critical empty cmdk listbox finding reproduced and retained; human AT/release QA pending",
       "documentation": "examples/advanced-forms.html and docs/traveler/advanced-forms.md",
-      "installation": "Passed all 43 components in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, aliases, portals and safe reinstallation"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "context-menu",
@@ -597,7 +597,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
       "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
       "documentation": "examples/extended-navigation.html and docs/traveler/extended-navigation.md",
-      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "dialog",
@@ -638,7 +638,7 @@
       "interaction": "passed Chromium 149.0.7827.55 prototype checks",
       "accessibility": "automated/keyboard review recorded; screen-reader and cross-browser review pending",
       "documentation": "prototype gallery and docs/traveler/visual-language.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks",
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json",
       "themedSource": "apps/v4/registry/traveler/ui/dialog.tsx",
       "reviewEvidence": "docs/traveler/review/evidence.json"
     },
@@ -660,7 +660,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
       "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
       "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall",
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json",
       "classification": "No built-in visual surface; canonical upstream implementation retained unchanged."
     },
     {
@@ -695,7 +695,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
       "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
       "documentation": "examples/extended-navigation.html and docs/traveler/extended-navigation.md",
-      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "dropdown-menu",
@@ -737,7 +737,7 @@
       "interaction": "passed Chromium 149.0.7827.55 prototype checks",
       "accessibility": "inherited aria-hidden-focus finding; keyboard containment passed; screen-reader review pending",
       "documentation": "prototype gallery and docs/traveler/visual-language.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks",
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json",
       "themedSource": "apps/v4/registry/traveler/ui/dropdown-menu.tsx",
       "reviewEvidence": "docs/traveler/review/evidence.json"
     },
@@ -766,7 +766,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
       "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
       "documentation": "examples/content.html and docs/traveler/content.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "field",
@@ -806,7 +806,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 validation, native forms, synthetic paste, filtering and modal focus passed",
       "accessibility": "No new axe violations; upstream critical empty cmdk listbox finding reproduced and retained; human AT/release QA pending",
       "documentation": "examples/advanced-forms.html and docs/traveler/advanced-forms.md",
-      "installation": "Passed all 43 components in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, aliases, portals and safe reinstallation"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "form",
@@ -844,7 +844,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 validation, native forms, synthetic paste, filtering and modal focus passed",
       "accessibility": "No new axe violations; upstream critical empty cmdk listbox finding reproduced and retained; human AT/release QA pending",
       "documentation": "examples/advanced-forms.html and docs/traveler/advanced-forms.md",
-      "installation": "Passed all 43 components in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, aliases, portals and safe reinstallation"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "hover-card",
@@ -864,7 +864,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
       "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
       "documentation": "examples/extended-navigation.html and docs/traveler/extended-navigation.md",
-      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "input-group",
@@ -901,7 +901,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 validation, native forms, synthetic paste, filtering and modal focus passed",
       "accessibility": "No new axe violations; upstream critical empty cmdk listbox finding reproduced and retained; human AT/release QA pending",
       "documentation": "examples/advanced-forms.html and docs/traveler/advanced-forms.md",
-      "installation": "Passed all 43 components in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, aliases, portals and safe reinstallation"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "input-otp",
@@ -930,7 +930,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 validation, native forms, synthetic paste, filtering and modal focus passed",
       "accessibility": "No new axe violations; upstream critical empty cmdk listbox finding reproduced and retained; human AT/release QA pending",
       "documentation": "examples/advanced-forms.html and docs/traveler/advanced-forms.md",
-      "installation": "Passed all 43 components in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, aliases, portals and safe reinstallation"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "input",
@@ -954,7 +954,7 @@
       "interaction": "passed Chromium 149.0.7827.55 prototype checks",
       "accessibility": "automated/keyboard review recorded; screen-reader and cross-browser review pending",
       "documentation": "prototype gallery and docs/traveler/visual-language.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks",
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json",
       "themedSource": "apps/v4/registry/traveler/ui/input.tsx",
       "reviewEvidence": "docs/traveler/review/evidence.json"
     },
@@ -995,7 +995,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
       "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
       "documentation": "examples/content.html and docs/traveler/content.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "kbd",
@@ -1011,7 +1011,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
       "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
       "documentation": "examples/content.html and docs/traveler/content.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "label",
@@ -1032,7 +1032,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "marker",
@@ -1053,7 +1053,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
       "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
       "documentation": "examples/conversation.html and docs/traveler/advanced.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "menubar",
@@ -1092,7 +1092,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
       "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
       "documentation": "examples/extended-navigation.html and docs/traveler/extended-navigation.md",
-      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "message-scroller",
@@ -1134,7 +1134,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
       "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
       "documentation": "examples/conversation.html and docs/traveler/advanced.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "message",
@@ -1162,7 +1162,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
       "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
       "documentation": "examples/conversation.html and docs/traveler/advanced.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "native-select",
@@ -1184,7 +1184,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
       "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
       "documentation": "examples/content.html and docs/traveler/content.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "navigation-menu",
@@ -1221,7 +1221,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
       "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
       "documentation": "examples/extended-navigation.html and docs/traveler/extended-navigation.md",
-      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "pagination",
@@ -1254,7 +1254,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
       "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
       "documentation": "examples/content.html and docs/traveler/content.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "popover",
@@ -1284,7 +1284,7 @@
       "interaction": "Chromium keyboard/controlled values/focus/portals passed",
       "accessibility": "axe reports no violations; human AT pending",
       "documentation": "examples/overlays.html and docs/traveler/overlays.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "progress",
@@ -1307,7 +1307,7 @@
       "interaction": "Chromium values, fill, selection and keyboard scrolling passed",
       "accessibility": "axe reports no violations; human AT review pending",
       "documentation": "examples/inventory.html and catalog.html",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "radio-group",
@@ -1332,7 +1332,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "resizable",
@@ -1354,7 +1354,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
       "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
       "documentation": "examples/advanced.html and docs/traveler/advanced.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "scroll-area",
@@ -1376,7 +1376,7 @@
       "interaction": "Chromium values, fill, selection and keyboard scrolling passed",
       "accessibility": "axe reports no violations; human AT review pending",
       "documentation": "examples/inventory.html and catalog.html",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "select",
@@ -1414,7 +1414,7 @@
       "interaction": "Chromium keyboard/controlled values/focus/portals passed",
       "accessibility": "No new axe findings; Select inherits baseline findings; human AT pending",
       "documentation": "examples/overlays.html and docs/traveler/overlays.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "separator",
@@ -1430,7 +1430,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "sheet",
@@ -1462,7 +1462,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
       "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
       "documentation": "examples/extended-navigation.html and docs/traveler/extended-navigation.md",
-      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "sidebar",
@@ -1525,7 +1525,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
       "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
       "documentation": "examples/sidebar.html and docs/traveler/extended-navigation.md",
-      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "skeleton",
@@ -1545,7 +1545,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
       "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
       "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "slider",
@@ -1569,7 +1569,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
       "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
       "documentation": "examples/content.html and docs/traveler/content.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "sonner",
@@ -1592,7 +1592,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard and composition checks passed",
       "accessibility": "No axe violations in new advanced/conversation states; human AT and release QA pending",
       "documentation": "examples/advanced.html and docs/traveler/advanced.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall; final candidate rechecked in M5.6"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "spinner",
@@ -1612,7 +1612,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
       "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
       "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "switch",
@@ -1636,7 +1636,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "table",
@@ -1666,7 +1666,7 @@
       "interaction": "Chromium values, fill, selection and keyboard scrolling passed",
       "accessibility": "axe reports no violations; human AT review pending",
       "documentation": "examples/inventory.html and catalog.html",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "tabs",
@@ -1695,7 +1695,7 @@
       "interaction": "Chromium keyboard/controlled values/focus/portals passed",
       "accessibility": "axe reports no violations; human AT pending",
       "documentation": "examples/overlays.html and docs/traveler/overlays.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "textarea",
@@ -1720,7 +1720,7 @@
       "interaction": "Chromium form values and keyboard checks passed",
       "accessibility": "axe reports no violations on forms; human AT review pending",
       "documentation": "examples/forms.html and docs/traveler/forms.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "toggle-group",
@@ -1749,7 +1749,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
       "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
       "documentation": "examples/content.html and docs/traveler/content.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "toggle",
@@ -1770,7 +1770,7 @@
       "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 state, keyboard, native forms and composition passed",
       "accessibility": "No axe violations in content/control fixture; human AT and release QA pending",
       "documentation": "examples/content.html and docs/traveler/content.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; safe reinstall preserves existing files, including documented CLI directive drift"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     },
     {
       "name": "tooltip",
@@ -1797,7 +1797,7 @@
       "interaction": "Chromium keyboard/controlled values/focus/portals passed",
       "accessibility": "axe reports no violations; human AT pending",
       "documentation": "examples/overlays.html and docs/traveler/overlays.md",
-      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+      "installation": "Passed final 60-component immutable candidate in clean Vite 7.3.2 / Next 16.3.3 dev+production; custom aliases, CSS, transitive dependencies, SSR/hydration and safe reinstall; see docs/traveler/consumers.json"
     }
   ],
   "supportingHelpers": [

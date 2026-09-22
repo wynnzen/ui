@@ -59,7 +59,7 @@ Preserve upstream collections and unrelated local changes.
 - [x] **M5.5 — Advanced and conversational:** Calendar/Date Picker, Data Table,
       Carousel, Chart, Resizable, Sonner, Attachment, Bubble, Marker, Message
       and Message Scroller; reconcile every pinned entry and composition.
-- [ ] **M5.6 — Completeness review:** every entry explicitly classified, consumer
+- [x] **M5.6 — Completeness review:** every entry explicitly classified, consumer
       and cross-engine evidence, documentation and versioned candidate updated.
       Human/release QA remains separate and pending.
 
@@ -333,3 +333,29 @@ Preserve upstream collections and unrelated local changes.
   preserve customized files. M5.6 verifies the final immutable candidate.
 - Combobox stays deferred and M4.2 stays pending. No publication, upstream source
   change or workspace dependency/lockfile change.
+
+### M5.6 — Completeness review
+
+- Reconciled all 61 pinned entries: 60 supported prototypes, one explicitly
+  deferred Base UI Combobox, the unchanged use-mobile hook, and Date Picker /
+  Data Table compositions. Tests enforce the exact inventory and helper hashes.
+- Created the 63-file immutable candidate at
+  `sha256-48a5fb56b458e2c811e55fa5e556fa88f2548242d766d3dcda18ede8e919f737`.
+  Archived the original MVP manifest and verified every byte of both snapshots;
+  original upstream sources and the workspace lockfile remain unchanged.
+- Fresh Vite/Next installations from that exact candidate pass production builds,
+  dev/prod interactions, SSR/hydration, custom aliases, complete dependency chains
+  and preservation of customized files. Retained exact versions and lock hashes.
+- Final type contracts, scoped lint, 5 source/schema/contrast/checksum checks,
+  production gallery build, all three browser engines, 60 reviewed/reproduced
+  screenshots and 65 responsive/state checks pass. No new axe finding or external
+  runtime request. Inherited findings remain documented for human review.
+- Updated the source-backed catalog, installation instructions, state coverage,
+  compatibility and release worksheet. The foundation is 1,177 gzip bytes;
+  isolated Button JS is −52 gzip bytes and CSS +256 gzip bytes versus baseline,
+  with no other component modules bundled.
+- **Local development is complete. M4.2 remains pending by user instruction:**
+  human screen readers, real Safari/mobile, browser-UI zoom, the release version
+  matrix, final identity/rights review and publication authorization. Nothing is
+  published. Full upstream/monorepo checks were not run; scoped and clean-consumer
+  evidence defines the verified scope.

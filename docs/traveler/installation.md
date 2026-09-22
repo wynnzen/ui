@@ -8,6 +8,7 @@ selected source baseline. Both clean-consumer matrices pass; see [compatibility]
 
 ```sh
 pnpm --filter=shadcn build
+pnpm --filter=@shadcn/react build
 pnpm traveler:registry
 pnpm traveler:check
 pnpm traveler:build
@@ -32,7 +33,7 @@ describes namespace mapping. Merge this entry into an initialized consumer's
 ```json
 {
   "registries": {
-    "@traveler": "http://127.0.0.1:4173/r/v0.1.0-dev/{name}.json"
+    "@traveler": "http://127.0.0.1:4173/r/sha256-48a5fb56b458e2c811e55fa5e556fa88f2548242d766d3dcda18ede8e919f737/{name}.json"
   }
 }
 ```
@@ -98,9 +99,11 @@ accessibility, or establish support for untested browsers/framework versions.
 ## Pinned local snapshot
 
 [release-candidate.json](release-candidate.json) records a content-addressed copy
-of all 22 JSON files. Use its `path` in the namespace URL to pin components and
-foundation together. Both consumers resolve its Dialog/Button/foundation payloads
-as byte-identical to their verified installs. `pnpm traveler:freeze` creates a
+of 63 JSON files: 60 components, foundation, use-mobile and the registry catalog.
+The namespace above uses that exact path, keeping components and foundation
+together. The original 22-file MVP manifest is archived at
+[release-candidates/mvp.json](release-candidates/mvp.json); its payload bytes
+remain unchanged. Final Vite/Next evidence records the candidate URL. `pnpm traveler:freeze` creates a
 new content-addressed directory if payloads change and refuses to overwrite
 existing pinned bytes. Rebuild the preview afterward to serve the new snapshot.
 
@@ -112,3 +115,7 @@ for inspection of the dependency graph that was actually built.
 The expanded consumer check records a pinned CLI client-directive issue during
 bulk non-RSC installation. Inspect the same requested item set and decline any
 unintended replacement; see [M5.2 installation notes](content.md#pinned-cli-limitation).
+
+Combobox is explicitly excluded by user decision; its Base UI API is not supplied
+by this Radix collection. Date Picker and Data Table are documented compositions
+of installed components, not standalone registry items. See [advanced notes](advanced.md).

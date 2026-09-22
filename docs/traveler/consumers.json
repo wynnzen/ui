@@ -1,6 +1,6 @@
 {
   "cli": "4.21.0",
-  "registryUrl": "http://127.0.0.1:4173/r/v0.1.0-dev/{name}.json",
+  "registryUrl": "http://127.0.0.1:4173/r/sha256-48a5fb56b458e2c811e55fa5e556fa88f2548242d766d3dcda18ede8e919f737/{name}.json",
   "consumers": [
     {
       "framework": "vite",
@@ -109,7 +109,7 @@
       ]
     }
   ],
-  "sourceRevision": "M5.5 development payloads; final immutable candidate rechecked in M5.6",
+  "sourceRevision": "075bcf2 (M5.5 canonical components); M5.6 verifies the exact immutable candidate",
   "node": "24.15.0",
   "pnpm": "10.33.4",
   "browser": "Chromium 149.0.7827.55",

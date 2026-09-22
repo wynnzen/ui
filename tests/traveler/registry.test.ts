@@ -11,6 +11,36 @@ import {
 it("ships schema-valid, source-exact payloads with only explicit themed dependencies", () => {
   const parsed = registrySchema.parse(registry)
   const names = parsed.items.map((item) => item.name)
+  expect(coverage.components).toHaveLength(61)
+  expect(
+    parsed.items.filter((item) => item.type === "registry:ui")
+  ).toHaveLength(60)
+  expect(
+    coverage.components
+      .filter((item) => item.status === "deferred")
+      .map((item) => item.name)
+  ).toEqual(["combobox"])
+  expect(
+    coverage.components
+      .filter((item) => item.status === "prototype")
+      .map((item) => item.name)
+      .sort()
+  ).toEqual(
+    parsed.items
+      .filter((item) => item.type === "registry:ui")
+      .map((item) => item.name)
+      .sort()
+  )
+  expect(coverage.components.every((item) => item.requiredStates?.length)).toBe(
+    true
+  )
+  expect(names).not.toContain("combobox")
+  for (const composition of coverage.compositions) {
+    expect(composition.status).toBe("prototype")
+    for (const dependency of composition.dependencies)
+      expect(names).toContain(dependency)
+  }
+
   const root = "apps/v4/registry/traveler"
   const built = `${root}/public/r/v0.1.0-dev`
   expect(
@@ -95,25 +125,28 @@ it("ships schema-valid, source-exact payloads with only explicit themed dependen
 
 it("verifies every byte of the pinned local registry snapshot", async () => {
   const { createHash } = await import("node:crypto")
-  const manifest = JSON.parse(
-    readFileSync("docs/traveler/release-candidate.json", "utf8")
-  )
-  const names = Object.keys(manifest.files).sort()
-  const hashes = Object.fromEntries(
-    names.map((name) => [
-      name,
-      createHash("sha256")
-        .update(
-          readFileSync(
-            `apps/v4/registry/traveler/public/${manifest.path.replace("{name}.json", name)}`
+  for (const manifestFile of [
+    "docs/traveler/release-candidates/mvp.json",
+    "docs/traveler/release-candidate.json",
+  ]) {
+    const manifest = JSON.parse(readFileSync(manifestFile, "utf8"))
+    const names = Object.keys(manifest.files).sort()
+    const hashes = Object.fromEntries(
+      names.map((name) => [
+        name,
+        createHash("sha256")
+          .update(
+            readFileSync(
+              `apps/v4/registry/traveler/public/${manifest.path.replace("{name}.json", name)}`
+            )
           )
-        )
-        .digest("hex"),
-    ])
-  )
-  expect(hashes).toEqual(manifest.files)
-  expect(
-    createHash("sha256").update(JSON.stringify(hashes)).digest("hex")
-  ).toBe(manifest.digest)
-  expect(manifest.path).toBe(`r/sha256-${manifest.digest}/{name}.json`)
+          .digest("hex"),
+      ])
+    )
+    expect(hashes).toEqual(manifest.files)
+    expect(
+      createHash("sha256").update(JSON.stringify(hashes)).digest("hex")
+    ).toBe(manifest.digest)
+    expect(manifest.path).toBe(`r/sha256-${manifest.digest}/{name}.json`)
+  }
 })

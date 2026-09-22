@@ -124,6 +124,18 @@ function Catalog() {
           <a className="trav-control underline" href="./inventory.html">
             Inventory
           </a>
+          <a
+            className="trav-control underline"
+            href="./advanced.html#date-picker"
+          >
+            Date Picker recipe
+          </a>
+          <a
+            className="trav-control underline"
+            href="./advanced.html#data-table"
+          >
+            Data Table recipe
+          </a>
         </nav>
       </header>
       <section
@@ -148,9 +160,9 @@ function Catalog() {
           </output>
         </div>
         <p className="text-sm text-muted-foreground">
-          Prototype means themed and exercised locally. Completion also requires
-          clean-consumer installation and release review. Backlog entries remain
-          visible so coverage is explicit.
+          Prototype means themed, exercised locally and installed in clean
+          consumers. Human release review remains pending. Combobox is
+          explicitly deferred because its pinned implementation uses Base UI.
         </p>
         <ul className="divide-y border-y">
           {components.map((component) => {
@@ -268,9 +280,9 @@ node "$TRAVELER_CHECKOUT/packages/shadcn/dist/index.js" add @traveler/dialog --d
 node "$TRAVELER_CHECKOUT/packages/shadcn/dist/index.js" add @traveler/dialog`}</code>
         </pre>
         <p className="max-w-3xl text-sm text-muted-foreground">
-          This pinned MVP snapshot contains the original 20 components. M5
-          additions use the mutable <code>/r/v0.1.0-dev/{"{name}"}.json</code>{" "}
-          development address until the next reviewed snapshot. Internal
+          This pinned candidate contains all 60 supported components and the
+          mobile helper. Combobox is explicitly deferred. The original
+          20-component MVP snapshot remains available unchanged. Internal
           dependencies resolve to the same Traveler snapshot. Foundation
           installs styles/traveler.css and licenses/traveler/LICENSE.md at your
           project root. Import that CSS after your Tailwind/shadcn imports,

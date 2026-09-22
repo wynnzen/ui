@@ -1,8 +1,9 @@
 # Traveler UI development
 
-The 20-component MVP plus forty M5 additions are implemented. All 60 pass clean Vite and Next consumer
-validation; Combobox is explicitly deferred. M1 visual direction is approved; M4 human/release QA
-and the M5 completeness milestone remain open. Nothing has been published.
+Local development is complete: 60 themed components, the unchanged mobile helper,
+and Date Picker/Data Table compositions. Combobox is explicitly deferred by user
+decision. The M1 visual direction is approved; human release QA remains pending.
+Nothing has been published.
 
 - [Plan and step-by-step execution record](../../todo.md)
 - [Local installation and update safety](installation.md)
@@ -32,3 +33,7 @@ Sidebar and its unchanged mobile helper.
 
 M5.5 [advanced and conversational components](advanced.md) includes Date Picker
 and Data Table compositions and the existing Message Scroller primitive.
+
+M5.6 records the [immutable candidate](release-candidate.json), verifies fresh
+Vite/Next installs from its exact URL, and preserves the original MVP snapshot.
+All local milestones are complete; M4.2 human/release QA stays open.

@@ -1,7 +1,24 @@
 # Prototype compatibility and verification
 
-This records **measured M1–M4.1 behavior**, not a released support matrix or WCAG
-conformance claim. Full release checks remain in M3/M4 of [todo.md](../../todo.md).
+Current local coverage is **60 implemented sources, one explicitly deferred
+Combobox**, the unchanged mobile helper and Date Picker/Data Table compositions.
+The final candidate is recorded in [release-candidate.json](release-candidate.json).
+Human release QA remains pending by user decision; this is not a released support
+matrix or a WCAG conformance claim.
+
+M5.6 verifies all 61 classifications, every pinned export/source hash, both old
+and new immutable snapshot checksums, scoped types/lint/build, three browser
+engines, 60 screenshot comparisons and 65 responsive/state checks. New advanced
+scan states have no axe violations; inherited findings listed below remain.
+The final 60-component Vite/Next installation report records the immutable URL.
+The current foundation is 4,044 bytes / 1,177 gzip bytes; isolated Button CSS adds
+256 gzip bytes and JavaScript is 52 gzip bytes smaller than the pinned baseline.
+See [release readiness](release-readiness.md) for the current gate/budget table.
+
+## Historical MVP measurements
+
+The following table records M1–M4.1 at the original 20-component candidate.
+Later milestone evidence follows; original measurements are retained as history.
 
 | Area                 | Evidence / status                                                                                                                                                          |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -209,3 +226,18 @@ advanced controls and safely decline customized-file replacement. Exact package
 versions and lock hashes are retained in consumers.json. A separate focused
 transcript capture shows offscreen content that browsers intentionally skip in
 full-page screenshots when content-visibility is auto.
+
+## M5.6 completeness
+
+Every component entry has a state audit and a declared implementation/deferral
+status. The test suite enforces the exact 60-source registry membership, excludes
+Combobox, checks composition dependency membership and verifies the unchanged
+mobile hook's provenance. Both immutable candidates remain covered by checksum
+verification. Source code is copied; it does not depend on a runtime registry.
+
+The standard CLI's non-RSC client-directive issue remains documented in
+[content.md](content.md#pinned-cli-limitation). Tests deliberately decline unwanted
+replacements, then check inventory and preserved hashes. Release identity,
+rights, human AT and real-device/browser QA are still open. Full upstream Next
+and monorepo-wide checks were not run; scoped gallery and fresh consumer checks
+cover the implemented collection.

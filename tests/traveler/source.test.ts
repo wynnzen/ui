@@ -11,6 +11,15 @@ it("freezes every canonical baseline component without modifying upstream source
       .filter((name) => name.endsWith(".tsx"))
       .sort()
   )
+  for (const helper of coverage.supportingHelpers) {
+    const source = readFileSync(helper.upstreamSource, "utf8")
+    expect(createHash("sha256").update(source).digest("hex"), helper.name).toBe(
+      helper.sourceSha256
+    )
+    expect(
+      readFileSync(`apps/v4/registry/traveler/hooks/${helper.name}.ts`, "utf8")
+    ).toBe(source)
+  }
   for (const item of coverage.components) {
     const source = readFileSync(item.upstreamSource, "utf8")
     expect(createHash("sha256").update(source).digest("hex"), item.name).toBe(
