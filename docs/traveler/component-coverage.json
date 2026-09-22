@@ -548,13 +548,19 @@
       ],
       "dependencies": ["cn", "lucide-react", "radix-ui", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "keyboard/pointer trigger",
+        "default/destructive/disabled",
+        "mixed/checked checkbox",
+        "radio/submenu/group/portal",
+        "focus/close"
+      ],
+      "visual": "49 reviewed screenshots; 54 responsive/state checks including all 8 Sheet/Drawer edges at 320x360",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
+      "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
+      "documentation": "examples/extended-navigation.html and docs/traveler/extended-navigation.md",
+      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
     },
     {
       "name": "dialog",
@@ -639,13 +645,20 @@
       ],
       "dependencies": ["cn", "react", "vaul"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "four directions",
+        "controlled/uncontrolled",
+        "explicit autoFocus",
+        "reduced motion",
+        "small viewport footer/scroll",
+        "native dismiss"
+      ],
+      "visual": "49 reviewed screenshots; 54 responsive/state checks including all 8 Sheet/Drawer edges at 320x360",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
+      "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
+      "documentation": "examples/extended-navigation.html and docs/traveler/extended-navigation.md",
+      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
     },
     {
       "name": "dropdown-menu",
@@ -804,13 +817,17 @@
       "exports": ["HoverCard", "HoverCardContent", "HoverCardTrigger"],
       "dependencies": ["cn", "radix-ui", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "controlled focus/hover/dismiss",
+        "portal/side/align",
+        "nonessential repeated content"
+      ],
+      "visual": "49 reviewed screenshots; 54 responsive/state checks including all 8 Sheet/Drawer edges at 320x360",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
+      "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
+      "documentation": "examples/extended-navigation.html and docs/traveler/extended-navigation.md",
+      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
     },
     {
       "name": "input-group",
@@ -1021,13 +1038,19 @@
       ],
       "dependencies": ["cn", "lucide-react", "radix-ui", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "controlled menu",
+        "arrow keys/disabled trigger",
+        "submenu/group/portal",
+        "checkbox/radio/disabled/destructive",
+        "shortcut/separator"
+      ],
+      "visual": "49 reviewed screenshots; 54 responsive/state checks including all 8 Sheet/Drawer edges at 320x360",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
+      "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
+      "documentation": "examples/extended-navigation.html and docs/traveler/extended-navigation.md",
+      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
     },
     {
       "name": "message-scroller",
@@ -1130,13 +1153,18 @@
         "react"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "default/inline viewport",
+        "link/current/trigger style",
+        "keyboard/indicator",
+        "long labels"
+      ],
+      "visual": "49 reviewed screenshots; 54 responsive/state checks including all 8 Sheet/Drawer edges at 320x360",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
+      "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
+      "documentation": "examples/extended-navigation.html and docs/traveler/extended-navigation.md",
+      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
     },
     {
       "name": "pagination",
@@ -1358,13 +1386,20 @@
       ],
       "dependencies": ["cn", "lucide-react", "radix-ui", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "four sides",
+        "controlled/uncontrolled",
+        "close-icon option",
+        "small viewport scroll/footer",
+        "nested menu",
+        "entry/Escape/focus"
+      ],
+      "visual": "49 reviewed screenshots; 54 responsive/state checks including all 8 Sheet/Drawer edges at 320x360",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
+      "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
+      "documentation": "examples/extended-navigation.html and docs/traveler/extended-navigation.md",
+      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
     },
     {
       "name": "sidebar",
@@ -1412,13 +1447,22 @@
         "react"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "all parts and three variants",
+        "left/right",
+        "offcanvas/icon/none",
+        "three menu sizes/two variants",
+        "active/disabled/action/badge/submenu",
+        "controlled state/shortcut/cookie",
+        "mobile focus",
+        "SSR skeleton"
+      ],
+      "visual": "49 reviewed screenshots; 54 responsive/state checks including all 8 Sheet/Drawer edges at 320x360",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, submenu, modal entry/close, mobile focus, Sidebar states passed",
+      "accessibility": "No new axe violations; exact upstream Context Menu/Navigation Menu focus findings retained; human release QA pending",
+      "documentation": "examples/sidebar.html and docs/traveler/extended-navigation.md",
+      "installation": "Passed all 50 components and hook dependency in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, alias rewriting and safe reinstallation"
     },
     {
       "name": "skeleton",
@@ -1684,6 +1728,16 @@
       "accessibility": "axe reports no violations; human AT pending",
       "documentation": "examples/overlays.html and docs/traveler/overlays.md",
       "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production; alias, CSS, SSR, transitive and reinstall checks"
+    }
+  ],
+  "supportingHelpers": [
+    {
+      "name": "use-mobile",
+      "upstreamSource": "apps/v4/registry/new-york-v4/hooks/use-mobile.ts",
+      "sourceSha256": "ad0936f84f1df79d3697bfbff9c18f8ad58431c1cbaf2359c6a853b0fcc9f28b",
+      "classification": "Unchanged behavior helper; no built-in visual surface",
+      "installation": "@traveler/use-mobile; transitive Sidebar dependency, consumer hook alias checked",
+      "documentation": "docs/traveler/extended-navigation.md"
     }
   ]
 }

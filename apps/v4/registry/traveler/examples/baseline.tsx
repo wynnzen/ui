@@ -15,6 +15,12 @@ import {
   CommandList,
 } from "@/registry/new-york-v4/ui/command"
 import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "@/registry/new-york-v4/ui/context-menu"
+import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -30,6 +36,7 @@ import {
   DropdownMenuTrigger,
 } from "@/registry/new-york-v4/ui/dropdown-menu"
 import { Input } from "@/registry/new-york-v4/ui/input"
+import * as N from "@/registry/new-york-v4/ui/navigation-menu"
 import {
   Select,
   SelectContent,
@@ -109,6 +116,29 @@ createRoot(document.getElementById("root")!).render(
         ))}
       </SelectContent>
     </Select>
+    <ContextMenu>
+      <ContextMenuTrigger asChild>
+        <button>Baseline context actions</button>
+      </ContextMenuTrigger>
+      <ContextMenuContent>
+        <ContextMenuItem>Copy baseline map</ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
+    <N.NavigationMenu aria-label="Baseline navigation">
+      <N.NavigationMenuList>
+        <N.NavigationMenuItem>
+          <N.NavigationMenuTrigger>Baseline routes</N.NavigationMenuTrigger>
+          <N.NavigationMenuContent>
+            <N.NavigationMenuLink href="#notes">
+              Baseline Eastbank
+            </N.NavigationMenuLink>
+            <N.NavigationMenuLink href="#notes">
+              Baseline Willowmere
+            </N.NavigationMenuLink>
+          </N.NavigationMenuContent>
+        </N.NavigationMenuItem>
+      </N.NavigationMenuList>
+    </N.NavigationMenu>
     <Command label="Baseline commands">
       <CommandInput />
       <CommandList>

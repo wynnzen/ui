@@ -285,6 +285,25 @@
       }
     },
     {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Traveler context-menu; preserves the pinned new-york-v4 API.",
+      "dependencies": ["cn@0.2.2", "lucide-react@0.474.0", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
       "name": "dialog",
       "type": "registry:ui",
       "title": "Dialog",
@@ -313,6 +332,25 @@
       "files": [
         {
           "path": "registry/traveler/ui/direction.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Traveler drawer; preserves the pinned new-york-v4 API.",
+      "dependencies": ["cn@0.2.2", "vaul@1.1.2"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/drawer.tsx",
           "type": "registry:ui"
         }
       ],
@@ -398,6 +436,25 @@
       "files": [
         {
           "path": "registry/traveler/ui/form.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "Traveler hover-card; preserves the pinned new-york-v4 API.",
+      "dependencies": ["cn@0.2.2", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/hover-card.tsx",
           "type": "registry:ui"
         }
       ],
@@ -531,6 +588,25 @@
       }
     },
     {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "Traveler menubar; preserves the pinned new-york-v4 API.",
+      "dependencies": ["cn@0.2.2", "lucide-react@0.474.0", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
       "name": "native-select",
       "type": "registry:ui",
       "title": "Native Select",
@@ -540,6 +616,30 @@
       "files": [
         {
           "path": "registry/traveler/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "Traveler navigation-menu; preserves the pinned new-york-v4 API.",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.2.2",
+        "lucide-react@0.474.0",
+        "radix-ui@1.4.3"
+      ],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/navigation-menu.tsx",
           "type": "registry:ui"
         }
       ],
@@ -673,6 +773,58 @@
       "files": [
         {
           "path": "registry/traveler/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Traveler sheet; preserves the pinned new-york-v4 API.",
+      "dependencies": ["cn@0.2.2", "lucide-react@0.474.0", "radix-ui@1.4.3"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Traveler sidebar; preserves the pinned new-york-v4 API.",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.2.2",
+        "lucide-react@0.474.0",
+        "radix-ui@1.4.3"
+      ],
+      "registryDependencies": [
+        "@traveler/foundation",
+        "@traveler/use-mobile",
+        "@traveler/button",
+        "@traveler/input",
+        "@traveler/separator",
+        "@traveler/sheet",
+        "@traveler/skeleton",
+        "@traveler/tooltip"
+      ],
+      "files": [
+        {
+          "path": "registry/traveler/ui/sidebar.tsx",
           "type": "registry:ui"
         }
       ],
@@ -876,6 +1028,24 @@
         {
           "path": "registry/traveler/ui/tooltip.tsx",
           "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "title": "Mobile breakpoint helper",
+      "description": "Unchanged pinned 768px Sidebar helper; no visual surface.",
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/hooks/use-mobile.ts",
+          "type": "registry:hook"
         }
       ],
       "meta": {

@@ -179,3 +179,17 @@ The Base UI Combobox is explicitly deferred by user decision; see advanced-forms
 Fresh Vite/Next installs of all 43 components pass build, dev/prod interaction,
 aliases, SSR/hydration, portal focus and safe reinstallation. Exact versions and
 lock hashes are retained in consumers.json. The workspace lockfile is unchanged.
+
+## M5.4 additions
+
+All 50 components retain pinned type contracts. Chromium, Firefox and WebKit pass
+standard context-menu keys, submenu and menubar navigation, viewport links, hover
+preview, four Sheet/Drawer sides and mobile Sidebar focus restoration. Review:
+49 inspected screenshots, 54 responsive/state checks. All eight panels fit a
+320×360 viewport with reachable footer actions. Noncollapsible layout stacks at
+mobile widths. The exact upstream Context Menu/Navigation Menu focus findings
+remain in the recorded human triage queue; other new scans have no violations.
+
+Fresh Vite/Next installs of all 50 components and the transitive use-mobile hook
+pass production builds, dev/prod interactions, SSR/hydration, hook aliases and
+safe reinstallation. Exact versions and lock hashes are in consumers.json.

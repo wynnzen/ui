@@ -857,6 +857,258 @@ try {
   await expect(destinationPicker).toBeFocused()
   await page.goto(
     new URL(
+      "extended-navigation.html",
+      process.env.TRAVELER_URL || "http://127.0.0.1:4173/"
+    ).href
+  )
+  await page.setViewportSize({ width: 1440, height: 1000 })
+  await page.mouse.move(0, 0)
+  const contextTrigger = page.getByRole("button", {
+    name: "Map context actions",
+    exact: true,
+  })
+  await contextTrigger.focus()
+  await page.keyboard.press("Shift+F10")
+  await expect(
+    page.getByRole("menuitem", { name: "Copy map", exact: false })
+  ).toBeFocused()
+  await page.keyboard.press("ArrowDown")
+  await expect(
+    page.getByRole("menuitem", { name: "Walking pace", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("ArrowRight")
+  await expect(
+    page.getByRole("menuitemradio", { name: "Steady", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("ArrowDown")
+  await expect(
+    page.getByRole("menuitemradio", { name: "Swift", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("Enter")
+  await expect(page.locator("#navigation-result")).toContainText("Pace: swift")
+  await contextTrigger.click({ button: "right" })
+  await expect(
+    page.getByRole("menuitemcheckbox", { name: "Marked routes", exact: true })
+  ).toHaveAttribute("aria-checked", "mixed")
+  await page
+    .getByRole("menuitemcheckbox", { name: "Marked routes", exact: true })
+    .click()
+  await expect(page.locator("#navigation-result")).toContainText("Marked: true")
+  await expect(contextTrigger).toBeFocused()
+  const journalMenu = page.getByRole("menuitem", {
+    name: "Journal",
+    exact: true,
+  })
+  await journalMenu.scrollIntoViewIfNeeded()
+  await page.mouse.move(0, 0)
+  await journalMenu.focus()
+  await page.keyboard.press("ArrowDown")
+  await expect(
+    page.getByRole("menuitem", { name: "Copy map", exact: false })
+  ).toBeFocused()
+  await page.keyboard.press("ArrowDown")
+  await expect(
+    page.getByRole("menuitem", { name: "Export format", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("ArrowRight")
+  await expect(
+    page.getByRole("menuitem", { name: "Plain text", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("Enter")
+  await expect(page.locator("#navigation-result")).toContainText(
+    "Exported plain text."
+  )
+  await journalMenu.focus()
+  await page.keyboard.press("ArrowRight")
+  await expect(
+    page.getByRole("menuitem", { name: "View", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("ArrowDown")
+  await expect(
+    page.getByRole("menuitemcheckbox", { name: "Marked routes", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("Escape")
+  const destinations = page.getByRole("button", {
+    name: "Destinations",
+    exact: true,
+  })
+  await destinations.focus()
+  await page.keyboard.press("Enter")
+  await page.keyboard.press("ArrowDown")
+  await expect(
+    page.getByRole("link", {
+      name: "Eastbank The river port beside the old bridge.",
+      exact: true,
+    })
+  ).toBeFocused()
+  await page.keyboard.press("Tab")
+  await expect(
+    page.getByRole("link", {
+      name: "Willowmere A sheltered path through the reeds.",
+      exact: true,
+    })
+  ).toBeFocused()
+  await page.keyboard.press("Escape")
+  await expect(destinations).toBeFocused()
+  const hoverTrigger = page.getByRole("link", {
+    name: "Preview Eastbank",
+    exact: true,
+  })
+  await hoverTrigger.scrollIntoViewIfNeeded()
+  await page.evaluate(
+    () =>
+      new Promise((resolve) =>
+        requestAnimationFrame(() => requestAnimationFrame(resolve))
+      )
+  )
+  await hoverTrigger.focus()
+  await expect(page.locator("[data-slot=hover-card-content]")).toBeVisible()
+  await page.keyboard.press("Escape")
+  for (const side of ["right", "left", "top", "bottom"]) {
+    const trigger = page.getByRole("button", {
+      name: `Open sheet ${side}`,
+      exact: true,
+    })
+    await trigger.click()
+    const panel = page.getByRole("dialog", {
+      name: `${side} route notes`,
+      exact: true,
+    })
+    await expect(panel).toBeVisible()
+    await expect(page.getByLabel("Sheet note", { exact: true })).toBeFocused()
+    await page
+      .getByLabel("Sheet note", { exact: true })
+      .fill("川に沿って進む。")
+    if (side === "right") {
+      await page
+        .getByRole("button", { name: "Sheet actions", exact: true })
+        .click()
+      await page
+        .getByRole("menuitem", { name: "Pin sheet note", exact: true })
+        .click()
+      await expect(
+        page.getByRole("button", { name: "Sheet actions", exact: true })
+      ).toBeFocused()
+      await expect(panel).toBeVisible()
+    }
+    await page.keyboard.press("Escape")
+    await expect(trigger).toBeFocused()
+  }
+  await page
+    .getByRole("button", { name: "Open sheet without icon", exact: true })
+    .click()
+  await expect(
+    page.getByRole("button", { name: "Close", exact: true })
+  ).toHaveCount(0)
+  await page
+    .getByRole("button", { name: "Close quiet panel", exact: true })
+    .click()
+  for (const direction of ["bottom", "top", "left", "right"]) {
+    const trigger = page.getByRole("button", {
+      name: `Open drawer ${direction}`,
+      exact: true,
+    })
+    await trigger.click()
+    await expect(
+      page.getByRole("dialog", {
+        name: `${direction} preparation`,
+        exact: true,
+      })
+    ).toBeVisible()
+    await expect(page.getByLabel("Drawer note", { exact: true })).toBeFocused()
+    await page
+      .getByRole("button", { name: "Finish preparation", exact: true })
+      .click()
+    await expect(page.getByRole("dialog")).toBeHidden()
+    await expect(trigger).toBeFocused()
+  }
+  await page
+    .getByRole("button", { name: "Open drawer bottom", exact: true })
+    .click()
+  // Vaul preserves selected text and rejects drags for 500ms after opening.
+  await page.getByLabel("Drawer note", {exact:true}).press("End")
+  await page.waitForTimeout(550)
+  const drawerBounds = await page.getByRole("dialog").boundingBox()
+  await page.mouse.move(
+    drawerBounds.x + drawerBounds.width / 2,
+    drawerBounds.y + 18
+  )
+  await page.mouse.down()
+  await page.mouse.move(
+    drawerBounds.x + drawerBounds.width / 2,
+    Math.min(999, drawerBounds.y + drawerBounds.height - 8),
+    { steps: 12 }
+  )
+  await page.mouse.up()
+  await expect(page.getByRole("dialog")).toBeHidden()
+  await page.goto(
+    new URL(
+      "sidebar.html",
+      process.env.TRAVELER_URL || "http://127.0.0.1:4173/"
+    ).href
+  )
+  await page.setViewportSize({ width: 1440, height: 1000 })
+  const sidebarToggle = page.locator("[data-slot=sidebar-trigger]")
+  await sidebarToggle.click()
+  await expect(page.locator("#sidebar-state")).toHaveText(
+    "Desktop sidebar collapsed"
+  )
+  await expect(
+    page.getByRole("link", { name: "Journal", exact: true })
+  ).toBeVisible()
+  await page.keyboard.press("Control+b")
+  await expect(page.locator("#sidebar-state")).toHaveText(
+    "Desktop sidebar expanded"
+  )
+  assert.ok(
+    (await page.context().cookies()).some(
+      (cookie) => cookie.name === "sidebar_state" && cookie.value === "true"
+    )
+  )
+  await page
+    .getByLabel("Collapse mode", { exact: true })
+    .selectOption("offcanvas")
+  await sidebarToggle.click()
+  await expect(page.locator("[data-slot=sidebar-container]")).toHaveAttribute(
+    "inert",
+    ""
+  )
+  await page.locator('[data-slot=sidebar-menu-button][href="#journal"]').focus()
+  await expect(
+    page.locator('[data-slot=sidebar-menu-button][href="#journal"]')
+  ).not.toBeFocused()
+  await sidebarToggle.click()
+  await page.getByRole("button", { name: "Add journey", exact: true }).click()
+  await expect(page.locator("#sidebar-result")).toHaveText("Journey added.")
+  await page.getByLabel("Sidebar side", { exact: true }).selectOption("right")
+  const mainBounds = await page
+    .locator("[data-slot=sidebar-inset]")
+    .boundingBox()
+  const sideBounds = await page
+    .locator("[data-slot=sidebar-container]")
+    .boundingBox()
+  assert.ok(mainBounds.x + mainBounds.width <= sideBounds.x + 1)
+  for (const variant of ["floating", "inset", "sidebar"])
+    await page
+      .getByLabel("Sidebar variant", { exact: true })
+      .selectOption(variant)
+  await page.setViewportSize({ width: 390, height: 844 })
+  await expect(page.locator("#sidebar-state")).toHaveText(
+    "Mobile sidebar closed"
+  )
+  await sidebarToggle.focus()
+  await page.keyboard.press("Enter")
+  await expect(
+    page.getByRole("dialog", { name: "Sidebar", exact: true })
+  ).toBeVisible()
+  await page.getByRole("button", { name: "Close", exact: true }).click()
+  await expect(sidebarToggle).toBeFocused()
+  await sidebarToggle.click()
+  await page.keyboard.press("Escape")
+  await expect(sidebarToggle).toBeFocused()
+  await page.setViewportSize({ width: 1440, height: 1000 })
+  await page.goto(
+    new URL(
       "catalog.html",
       process.env.TRAVELER_URL || "http://127.0.0.1:4173/"
     ).href

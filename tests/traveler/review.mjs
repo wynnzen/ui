@@ -131,6 +131,22 @@ try {
   )
   await page.keyboard.press("Escape")
   await page
+    .getByRole("button", { name: "Baseline context actions", exact: true })
+    .click({ button: "right" })
+  const inheritedContextMenu = await accessibility(
+    "baseline context menu",
+    "baseline"
+  )
+  await page.keyboard.press("Escape")
+  await page
+    .getByRole("button", { name: "Baseline routes", exact: true })
+    .click()
+  const inheritedNavigation = await accessibility(
+    "baseline navigation menu",
+    "baseline"
+  )
+  await page.keyboard.press("Escape")
+  await page
     .getByRole("combobox", { name: "Baseline commands", exact: true })
     .fill("no-match-route")
   const inheritedEmptyCommand = await accessibility(
@@ -630,6 +646,112 @@ try {
     "rgb(228, 220, 203)"
   )
   report.checks.push("Separate upstream document receives no Traveler tokens")
+  await page.goto(new URL("extended-navigation.html", url).href, {
+    waitUntil: "networkidle",
+  })
+  await page.addScriptTag({ path: axePath })
+  for (const width of [320, 768, 1440]) {
+    await page.setViewportSize({ width, height: 1000 })
+    await noOverflow(`Extended navigation ${width}px`)
+    await screenshot(`extended-navigation-${width}`)
+  }
+  await accessibility("extended navigation")
+  await page
+    .getByRole("button", { name: "Map context actions", exact: true })
+    .click({ button: "right" })
+  await screenshot(
+    "context-menu",
+    page.locator("[data-slot=context-menu-content]")
+  )
+  await accessibility("open context menu", inheritedContextMenu)
+  await page.keyboard.press("Escape")
+  await page.getByRole("menuitem", { name: "Journal", exact: true }).click()
+  await accessibility("open menubar")
+  await page.keyboard.press("Escape")
+  await page.getByRole("button", { name: "Destinations", exact: true }).click()
+  await expect(
+    page.locator("[data-slot=navigation-menu-viewport]")
+  ).toBeVisible()
+  await screenshot(
+    "navigation-menu",
+    page.locator("[data-slot=navigation-menu-viewport]")
+  )
+  await accessibility("open navigation menu", inheritedNavigation)
+  await page.keyboard.press("Escape")
+  await page
+    .getByRole("button", { name: "Open sheet right", exact: true })
+    .click()
+  await screenshot("sheet-right", page.getByRole("dialog"))
+  await accessibility("open sheet")
+  await page.keyboard.press("Escape")
+  await page
+    .getByRole("button", { name: "Open drawer bottom", exact: true })
+    .click()
+  await screenshot("drawer-bottom", page.getByRole("dialog"))
+  await accessibility("open drawer")
+  await expect(page.getByRole("dialog")).toHaveCSS("animation-name", "none")
+  await page
+    .getByRole("button", { name: "Finish preparation", exact: true })
+    .click()
+  await page.setViewportSize({ width: 320, height: 360 })
+  for (const kind of ["sheet", "drawer"])
+    for (const side of ["right", "left", "top", "bottom"]) {
+      await page
+        .getByRole("button", { name: `Open ${kind} ${side}`, exact: true })
+        .click()
+      const panel = page.getByRole("dialog")
+      await expect(panel).toBeVisible()
+      const b = await panel.boundingBox()
+      assert.ok(
+        b.x >= -1 && b.y >= -1 && b.x + b.width <= 321 && b.y + b.height <= 361,
+        `${kind} ${side} viewport bounds`
+      )
+      const close = page.getByRole("button", {
+        name: kind === "sheet" ? "Save sheet notes" : "Finish preparation",
+        exact: true,
+      })
+      await close.scrollIntoViewIfNeeded()
+      await close.click()
+      await expect(panel).toBeHidden()
+    }
+  report.checks.push(
+    "Four Sheet sides and four Drawer directions fit 320x360 with reachable footer actions; reduced motion removes Drawer animations"
+  )
+  await page.setViewportSize({ width: 768, height: 1000 })
+  await page.evaluate(() => (document.documentElement.style.fontSize = "200%"))
+  await noOverflow("Extended navigation at 200% text")
+  await page.goto(new URL("sidebar.html", url).href, {
+    waitUntil: "networkidle",
+  })
+  await page.addScriptTag({ path: axePath })
+  for (const width of [320, 768, 1440]) {
+    await page.setViewportSize({ width, height: 1000 })
+    await noOverflow(`Sidebar ${width}px`)
+    await screenshot(`sidebar-${width}`)
+  }
+  await accessibility("desktop sidebar")
+  await page.locator("[data-slot=sidebar-trigger]").click()
+  await screenshot("sidebar-icon")
+  await accessibility("collapsed icon sidebar")
+  await page
+    .getByLabel("Collapse mode", { exact: true })
+    .selectOption("offcanvas")
+  await accessibility("collapsed offcanvas sidebar")
+  await page.setViewportSize({ width: 320, height: 640 })
+  await page.locator("[data-slot=sidebar-trigger]").click()
+  await expect(
+    page.getByRole("dialog", { name: "Sidebar", exact: true })
+  ).toBeVisible()
+  await noOverflow("Mobile sidebar open at 320px")
+  await screenshot("sidebar-mobile", page.getByRole("dialog"))
+  await accessibility("mobile sidebar")
+  await page.keyboard.press("Escape")
+  report.checks.push(
+    "Sidebar desktop, icon, offcanvas and mobile Sheet semantics and responsive reflow"
+  )
+  await page.getByLabel("Collapse mode", { exact: true }).selectOption("none")
+  await noOverflow("Noncollapsible Sidebar host stacks at 320px")
+  await accessibility("noncollapsible sidebar")
   assert.deepEqual(errors, [])
   assert.deepEqual(
     report.externalRequests,

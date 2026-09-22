@@ -13,7 +13,12 @@ it("ships schema-valid, source-exact payloads with only explicit themed dependen
   const names = parsed.items.map((item) => item.name)
   const root = "apps/v4/registry/traveler"
   const built = `${root}/public/r/v0.1.0-dev`
-  expect(names.filter((name) => name !== "foundation").sort()).toEqual(
+  expect(
+    parsed.items
+      .filter((item) => item.type === "registry:ui")
+      .map((item) => item.name)
+      .sort()
+  ).toEqual(
     readdirSync(`${root}/ui`)
       .map((name) => name.replace(/\.tsx$/, ""))
       .sort()
@@ -48,7 +53,7 @@ it("ships schema-valid, source-exact payloads with only explicit themed dependen
       )
       expect(imports.filter((name) => name.includes("new-york"))).toEqual([])
       for (const dependency of imports.filter((name) =>
-        name.startsWith("@/registry/traveler/ui/")
+        name.startsWith("@/registry/traveler/")
       )) {
         expect(item.registryDependencies).toContain(
           `@traveler/${dependency.split("/").at(-1)}`

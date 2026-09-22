@@ -63,3 +63,11 @@ native text opts out of forced color replacement while its visible slots retain
 system colors. Form/OTP/cmdk state and filtering stay in their existing libraries.
 The upstream empty-listbox axe finding is reproduced and retained for human QA.
 The user explicitly deferred the Base UI Combobox; no substitute API is claimed.
+
+M5.4 adds seven navigation/overlay APIs and an unchanged use-mobile helper.
+Context Menu bridges standard keyboard opening to its native primitive handler.
+Drawer separates inner scrolling from its primitive overscroll surface to keep
+bounded-panel footer actions and drag dismissal working. Sidebar adds inert closed offcanvas content, prior-focus restoration for
+its mobile Sheet, stable skeleton markup, right-side spacing and correct
+separator width; icon mode keeps names while hiding unsuitable input/loading
+text. Other changes retain state/callback ownership and reuse semantic recipes.

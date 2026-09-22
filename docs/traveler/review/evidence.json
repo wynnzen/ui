@@ -116,8 +116,8 @@
     },
     {
       "name": "catalog-search",
-      "sha256": "697630a4f37159d68afbd622b8a304625d74a7b3de6795a7977b654ddef6b36c",
-      "bytes": 310369
+      "sha256": "cc0e64566f91c66822fe154b1a5cbd853192493b634f98d4e9d78fc2410de8d9",
+      "bytes": 310327
     },
     {
       "name": "disclosure-320",
@@ -188,6 +188,66 @@
       "name": "otp-forced-colors",
       "sha256": "39db6964a667120190dd91b09a91087e23b72797d62c59b71576ff0518b142bb",
       "bytes": 42487
+    },
+    {
+      "name": "extended-navigation-320",
+      "sha256": "2ce471ceacbd2c31c0d0cbb7de96e317d8ba8396ddb800f3dacb4b456118dca2",
+      "bytes": 129237
+    },
+    {
+      "name": "extended-navigation-768",
+      "sha256": "8839e3d038c074537ba1f50d58eb17d04c9b939c7356c4f40f5786ffbc10a3cd",
+      "bytes": 129825
+    },
+    {
+      "name": "extended-navigation-1440",
+      "sha256": "3348a1f6a0fc9e8b0bdc6dde8b95b041825d32fd1fab538c49db137caf038403",
+      "bytes": 135886
+    },
+    {
+      "name": "context-menu",
+      "sha256": "818a27f021ed988b85dc40eca31d4f774bb7ca5332be13ad31b213f8590deef8",
+      "bytes": 9566
+    },
+    {
+      "name": "navigation-menu",
+      "sha256": "bbeecaceacb819f35c652ce042c16be4c8c0303d9ed8569cfa37250a11d8189b",
+      "bytes": 9496
+    },
+    {
+      "name": "sheet-right",
+      "sha256": "afb0ca64d444c2c8df802d6b2ae912520a9804f0996b3a58038981ae4fad5cb2",
+      "bytes": 26696
+    },
+    {
+      "name": "drawer-bottom",
+      "sha256": "2122e043e23ede0c64c03d09ec41563753acd46e94eddaa88b70aae86de4f5f0",
+      "bytes": 23359
+    },
+    {
+      "name": "sidebar-320",
+      "sha256": "08daf1a7e6a7d78953995fde182d8e6ed629c524eac38c8b4794b352743f0256",
+      "bytes": 73176
+    },
+    {
+      "name": "sidebar-768",
+      "sha256": "35312ab1d214f597ecf1759e0a3d6a098ae345b319f68d00791e2982e52cd34d",
+      "bytes": 95856
+    },
+    {
+      "name": "sidebar-1440",
+      "sha256": "65bba3187c02d666f3cf50e89232e8c19f591f3cdab0bc159d2d73db85d329aa",
+      "bytes": 94371
+    },
+    {
+      "name": "sidebar-icon",
+      "sha256": "24c844522edc0a93fb814242bf21efc7b58d1b9de5ebd8496a3530894c6103a3",
+      "bytes": 79285
+    },
+    {
+      "name": "sidebar-mobile",
+      "sha256": "2917ef36c602c29cad815cfb9fba22267ea18b6a5b77acf1d310595f76c8e332",
+      "bytes": 18664
     }
   ],
   "accessibility": [
@@ -268,6 +328,60 @@
         {
           "id": "aria-hidden-focus",
           "count": 2
+        },
+        {
+          "id": "color-contrast",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "name": "baseline context menu",
+      "violations": [
+        {
+          "id": "aria-hidden-focus",
+          "impact": "serious",
+          "targets": [
+            [
+              "#root"
+            ]
+          ],
+          "surfaces": [
+            "root"
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "baseline navigation menu",
+      "violations": [
+        {
+          "id": "aria-hidden-focus",
+          "impact": "serious",
+          "targets": [
+            [
+              "span:nth-child(2)"
+            ]
+          ],
+          "surfaces": [
+            "SPAN"
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "count": 1
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "count": 1
         }
       ]
     },
@@ -279,7 +393,7 @@
           "impact": "critical",
           "targets": [
             [
-              "#radix-_r_6_"
+              "#radix-_r_8_"
             ]
           ],
           "surfaces": [
@@ -288,6 +402,10 @@
         }
       ],
       "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "count": 1
+        },
         {
           "id": "aria-valid-attr-value",
           "count": 1
@@ -594,6 +712,142 @@
           "count": 10
         }
       ]
+    },
+    {
+      "name": "extended navigation",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-valid-attr-value",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "name": "open context menu",
+      "violations": [
+        {
+          "id": "aria-hidden-focus",
+          "impact": "serious",
+          "targets": [
+            [
+              "#root"
+            ]
+          ],
+          "surfaces": [
+            "root"
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 2
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "open menubar",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-valid-attr-value",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "name": "open navigation menu",
+      "violations": [
+        {
+          "id": "aria-hidden-focus",
+          "impact": "serious",
+          "targets": [
+            [
+              "span[aria-hidden=\"true\"]"
+            ]
+          ],
+          "surfaces": [
+            "SPAN"
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "count": 1
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "count": 9
+        },
+        {
+          "id": "color-contrast",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "open sheet",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 3
+        },
+        {
+          "id": "color-contrast",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "open drawer",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 3
+        },
+        {
+          "id": "color-contrast",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "desktop sidebar",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "collapsed icon sidebar",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "collapsed offcanvas sidebar",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "mobile sidebar",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "noncollapsible sidebar",
+      "violations": [],
+      "incomplete": []
     }
   ],
   "checks": [
@@ -639,7 +893,18 @@
     "Advanced forms at 200% text",
     "OTP active slot retains forced-colors outline",
     "Progress, Switch and Scroll Area state indicators survive forced colors",
-    "Separate upstream document receives no Traveler tokens"
+    "Separate upstream document receives no Traveler tokens",
+    "Extended navigation 320px",
+    "Extended navigation 768px",
+    "Extended navigation 1440px",
+    "Four Sheet sides and four Drawer directions fit 320x360 with reachable footer actions; reduced motion removes Drawer animations",
+    "Extended navigation at 200% text",
+    "Sidebar 320px",
+    "Sidebar 768px",
+    "Sidebar 1440px",
+    "Mobile sidebar open at 320px",
+    "Sidebar desktop, icon, offcanvas and mobile Sheet semantics and responsive reflow",
+    "Noncollapsible Sidebar host stacks at 320px"
   ],
   "externalRequests": []
 }

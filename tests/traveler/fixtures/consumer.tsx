@@ -1,5 +1,12 @@
 "use client"
 
+import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@fixture/components/ui/sheet"
+import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerClose } from "@fixture/components/ui/drawer"
+import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem } from "@fixture/components/ui/context-menu"
+import { Menubar, MenubarMenu, MenubarTrigger, MenubarContent, MenubarItem } from "@fixture/components/ui/menubar"
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@fixture/components/ui/navigation-menu"
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "@fixture/components/ui/hover-card"
+import { SidebarProvider, Sidebar, SidebarHeader, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarMenuSkeleton, SidebarTrigger } from "@fixture/components/ui/sidebar"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { Command, CommandDialog, CommandInput, CommandList, CommandItem } from "@fixture/components/ui/command"
@@ -81,5 +88,12 @@ export default function Consumer() {
   <Label htmlFor="consumer-code">Consumer courier code</Label><InputOTP id="consumer-code" maxLength={4}><InputOTPGroup>{[0,1,2,3].map(index=><InputOTPSlot key={index} index={index}/>)}</InputOTPGroup></InputOTP>
   <Command label="Consumer inline commands"><CommandInput aria-label="Find consumer command"/><CommandList><CommandItem value="map">Open map</CommandItem></CommandList></Command>
   <Button onClick={()=>setCommandsOpen(true)}>Open consumer commands</Button><CommandDialog open={commandsOpen} onOpenChange={setCommandsOpen} title="Consumer commands" description="Search the installed command list."><CommandInput aria-label="Consumer modal search"/><CommandList><CommandItem value="eastbank" onSelect={()=>setCommandsOpen(false)}>Eastbank</CommandItem></CommandList></CommandDialog>
+  <Sheet><SheetTrigger asChild><Button>Open consumer sheet</Button></SheetTrigger><SheetContent><SheetHeader><SheetTitle>Consumer sheet</SheetTitle><SheetDescription>Installed side panel.</SheetDescription></SheetHeader></SheetContent></Sheet>
+  <Drawer autoFocus><DrawerTrigger asChild><Button>Open consumer drawer</Button></DrawerTrigger><DrawerContent><DrawerHeader><DrawerTitle>Consumer drawer</DrawerTitle><DrawerDescription>Installed preparation panel.</DrawerDescription></DrawerHeader><DrawerClose asChild><Button>Close consumer drawer</Button></DrawerClose></DrawerContent></Drawer>
+  <ContextMenu><ContextMenuTrigger asChild><Button variant="outline">Consumer context actions</Button></ContextMenuTrigger><ContextMenuContent><ContextMenuItem>Copy consumer map</ContextMenuItem></ContextMenuContent></ContextMenu>
+  <Menubar aria-label="Consumer tools"><MenubarMenu><MenubarTrigger>Tools</MenubarTrigger><MenubarContent><MenubarItem>Inspect map</MenubarItem></MenubarContent></MenubarMenu></Menubar>
+  <NavigationMenu aria-label="Consumer navigation"><NavigationMenuList><NavigationMenuItem><NavigationMenuLink href="#recorded-progress">Progress</NavigationMenuLink></NavigationMenuItem></NavigationMenuList></NavigationMenu>
+  <HoverCard><HoverCardTrigger href="#recorded-progress">Preview progress</HoverCardTrigger><HoverCardContent>Recorded progress remains available.</HoverCardContent></HoverCard>
+  <SidebarProvider className="min-h-0"><Sidebar collapsible="none"><SidebarHeader>Consumer sidebar</SidebarHeader><SidebarContent><SidebarMenu><SidebarMenuItem><SidebarMenuButton>Consumer journal</SidebarMenuButton></SidebarMenuItem><SidebarMenuItem><SidebarMenuSkeleton showIcon/></SidebarMenuItem></SidebarMenu></SidebarContent></Sidebar><SidebarTrigger/></SidebarProvider>
   </main></TooltipProvider>
 }

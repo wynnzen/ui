@@ -25,3 +25,6 @@ this example asset; no external image or font request was added.
 
 M5.3 package metadata declares MIT for cmdk 1.1.1, input-otp 1.4.2 and
 react-hook-form 7.62.0. Their original notices remain with the dependencies.
+
+M5.4 uses the already-pinned Vaul 1.1.2 dependency, whose package metadata
+declares MIT. No new visual or font asset is required.

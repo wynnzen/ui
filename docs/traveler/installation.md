@@ -15,8 +15,8 @@ pnpm traveler:preview
 ```
 
 The unchanged workspace CLI is shadcn **4.21.0**. Canonical metadata is
-`apps/v4/registry/traveler/registry.json`. The CLI emits 44 items (foundation plus
-43 components) into `public/r/v0.1.0-dev/`; the Vite preview serves them at
+`apps/v4/registry/traveler/registry.json`. The CLI emits 52 items (foundation, 50 components and
+the Sidebar mobile hook) into `public/r/v0.1.0-dev/`; the Vite preview serves them at
 `http://127.0.0.1:4173/r/v0.1.0-dev/{name}.json`. Development paths are mutable;
 release endpoints must be frozen and verified before publication.
 

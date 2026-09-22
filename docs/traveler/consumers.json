@@ -22,7 +22,8 @@
           "radix-ui": "1.4.3",
           "react": "19.2.3",
           "react-dom": "19.2.3",
-          "react-hook-form": "7.62.0"
+          "react-hook-form": "7.62.0",
+          "vaul": "1.1.2"
         },
         "devDependencies": {
           "@tailwindcss/postcss": "4.3.0",
@@ -35,13 +36,13 @@
           "vite": "7.3.2"
         }
       },
-      "installedComponents": 43,
+      "installedComponents": 50,
       "transitiveDialog": true,
       "identicalReinstall": true,
       "clientDirectiveDrift": "CLI 4.21.0 non-RSC regex drift; overwrite declined",
       "customizedFilePreserved": true,
       "cssSha256": "f56e867caadbb9efb0ec33f312949044a19ec352132bc8c1a45bc21f76549b0f",
-      "lockSha256": "ac036a28e604cd0b02fce65260a815b690f8fdf5766e4b31ee7730ddd572860d",
+      "lockSha256": "e590f7438275e4d3187bfbb6e8765110e4b16e7b2bf9e13388240d5c00366077",
       "checks": [
         "development: interaction, portal tokens, focus return, no errors/external requests",
         "production: interaction, portal tokens, focus return, no errors/external requests"
@@ -68,7 +69,8 @@
           "radix-ui": "1.4.3",
           "react": "19.2.3",
           "react-dom": "19.2.3",
-          "react-hook-form": "7.62.0"
+          "react-hook-form": "7.62.0",
+          "vaul": "1.1.2"
         },
         "devDependencies": {
           "@tailwindcss/postcss": "4.3.0",
@@ -80,20 +82,20 @@
           "typescript": "5.9.2"
         }
       },
-      "installedComponents": 43,
+      "installedComponents": 50,
       "transitiveDialog": true,
       "identicalReinstall": true,
       "clientDirectiveDrift": "not applicable",
       "customizedFilePreserved": true,
       "cssSha256": "f56e867caadbb9efb0ec33f312949044a19ec352132bc8c1a45bc21f76549b0f",
-      "lockSha256": "67479fdf1141baef740e66e952d1fd8e8b5964b6eaa68c029e465c2fad32b348",
+      "lockSha256": "749d756ed67c82dc7404a6766eacb632706b44074a15e4c723eebbe5d94e23ab",
       "checks": [
         "development: interaction, portal tokens, focus return, no errors/external requests, SSR/hydration",
         "production: interaction, portal tokens, focus return, no errors/external requests, SSR/hydration"
       ]
     }
   ],
-  "sourceRevision": "M5.3; canonical sources and this report committed together",
+  "sourceRevision": "M5.4; canonical sources and this report committed together",
   "node": "24.15.0",
   "pnpm": "10.33.4",
   "browser": "Chromium 149.0.7827.55",

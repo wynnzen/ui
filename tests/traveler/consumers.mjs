@@ -297,6 +297,19 @@ try {
       items.length
     )
     assert.equal(
+      readFileSync(join(root, src, "hooks/use-mobile.ts"), "utf8").trim(),
+      readFileSync(
+        join(repo, "apps/v4/registry/traveler/hooks/use-mobile.ts"),
+        "utf8"
+      ).trim()
+    )
+    assert.ok(
+      readFileSync(
+        join(root, src, "components/ui/sidebar.tsx"),
+        "utf8"
+      ).includes('"@fixture/hooks/use-mobile"')
+    )
+    assert.equal(
       readFileSync(join(root, "styles/traveler.css"), "utf8"),
       readFileSync(
         join(repo, "apps/v4/registry/traveler/styles/theme.css"),
@@ -511,6 +524,29 @@ try {
         ).toBeVisible()
         await page.keyboard.press("Escape")
         await expect(commandTrigger).toBeFocused()
+        const sheetTrigger = page.getByRole("button", {
+          name: "Open consumer sheet",
+          exact: true,
+        })
+        await sheetTrigger.click()
+        await expect(
+          page.getByRole("dialog", { name: "Consumer sheet", exact: true })
+        ).toBeVisible()
+        await page.keyboard.press("Escape")
+        await expect(sheetTrigger).toBeFocused()
+        await page
+          .getByRole("button", { name: "Open consumer drawer", exact: true })
+          .click()
+        await expect(
+          page.getByRole("dialog", { name: "Consumer drawer", exact: true })
+        ).toBeVisible()
+        await page
+          .getByRole("button", { name: "Close consumer drawer", exact: true })
+          .click()
+        await expect(page.getByRole("dialog")).toBeHidden()
+        await expect(
+          page.getByRole("button", { name: "Consumer journal", exact: true })
+        ).toBeVisible()
         assert.deepEqual(errors, [])
         assert.deepEqual(external, [])
         results.checks.push(

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer",
+  "title": "Drawer",
+  "description": "Traveler drawer; preserves the pinned new-york-v4 API.",
+  "dependencies": [
+    "cn@0.2.2",
+    "vaul@1.1.2"
+  ],
+  "registryDependencies": [
+    "@traveler/foundation"
+  ],
+  "files": [
+    {
+      "path": "registry/traveler/ui/drawer.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { Drawer as DrawerPrimitive } from \"vaul\"\n\nfunction Drawer({\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Root>) {\n  return <DrawerPrimitive.Root data-slot=\"drawer\" {...props} />\n}\n\nfunction DrawerTrigger({\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Trigger>) {\n  return <DrawerPrimitive.Trigger data-slot=\"drawer-trigger\" {...props} />\n}\n\nfunction DrawerPortal({\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Portal>) {\n  return <DrawerPrimitive.Portal data-slot=\"drawer-portal\" {...props} />\n}\n\nfunction DrawerClose({\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Close>) {\n  return <DrawerPrimitive.Close data-slot=\"drawer-close\" {...props} />\n}\n\nfunction DrawerOverlay({\n  className,\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Overlay>) {\n  return (\n    <DrawerPrimitive.Overlay\n      data-slot=\"drawer-overlay\"\n      className={cn(\n        \"trav-overlay fixed inset-0 z-50 bg-black/60 motion-reduce:animate-none! motion-reduce:transition-none!\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction DrawerContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Content>) {\n  return (\n    <DrawerPortal data-slot=\"drawer-portal\">\n      <DrawerOverlay />\n      <DrawerPrimitive.Content\n        data-slot=\"drawer-content\"\n        className={cn(\n          \"trav-panel group/drawer-content fixed z-50 flex h-auto max-h-dvh flex-col bg-card text-card-foreground motion-reduce:animate-none! motion-reduce:transition-none!\",\n          \"data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0 data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=top]:max-h-[90dvh] data-[vaul-drawer-direction=top]:rounded-b-xs data-[vaul-drawer-direction=top]:border-b\",\n          \"data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0 data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=bottom]:max-h-[90dvh] data-[vaul-drawer-direction=bottom]:rounded-t-xs data-[vaul-drawer-direction=bottom]:border-t\",\n          \"data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=right]:right-0 data-[vaul-drawer-direction=right]:w-[min(24rem,calc(100vw-2rem))] data-[vaul-drawer-direction=right]:border-l data-[vaul-drawer-direction=right]:sm:max-w-sm\",\n          \"data-[vaul-drawer-direction=left]:inset-y-0 data-[vaul-drawer-direction=left]:left-0 data-[vaul-drawer-direction=left]:w-[min(24rem,calc(100vw-2rem))] data-[vaul-drawer-direction=left]:border-r data-[vaul-drawer-direction=left]:sm:max-w-sm\",\n          className\n        )}\n        {...props}\n      >\n        <div className=\"flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain\">\n          <div\n            aria-hidden=\"true\"\n            className=\"mx-auto mt-4 hidden h-1 w-16 shrink-0 rounded-xs bg-border group-data-[vaul-drawer-direction=bottom]/drawer-content:block\"\n          />\n          {children}\n        </div>\n      </DrawerPrimitive.Content>\n    </DrawerPortal>\n  )\n}\n\nfunction DrawerHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"drawer-header\"\n      className={cn(\"flex shrink-0 flex-col gap-2 p-5 text-start\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction DrawerFooter({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"drawer-footer\"\n      className={cn(\"mt-auto flex shrink-0 flex-col gap-2 p-5\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction DrawerTitle({\n  className,\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Title>) {\n  return (\n    <DrawerPrimitive.Title\n      data-slot=\"drawer-title\"\n      className={cn(\n        \"font-heading text-xl leading-snug text-foreground\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction DrawerDescription({\n  className,\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Description>) {\n  return (\n    <DrawerPrimitive.Description\n      data-slot=\"drawer-description\"\n      className={cn(\"text-sm leading-relaxed text-muted-foreground\", className)}\n      {...props}\n    />\n  )\n}\n\nexport {\n  Drawer,\n  DrawerPortal,\n  DrawerOverlay,\n  DrawerTrigger,\n  DrawerClose,\n  DrawerContent,\n  DrawerHeader,\n  DrawerFooter,\n  DrawerTitle,\n  DrawerDescription,\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "meta": {
+    "version": "0.1.0-dev",
+    "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+    "status": "development"
+  },
+  "type": "registry:ui"
+}

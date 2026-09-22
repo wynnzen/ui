@@ -54,7 +54,7 @@ Preserve upstream collections and unrelated local changes.
 - [x] **M5.3 — Forms and command:** Field, Form, Input Group, Input OTP,
       Command; validate their complete dependency chains. Combobox is explicitly
       deferred by user decision because it uses Base UI.
-- [ ] **M5.4 — Extended navigation and overlays:** Context Menu, Menubar,
+- [x] **M5.4 — Extended navigation and overlays:** Context Menu, Menubar,
       Navigation Menu, Hover Card, Sheet, Drawer and Sidebar.
 - [ ] **M5.5 — Advanced and conversational:** Calendar/Date Picker, Data Table,
       Carousel, Chart, Resizable, Sonner, Attachment, Bubble, Marker, Message
@@ -296,3 +296,21 @@ Preserve upstream collections and unrelated local changes.
   source/API inventory remains; no themed source or install item is supplied.
   The Popover/Command recipe is a separate composition. Human release QA remains
   pending, and the original immutable MVP bytes remain untouched.
+
+### M5.4 — Extended navigation and overlays
+
+- Added Context Menu, Menubar, Navigation Menu, Hover Card, Sheet, Drawer and
+  Sidebar, plus the unchanged use-mobile hook and complete registry edges.
+- Shared keyboard context opening now works across engines. Fixed bounded
+  Drawer footer hit testing, Sidebar offcanvas focus, icon labels, mobile focus
+  return, right-side spacing, separator width and random SSR skeleton markup.
+- Types, lint, 5 source/schema checks, production build, all three browser engine
+  suites, 49 inspected/reproduced screenshots and 54 responsive/state checks pass.
+  Four Sheet sides and four Drawer directions fit 320×360 with usable footers.
+  Baseline-matched Context Menu/Navigation Menu focus findings remain for human
+  review alongside the earlier findings; no rule is globally disabled.
+- Fresh Vite/Next installs of all 50 components and the hook pass builds,
+  dev/prod, SSR/hydration, custom aliases and safe reinstallation. Vaul remains
+  the pinned 1.1.2 dependency; no upstream or workspace-lock change.
+- Combobox remains explicitly deferred. Ten component sources and advanced
+  compositions remain; human release QA and publication gates are still open.
