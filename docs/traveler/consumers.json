@@ -32,7 +32,7 @@
           "vite": "7.3.2"
         }
       },
-      "installedComponents": 20,
+      "installedComponents": 27,
       "transitiveDialog": true,
       "identicalReinstall": true,
       "customizedFilePreserved": true,
@@ -73,7 +73,7 @@
           "typescript": "5.9.2"
         }
       },
-      "installedComponents": 20,
+      "installedComponents": 27,
       "transitiveDialog": true,
       "identicalReinstall": true,
       "customizedFilePreserved": true,
@@ -85,7 +85,7 @@
       ]
     }
   ],
-  "sourceCommit": "7f257302",
+  "sourceRevision": "M5.1; canonical sources and this report committed together",
   "node": "24.15.0",
   "pnpm": "10.33.4",
   "browser": "Chromium 149.0.7827.55",

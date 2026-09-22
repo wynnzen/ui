@@ -290,7 +290,7 @@ try {
     const ui = join(root, src, "components/ui")
     assert.equal(
       readdirSync(ui).filter((name) => name.endsWith(".tsx")).length,
-      20
+      items.length
     )
     assert.equal(
       readFileSync(join(root, "styles/traveler.css"), "utf8"),
@@ -359,7 +359,7 @@ try {
     const results = {
       framework,
       versions: JSON.parse(readFileSync(join(root, "package.json"), "utf8")),
-      installedComponents: 20,
+      installedComponents: items.length,
       transitiveDialog: true,
       identicalReinstall: true,
       customizedFilePreserved: true,
@@ -390,13 +390,18 @@ try {
         const response = await page.goto(url, { waitUntil: "networkidle" })
         if (framework === "next")
           assert.match(await response.text(), /Server-rendered Traveler panel/)
+        // A streamed Next page can be visible before React attaches events.
+        await expect(page.locator("main")).toHaveAttribute(
+          "data-hydrated",
+          "true"
+        )
         const button = page.getByRole("button", {
           name: "Record progress",
           exact: true,
         })
         await expect(button).toHaveCSS("background-color", "rgb(228, 220, 203)")
         await button.click()
-        await expect(page.getByRole("status")).toHaveText("Recorded 1")
+        await expect(page.locator("output")).toHaveText("Recorded 1")
         await page
           .getByRole("button", { name: "Open journey", exact: true })
           .click()
@@ -421,6 +426,25 @@ try {
         await expect(
           page.getByRole("button", { name: "Open journey", exact: true })
         ).toBeFocused()
+        await page
+          .getByRole("button", { name: "Route notes", exact: true })
+          .click()
+        await expect(
+          page.getByText("Installed disclosure content.", { exact: true })
+        ).toBeVisible()
+        await page
+          .getByRole("button", { name: "Shelter details", exact: true })
+          .click()
+        await expect(
+          page.getByText("Installed collapsible content.", { exact: true })
+        ).toBeVisible()
+        await expect(page.locator("main").getByRole("alert")).toHaveCSS(
+          "background-color",
+          "rgb(27, 30, 33)"
+        )
+        await expect(
+          page.getByRole("status", { name: "Loading route", exact: true })
+        ).toHaveCSS("animation-name", "none")
         assert.deepEqual(errors, [])
         assert.deepEqual(external, [])
         results.checks.push(

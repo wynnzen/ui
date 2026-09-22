@@ -145,3 +145,13 @@ remain recorded for Chromium. The full release-browser matrix, real Safari,
 mobile and assistive-technology review are still open. Environment details,
 measured bundle/CSS budgets and the human worksheet are in
 [release-readiness.md](release-readiness.md).
+
+## M5.1 additions
+
+All 27 development components now install and build in the same clean Vite/Next
+matrix; updated exact versions and checks are in [consumers.json](consumers.json).
+The browser suite passes on Chromium 149.0.7827.55, Firefox 151.0 and Playwright
+WebKit 26.5. The new disclosure fixture has no axe findings; its 320/768/1440px
+and forced-colors screenshots were inspected and reproduce. Total review: 27
+screenshots and 32 responsive/state checks. RTL evidence is limited to the basic
+Direction/Tabs fixture; full RTL and all human release checks remain pending.

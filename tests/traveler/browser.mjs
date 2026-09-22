@@ -457,6 +457,93 @@ try {
     .toBeGreaterThan(0)
   await page.goto(
     new URL(
+      "disclosure.html",
+      process.env.TRAVELER_URL || "http://127.0.0.1:4173/"
+    ).href
+  )
+  const road = page.getByRole("button", {
+    name: "Which road is open?",
+    exact: true,
+  })
+  await expect(road).toHaveAttribute("aria-expanded", "true")
+  await road.focus()
+  await page.keyboard.press("Enter")
+  await expect(road).toHaveAttribute("aria-expanded", "false")
+  await page.keyboard.press("ArrowDown")
+  await expect(
+    page.getByRole("button", { name: "Where can the party rest", exact: false })
+  ).toBeFocused()
+  await page.keyboard.press("End")
+  await expect(
+    page.getByRole("button", { name: "Where can the party rest", exact: false })
+  ).toBeFocused()
+  await page.keyboard.press("Home")
+  await expect(road).toBeFocused()
+  await expect(
+    page.getByRole("button", {
+      name: "Winter trail · unavailable",
+      exact: true,
+    })
+  ).toBeDisabled()
+  await page.getByRole("button", { name: "Supply notes", exact: true }).click()
+  await expect(
+    page.getByRole("button", { name: "Weather notes", exact: true })
+  ).toHaveAttribute("aria-expanded", "true")
+  await expect(page.locator("#accordion [role=status]")).toHaveText(
+    "Open notes: weather, supplies"
+  )
+  await page
+    .getByRole("button", { name: "Show shelter details", exact: true })
+    .click()
+  await expect(
+    page.getByText("Three bunks, a covered hearth", { exact: false })
+  ).toBeVisible()
+  await page
+    .getByRole("button", { name: "Hide shelter details", exact: true })
+    .press("Space")
+  await expect(
+    page.getByText("Three bunks, a covered hearth", { exact: false })
+  ).toBeHidden()
+  await page.getByRole("button", { name: "Visitor note", exact: true }).click()
+  await expect(
+    page.getByText("Leave the shelter ready for the next traveller.")
+  ).toBeHidden()
+  await expect(
+    page.getByRole("button", { name: "Locked archive", exact: true })
+  ).toBeDisabled()
+  await expect(page.getByTestId("reading-direction")).toHaveText(
+    "Primitive direction: rtl"
+  )
+  await page.getByRole("tab", { name: "Route", exact: true }).focus()
+  await page.keyboard.press("ArrowLeft")
+  await expect(
+    page.getByRole("tab", { name: "Camp", exact: true })
+  ).toBeFocused()
+  await expect(
+    page.getByRole("tab", { name: "Camp", exact: true })
+  ).toHaveAttribute("aria-selected", "true")
+  for (const [index, ratio] of [
+    [0, 16 / 9],
+    [1, 1],
+  ]) {
+    const bounds = await page
+      .locator("[data-slot=aspect-ratio]")
+      .nth(index)
+      .boundingBox()
+    assert.ok(Math.abs(bounds.width / bounds.height - ratio) < 0.02)
+  }
+  await expect(
+    page.getByRole("status", { name: "Loading", exact: true })
+  ).toHaveCSS("animation-name", "none")
+  await expect(
+    page.getByRole("status", { name: "Fetching weather", exact: true })
+  ).toHaveCSS("width", "24px")
+  await expect(page.locator("[data-slot=skeleton]").first()).toHaveCSS(
+    "animation-name",
+    "none"
+  )
+  await page.goto(
+    new URL(
       "catalog.html",
       process.env.TRAVELER_URL || "http://127.0.0.1:4173/"
     ).href

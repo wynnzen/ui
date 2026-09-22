@@ -442,7 +442,7 @@ try {
   })
   await noOverflow("Navigation at 200% text / 768px")
 
-  for (const name of ["inventory", "catalog"]) {
+  for (const name of ["inventory", "catalog", "disclosure"]) {
     await page.goto(new URL(`${name}.html`, url).href, {
       waitUntil: "networkidle",
     })
@@ -450,7 +450,7 @@ try {
     for (const width of [320, 768, 1440]) {
       await page.setViewportSize({ width, height: 1000 })
       await noOverflow(`${name} ${width}px reflow`)
-      if (name === "inventory") await screenshot(`${name}-${width}`)
+      if (name !== "catalog") await screenshot(`${name}-${width}`)
     }
     await accessibility(name)
     if (name === "catalog") {
@@ -461,6 +461,30 @@ try {
     }
   }
 
+  await page.setViewportSize({ width: 768, height: 1000 })
+  await page.evaluate(() => {
+    document.documentElement.style.fontSize = "200%"
+  })
+  await noOverflow("Disclosure and feedback at 200% text")
+  await page.evaluate(() => {
+    document.documentElement.style.fontSize = ""
+  })
+  await page.emulateMedia({ forcedColors: "active" })
+  await page
+    .getByRole("button", { name: "Which road is open?", exact: true })
+    .focus()
+  await expect(
+    page.getByRole("button", { name: "Which road is open?", exact: true })
+  ).toHaveCSS("outline-style", "solid")
+  await expect(page.locator("[data-slot=skeleton]").first()).toHaveCSS(
+    "border-top-style",
+    "solid"
+  )
+  await screenshot("disclosure-forced-colors", page.locator("#accordion"))
+  report.checks.push(
+    "Disclosure focus and placeholder borders survive forced colors"
+  )
+  await page.emulateMedia({ forcedColors: "none" })
   await page.emulateMedia({ forcedColors: "active" })
   for (const [name, selector] of [
     ["forms", "[data-slot=switch-thumb]"],

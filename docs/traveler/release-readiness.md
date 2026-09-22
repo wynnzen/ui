@@ -73,9 +73,9 @@ No serious finding has been silently disabled or presented as a clean scan.
 
 ## Scope after MVP
 
-The coverage manifest exposes all **41 remaining entries as backlog**, including
-third-party-backed components and behavior-only helpers. They have no install
-items and are not advertised as complete. M5 must style and verify them or record
-an explicit final classification; Date Picker/Data Table compositions must be
-reconciled with their pinned source dependencies. Do not infer full-library
+The immutable MVP candidate remains at 20 components. M5.1 adds seven local
+development items, including three helpers with no built-in visual surface;
+34 entries remain backlog. Their coverage and install evidence are tracked
+separately. M5 must verify or explicitly classify every remaining entry,
+including Date Picker/Data Table compositions. Do not infer full-library
 support from the completed MVP.

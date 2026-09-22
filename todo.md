@@ -47,7 +47,7 @@ Preserve upstream collections and unrelated local changes.
       real Safari/mobile and browser zoom, current/previous stable browser matrix,
       final rights review, public name/namespace/host and publication authorization.
       See `docs/traveler/release-readiness.md`; no public release is claimed.
-- [ ] **M5.1 — Disclosure and feedback:** Accordion, Collapsible, Aspect Ratio,
+- [x] **M5.1 — Disclosure and feedback:** Accordion, Collapsible, Aspect Ratio,
       Direction, Alert, Skeleton and Spinner, with helper classifications.
 - [ ] **M5.2 — Content and controls:** Avatar, Breadcrumb, Button Group, Empty,
       Item, Kbd, Native Select, Pagination, Slider, Toggle and Toggle Group.
@@ -242,3 +242,19 @@ Preserve upstream collections and unrelated local changes.
   results yet and explicitly requested that release QA remain pending.
 - Keep the M4.2 gate unchecked. Continue authorized local M5 development and
   per-step commits without publishing or claiming release readiness.
+
+### M5.1 — Disclosure and feedback
+
+- Added seven sources, exact-source registry items, API contracts and examples;
+  Collapsible, Aspect Ratio and Direction are unchanged no-chrome helpers.
+- Accordion uses shared focus and logical alignment; Alert titles wrap; loading
+  states respect reduced motion. No added package or shared theme rule.
+- Types, lint, 5 Vitest checks, production build, 27 inspected/reproduced
+  screenshot comparisons and 32 responsive/state checks pass. Disclosure axe
+  scan is clean; inherited menu/Select findings remain. All three browser engines
+  pass, including a basic Direction/RTL keyboard fixture.
+- Fresh Vite/Next installs of all 27 sources pass dev/prod, aliases, CSS, portal,
+  SSR/hydration and safe reinstall checks. Fixed fixture readiness for streamed
+  Next hydration and scoped Alert checks away from its route announcer.
+- M4.2 remains pending by user instruction. Original immutable MVP payloads
+  remain unchanged; M5 additions use the documented development registry.

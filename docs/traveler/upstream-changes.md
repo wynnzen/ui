@@ -31,8 +31,8 @@ changes reuse control/panel/menu recipes, logical spacing, opaque surfaces and
 visible mixed/selected states. No event-handler rewrite was needed.
 
 Clean Vite/Next installation is verified and a content-addressed local snapshot
-is available. Publication, human QA and the remaining 41 source components are
-pending. Existing prototypes are not marked complete.
+is available. Publication and human QA remain pending; remaining source work is tracked in
+the coverage manifest. Existing prototypes are not marked complete.
 
 M2.3 adds Progress, Table and Scroll Area. Progress now forwards its value to
 Radix and computes fill relative to max, fixing the upstream wrapper's missing
@@ -40,3 +40,9 @@ value semantics. Table's named scrolling region and Scroll Area's viewport are
 keyboard-focusable; scrolling stays native. Scroll Area's minimum width permits
 grid reflow. Progress fill, Switch thumb and Scroll Area thumb use system colors
 in forced-colors mode, after measured default backgrounds lost their state cues.
+
+M5.1 adds Accordion, Alert, Skeleton and Spinner using the existing recipes.
+Alert titles wrap instead of truncating; disclosure height animation is removed;
+loading animations respect reduced motion. Collapsible, Aspect Ratio and
+Direction are byte-identical behavior/layout helpers with no built-in chrome.
+No new package, shared CSS rule or state-management layer was introduced.

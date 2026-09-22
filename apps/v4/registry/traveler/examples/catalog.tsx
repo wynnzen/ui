@@ -30,6 +30,15 @@ const pages: Record<string, string[]> = {
   ],
   "overlays.html": ["select", "tabs", "alert-dialog", "popover", "tooltip"],
   "inventory.html": ["progress", "table", "scroll-area"],
+  "disclosure.html": [
+    "accordion",
+    "collapsible",
+    "aspect-ratio",
+    "direction",
+    "alert",
+    "skeleton",
+    "spinner",
+  ],
 }
 const tokens = [
   ...themeSource.split("@theme")[0].matchAll(/(--[\w-]+):\s*([^;]+);/g),
@@ -52,9 +61,9 @@ function Catalog() {
           An index for the journey.
         </h1>
         <p className="max-w-2xl text-muted-foreground">
-          Twenty themed components from a pinned inventory of 61. The visual
-          direction is approved; installation evidence and release QA are
-          tracked separately.
+          {Object.keys(sources).length} available components from a pinned
+          inventory of {coverage.components.length}. The visual direction is
+          approved; installation evidence and release QA are tracked separately.
         </p>
         <nav
           aria-label="Catalog sections"
@@ -222,14 +231,16 @@ node "$TRAVELER_CHECKOUT/packages/shadcn/dist/index.js" add @traveler/dialog --d
 node "$TRAVELER_CHECKOUT/packages/shadcn/dist/index.js" add @traveler/dialog`}</code>
         </pre>
         <p className="max-w-3xl text-sm text-muted-foreground">
-          Replace dialog with any prototype name above. Internal dependencies
-          resolve to the same Traveler snapshot. Foundation installs
-          styles/traveler.css and licenses/traveler/LICENSE.md at your project
-          root. Import that CSS after your Tailwind/shadcn imports, retain your
-          host semantic token mappings, and activate the html element with the
-          attributes below. An existing button.tsx can conflict even when the
-          registry namespace is different; do not use unattended overwrite
-          flags.
+          This pinned MVP snapshot contains the original 20 components. M5
+          additions use the mutable <code>/r/v0.1.0-dev/{"{name}"}.json</code>{" "}
+          development address until the next reviewed snapshot. Internal
+          dependencies resolve to the same Traveler snapshot. Foundation
+          installs styles/traveler.css and licenses/traveler/LICENSE.md at your
+          project root. Import that CSS after your Tailwind/shadcn imports,
+          retain your host semantic token mappings, and activate the html
+          element with the attributes below. An existing button.tsx can conflict
+          even when the registry namespace is different; do not use unattended
+          overwrite flags.
         </p>
       </section>
       <section

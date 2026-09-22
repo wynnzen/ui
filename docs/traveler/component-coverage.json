@@ -17,13 +17,20 @@
       ],
       "dependencies": ["cn", "lucide-react", "radix-ui", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "single/multiple",
+        "controlled/uncontrolled",
+        "open/closed",
+        "disabled",
+        "keyboard navigation",
+        "long content"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-colors screenshots; shared M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
+      "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
+      "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall"
     },
     {
       "name": "alert-dialog",
@@ -76,13 +83,17 @@
       "exports": ["Alert", "AlertDescription", "AlertTitle"],
       "dependencies": ["class-variance-authority", "cn", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "default/destructive",
+        "icon/no icon",
+        "long title/description"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-colors screenshots; shared M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
+      "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
+      "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall"
     },
     {
       "name": "aspect-ratio",
@@ -92,13 +103,14 @@
       "exports": ["AspectRatio"],
       "dependencies": ["radix-ui"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": ["16:9", "1:1", "responsive width"],
+      "visual": "Reviewed 320/768/1440px and forced-colors screenshots; shared M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
+      "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
+      "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall",
+      "classification": "No built-in visual surface; canonical upstream implementation retained unchanged."
     },
     {
       "name": "attachment",
@@ -403,13 +415,19 @@
       "exports": ["Collapsible", "CollapsibleContent", "CollapsibleTrigger"],
       "dependencies": ["radix-ui"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "controlled/uncontrolled",
+        "open/closed",
+        "disabled",
+        "asChild"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-colors screenshots; shared M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
+      "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
+      "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall",
+      "classification": "No built-in visual surface; canonical upstream implementation retained unchanged."
     },
     {
       "name": "combobox",
@@ -566,13 +584,18 @@
       "exports": ["DirectionProvider", "useDirection"],
       "dependencies": ["radix-ui", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "dir/direction precedence",
+        "useDirection",
+        "RTL primitive keyboard"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-colors screenshots; shared M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
+      "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
+      "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall",
+      "classification": "No built-in visual surface; canonical upstream implementation retained unchanged."
     },
     {
       "name": "drawer",
@@ -1334,13 +1357,17 @@
       "exports": ["Skeleton"],
       "dependencies": ["cn"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "custom dimensions",
+        "reduced motion",
+        "decorative placeholder"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-colors screenshots; shared M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
+      "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
+      "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall"
     },
     {
       "name": "slider",
@@ -1382,13 +1409,17 @@
       "exports": ["Spinner"],
       "dependencies": ["cn", "lucide-react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "default/custom label",
+        "size override",
+        "reduced motion"
+      ],
+      "visual": "Reviewed 320/768/1440px and forced-colors screenshots; shared M1 recipes",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 keyboard, state and RTL fixture passed",
+      "accessibility": "No axe violations in disclosure fixture; human AT and release QA pending",
+      "documentation": "examples/disclosure.html and docs/traveler/disclosure.md",
+      "installation": "Passed clean Vite 7.3.2 / Next 16.3.3 dev+production, aliases, CSS, SSR/hydration and safe reinstall"
     },
     {
       "name": "switch",

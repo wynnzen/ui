@@ -116,8 +116,28 @@
     },
     {
       "name": "catalog-search",
-      "sha256": "e77051b27e7826836ca42ae1413f817095106a7f9730ab59577f09da1ca53e7a",
-      "bytes": 297319
+      "sha256": "94978042a3f9bafd77292bc1239f0a38c490136bdb8bd0d4bc6027de7e386390",
+      "bytes": 305668
+    },
+    {
+      "name": "disclosure-320",
+      "sha256": "35906a6fe33c93ca7566a5735520fa82197374a0e9855090c3c19111a2dd297d",
+      "bytes": 288298
+    },
+    {
+      "name": "disclosure-768",
+      "sha256": "c3d0f8378116314b9112abb3086cd88fe2cf5453927eb499289b690839af7e92",
+      "bytes": 321214
+    },
+    {
+      "name": "disclosure-1440",
+      "sha256": "8f35f4e68ac10317fc01c1c03120c9468a8e98137f8b5ba6fd3bc99eabea4ed8",
+      "bytes": 329617
+    },
+    {
+      "name": "disclosure-forced-colors",
+      "sha256": "f6b7b3fe242b985773e9ee715ddd3675bb4644ed28f212129cca751f32bdafcb",
+      "bytes": 55855
     }
   ],
   "accessibility": [
@@ -134,6 +154,18 @@
           ],
           "surfaces": [
             "root"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "targets": [
+            [
+              "div[data-highlighted=\"\"]"
+            ]
+          ],
+          "surfaces": [
+            "menuitem"
           ]
         }
       ],
@@ -378,6 +410,16 @@
           "count": 2
         }
       ]
+    },
+    {
+      "name": "disclosure",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "count": 9
+        }
+      ]
     }
   ],
   "checks": [
@@ -406,6 +448,11 @@
     "catalog 320px reflow",
     "catalog 768px reflow",
     "catalog 1440px reflow",
+    "disclosure 320px reflow",
+    "disclosure 768px reflow",
+    "disclosure 1440px reflow",
+    "Disclosure and feedback at 200% text",
+    "Disclosure focus and placeholder borders survive forced colors",
     "Progress, Switch and Scroll Area state indicators survive forced colors",
     "Separate upstream document receives no Traveler tokens"
   ],
