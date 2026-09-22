@@ -18,6 +18,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
+        advancedForms: `${appRoot}registry/traveler/examples/advanced-forms.html`,
         content: `${appRoot}registry/traveler/examples/content.html`,
         disclosure: `${appRoot}registry/traveler/examples/disclosure.html`,
         catalog: `${appRoot}registry/traveler/examples/catalog.html`,

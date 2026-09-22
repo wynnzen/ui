@@ -129,6 +129,14 @@ try {
       .locator("[data-radix-select-viewport]")
       .evaluate((el) => el.scrollTop)) > 0
   )
+  await page.keyboard.press("Escape")
+  await page
+    .getByRole("combobox", { name: "Baseline commands", exact: true })
+    .fill("no-match-route")
+  const inheritedEmptyCommand = await accessibility(
+    "baseline empty command results",
+    "baseline"
+  )
   await page.goto(url, { waitUntil: "networkidle" })
   await page.addScriptTag({ path: axePath })
 
@@ -186,9 +194,11 @@ try {
         (finding) =>
           !inherited.some(
             (baseline) =>
-              ["aria-hidden-focus", "scrollable-region-focusable"].includes(
-                baseline.id
-              ) &&
+              [
+                "aria-hidden-focus",
+                "scrollable-region-focusable",
+                "aria-required-children",
+              ].includes(baseline.id) &&
               finding.id === baseline.id &&
               JSON.stringify(finding.surfaces) ===
                 JSON.stringify(baseline.surfaces)
@@ -514,6 +524,69 @@ try {
   report.checks.push(
     "Slider thumb focus and system-color track/range remain visible"
   )
+  await page.emulateMedia({ forcedColors: "none" })
+  await page.goto(new URL("advanced-forms.html", url).href, {
+    waitUntil: "networkidle",
+  })
+  await page.addScriptTag({ path: axePath })
+  for (const width of [320, 768, 1440]) {
+    await page.setViewportSize({ width, height: 1000 })
+    await noOverflow(`Advanced forms ${width}px reflow`)
+    await screenshot(`advanced-forms-${width}`)
+  }
+  await accessibility("advanced forms")
+  await page
+    .getByRole("combobox", { name: "Journey commands", exact: true })
+    .fill("no-match-route")
+  await accessibility("empty command results", inheritedEmptyCommand)
+  await page
+    .getByRole("combobox", { name: "Journey commands", exact: true })
+    .fill("")
+  await page
+    .getByRole("combobox", { name: "Destination picker", exact: true })
+    .click()
+  await accessibility("Popover Command recipe")
+  await page.keyboard.press("Escape")
+  await page
+    .getByRole("button", { name: "Save traveller profile", exact: true })
+    .click()
+  await screenshot("form-validation", page.locator("#form"))
+  await accessibility("form validation")
+  await page
+    .getByRole("button", { name: "Open command palette", exact: true })
+    .click()
+  await screenshot("command-dialog", page.getByRole("dialog"))
+  await accessibility("command dialog")
+  await page.setViewportSize({ width: 320, height: 360 })
+  await noOverflow("Command palette 320x360 viewport")
+  const commandBounds = await page.getByRole("dialog").boundingBox()
+  assert.ok(
+    commandBounds.y >= 0 && commandBounds.y + commandBounds.height <= 360
+  )
+  await page.keyboard.press("Escape")
+  await page.setViewportSize({ width: 768, height: 1000 })
+  await page.evaluate(() => {
+    document.documentElement.style.fontSize = "200%"
+  })
+  await noOverflow("Advanced forms at 200% text")
+  await page.evaluate(() => {
+    document.documentElement.style.fontSize = ""
+  })
+  await page.emulateMedia({ forcedColors: "active" })
+  await page.getByLabel("Courier code", { exact: true }).focus()
+  await expect(
+    page.locator("[data-slot=input-otp-slot][data-active=true]").first()
+  ).toHaveCSS("outline-style", "solid")
+  await expect(page.getByLabel("Courier code", { exact: true })).toHaveCSS(
+    "forced-color-adjust",
+    "none"
+  )
+  await expect(page.getByLabel("Courier code", { exact: true })).toHaveCSS(
+    "color",
+    "rgba(0, 0, 0, 0)"
+  )
+  await screenshot("otp-forced-colors", page.locator("#input-otp"))
+  report.checks.push("OTP active slot retains forced-colors outline")
   await page.emulateMedia({ forcedColors: "none" })
   await page.emulateMedia({ forcedColors: "active" })
   for (const [name, selector] of [

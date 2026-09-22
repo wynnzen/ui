@@ -51,8 +51,9 @@ Preserve upstream collections and unrelated local changes.
       Direction, Alert, Skeleton and Spinner, with helper classifications.
 - [x] **M5.2 — Content and controls:** Avatar, Breadcrumb, Button Group, Empty,
       Item, Kbd, Native Select, Pagination, Slider, Toggle and Toggle Group.
-- [ ] **M5.3 — Forms and command:** Field, Form, Input Group, Input OTP,
-      Command and Combobox; validate their complete dependency chains.
+- [x] **M5.3 — Forms and command:** Field, Form, Input Group, Input OTP,
+      Command; validate their complete dependency chains. Combobox is explicitly
+      deferred by user decision because it uses Base UI.
 - [ ] **M5.4 — Extended navigation and overlays:** Context Menu, Menubar,
       Navigation Menu, Hover Card, Sheet, Drawer and Sidebar.
 - [ ] **M5.5 — Advanced and conversational:** Calendar/Date Picker, Data Table,
@@ -276,3 +277,22 @@ Preserve upstream collections and unrelated local changes.
 - No new package or shared theme rule. The geometric SVG is original, inline
   and example-only. Release QA and the original immutable MVP snapshot remain
   unchanged. 23 pinned entries remain to be processed.
+
+### M5.3 — Forms and command
+
+- Added Field, Form, Input Group, Input OTP and Command with every pinned API,
+  explicit dependency edges and a complete form/command example page.
+- Corrected textarea addon focus, CommandDialog naming and modal focus return,
+  decorative separator semantics and duplicate OTP text in forced colors.
+- Types, lint, 5 source/schema/contrast checks, production build, all three engine
+  suites, 37 inspected/reproduced screenshots and 43 responsive/state checks pass.
+  An upstream critical empty cmdk listbox finding is reproduced and retained for
+  human triage; other new scan states have no violations. Synthetic clipboard
+  data tests do not claim real OS clipboard/mobile autofill coverage.
+- Fresh Vite/Next installs of all 43 components pass builds, dev/prod interaction,
+  aliases, SSR, portal focus and safe reinstall checks. An initial upstream TLS
+  failure was retried successfully. Retained exact consumer locks and evidence.
+- The user explicitly deferred the Base UI Combobox for this release. Its frozen
+  source/API inventory remains; no themed source or install item is supplied.
+  The Popover/Command recipe is a separate composition. Human release QA remains
+  pending, and the original immutable MVP bytes remain untouched.

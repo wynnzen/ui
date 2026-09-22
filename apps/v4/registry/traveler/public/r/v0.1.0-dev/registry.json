@@ -266,6 +266,25 @@
       }
     },
     {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Traveler command; new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cmdk@1.1.1", "cn@0.2.2", "lucide-react@0.474.0"],
+      "registryDependencies": ["@traveler/foundation", "@traveler/dialog"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
       "name": "dialog",
       "type": "registry:ui",
       "title": "Dialog",
@@ -342,6 +361,53 @@
       }
     },
     {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Traveler field; new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["class-variance-authority@0.7.1", "cn@0.2.2"],
+      "registryDependencies": [
+        "@traveler/foundation",
+        "@traveler/label",
+        "@traveler/separator"
+      ],
+      "files": [
+        {
+          "path": "registry/traveler/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form",
+      "description": "Traveler form; new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": [
+        "cn@0.2.2",
+        "radix-ui@1.4.3",
+        "radix-ui@1.4.3",
+        "react-hook-form@7.62.0"
+      ],
+      "registryDependencies": ["@traveler/foundation", "@traveler/label"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/form.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
       "name": "input",
       "type": "registry:ui",
       "title": "Input",
@@ -351,6 +417,49 @@
       "files": [
         {
           "path": "registry/traveler/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Traveler input-group; new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["class-variance-authority@0.7.1", "cn@0.2.2"],
+      "registryDependencies": [
+        "@traveler/foundation",
+        "@traveler/button",
+        "@traveler/input",
+        "@traveler/textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/traveler/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "meta": {
+        "version": "0.1.0-dev",
+        "upstreamCommit": "98a1fe67b439324ddc857f47fbdce056600a4329",
+        "status": "development"
+      }
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input Otp",
+      "description": "Traveler input-otp; new-york-v4 API at the pinned upstream baseline.",
+      "dependencies": ["cn@0.2.2", "input-otp@1.4.2", "lucide-react@0.474.0"],
+      "registryDependencies": ["@traveler/foundation"],
+      "files": [
+        {
+          "path": "registry/traveler/ui/input-otp.tsx",
           "type": "registry:ui"
         }
       ],

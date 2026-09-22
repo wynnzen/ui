@@ -164,3 +164,18 @@ values, range-thumb names, Slider commit callbacks, vertical controls and Toggle
 state. Review totals are 31 inspected/reproduced screenshots and 37 responsive
 checks, with no new accessibility findings. The non-RSC CLI directive-only drift
 is reproduced and safely declined; see content.md. Human release QA is pending.
+
+## M5.3 additions
+
+All 43 component APIs pass type checks. Chromium, Firefox and WebKit suites pass
+validation, native form data, OTP filtering/transformed synthetic paste/completion,
+Command keyboard selection/scrolling and modal focus return. The 37 reviewed
+screenshots reproduce; 43 responsive/state checks pass. Forced-color OTP digits
+render once. The empty Command list reproduces upstream cmdk's critical
+`aria-required-children` finding; the exact baseline-matched state remains in
+review/evidence.json for human AT triage. Other new scans have no violations.
+The Base UI Combobox is explicitly deferred by user decision; see advanced-forms.md.
+
+Fresh Vite/Next installs of all 43 components pass build, dev/prod interaction,
+aliases, SSR/hydration, portal focus and safe reinstallation. Exact versions and
+lock hashes are retained in consumers.json. The workspace lockfile is unchanged.

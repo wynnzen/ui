@@ -1,6 +1,6 @@
 # Traveler UI development
 
-The 20-component MVP plus eighteen M5 additions are implemented and installed
+The 20-component MVP plus twenty-three M5 additions are implemented and installed
 successfully in clean Vite and Next.js applications. M1 visual direction is approved; M4 human/release QA
 and the M5 completeness milestone remain open. Nothing has been published.
 
@@ -22,3 +22,6 @@ classifies three unchanged behavior/layout helpers explicitly.
 
 M5.2 [content and controls](content.md) includes accessible slider naming and
 the reproduced non-RSC CLI directive limitation.
+
+M5.3 [forms and command](advanced-forms.md) includes the explicit Combobox
+deferral and inherited empty-results accessibility triage.

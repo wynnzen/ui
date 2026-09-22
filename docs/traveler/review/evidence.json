@@ -116,8 +116,8 @@
     },
     {
       "name": "catalog-search",
-      "sha256": "3fbb7425c02fc06eb42fe299382fa48df7cafa7999cfb3d89a542bf21166457c",
-      "bytes": 310652
+      "sha256": "697630a4f37159d68afbd622b8a304625d74a7b3de6795a7977b654ddef6b36c",
+      "bytes": 310369
     },
     {
       "name": "disclosure-320",
@@ -158,6 +158,36 @@
       "name": "slider-forced-colors",
       "sha256": "28d7f284bc240b85b43ae27df3671a15722a791145026b819ce7397dc8ee8136",
       "bytes": 40803
+    },
+    {
+      "name": "advanced-forms-320",
+      "sha256": "b0963a5e24cd2911fe757596d1554e1650ec1d8b750b8514d56dfdfa8a32cce8",
+      "bytes": 316871
+    },
+    {
+      "name": "advanced-forms-768",
+      "sha256": "65cdc47109a4366ace191af5913ee7394b01349a38543712646e603e11ebefae",
+      "bytes": 347344
+    },
+    {
+      "name": "advanced-forms-1440",
+      "sha256": "c19052ef5c346a3c8ff8e8c4feddae06f82534b92f4812c8e4136ea2bdfb2414",
+      "bytes": 368288
+    },
+    {
+      "name": "form-validation",
+      "sha256": "b0f779fe8b5f841ccf62af1a096804f7f991c32aaa0054ec66b6c8b3adb31fc0",
+      "bytes": 64797
+    },
+    {
+      "name": "command-dialog",
+      "sha256": "65ba276975c275c91feb7cf1207dcd2885dc6cd07043b384fc41f6186bce84a3",
+      "bytes": 9960
+    },
+    {
+      "name": "otp-forced-colors",
+      "sha256": "39db6964a667120190dd91b09a91087e23b72797d62c59b71576ff0518b142bb",
+      "bytes": 42487
     }
   ],
   "accessibility": [
@@ -238,6 +268,29 @@
         {
           "id": "aria-hidden-focus",
           "count": 2
+        }
+      ]
+    },
+    {
+      "name": "baseline empty command results",
+      "violations": [
+        {
+          "id": "aria-required-children",
+          "impact": "critical",
+          "targets": [
+            [
+              "#radix-_r_6_"
+            ]
+          ],
+          "surfaces": [
+            "listbox"
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-valid-attr-value",
+          "count": 1
         }
       ]
     },
@@ -454,6 +507,93 @@
           "count": 4
         }
       ]
+    },
+    {
+      "name": "advanced forms",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "count": 5
+        },
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "name": "empty command results",
+      "violations": [
+        {
+          "id": "aria-required-children",
+          "impact": "critical",
+          "targets": [
+            [
+              "#radix-_r_4_"
+            ]
+          ],
+          "surfaces": [
+            "listbox"
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "count": 5
+        },
+        {
+          "id": "color-contrast",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "name": "Popover Command recipe",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "count": 5
+        },
+        {
+          "id": "aria-valid-attr-value",
+          "count": 1
+        },
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "name": "form validation",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "count": 5
+        },
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "name": "command dialog",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-hidden-focus",
+          "count": 3
+        },
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
     }
   ],
   "checks": [
@@ -492,6 +632,12 @@
     "Content and controls 1440px reflow",
     "Content and controls at 200% text",
     "Slider thumb focus and system-color track/range remain visible",
+    "Advanced forms 320px reflow",
+    "Advanced forms 768px reflow",
+    "Advanced forms 1440px reflow",
+    "Command palette 320x360 viewport",
+    "Advanced forms at 200% text",
+    "OTP active slot retains forced-colors outline",
     "Progress, Switch and Scroll Area state indicators survive forced colors",
     "Separate upstream document receives no Traveler tokens"
   ],

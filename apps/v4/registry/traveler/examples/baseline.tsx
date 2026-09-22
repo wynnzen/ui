@@ -8,6 +8,13 @@ import {
   CardTitle,
 } from "@/registry/new-york-v4/ui/card"
 import {
+  Command,
+  CommandEmpty,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/registry/new-york-v4/ui/command"
+import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -102,6 +109,13 @@ createRoot(document.getElementById("root")!).render(
         ))}
       </SelectContent>
     </Select>
+    <Command label="Baseline commands">
+      <CommandInput />
+      <CommandList>
+        <CommandEmpty>No matching commands.</CommandEmpty>
+        <CommandItem>Open journal</CommandItem>
+      </CommandList>
+    </Command>
     <p id="notes">
       This document imports the pinned upstream source unchanged.
     </p>

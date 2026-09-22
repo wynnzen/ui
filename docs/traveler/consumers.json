@@ -15,11 +15,14 @@
         },
         "dependencies": {
           "class-variance-authority": "0.7.1",
+          "cmdk": "1.1.1",
           "cn": "0.2.2",
+          "input-otp": "1.4.2",
           "lucide-react": "0.474.0",
           "radix-ui": "1.4.3",
           "react": "19.2.3",
-          "react-dom": "19.2.3"
+          "react-dom": "19.2.3",
+          "react-hook-form": "7.62.0"
         },
         "devDependencies": {
           "@tailwindcss/postcss": "4.3.0",
@@ -32,13 +35,13 @@
           "vite": "7.3.2"
         }
       },
-      "installedComponents": 38,
+      "installedComponents": 43,
       "transitiveDialog": true,
       "identicalReinstall": true,
       "clientDirectiveDrift": "CLI 4.21.0 non-RSC regex drift; overwrite declined",
       "customizedFilePreserved": true,
       "cssSha256": "f56e867caadbb9efb0ec33f312949044a19ec352132bc8c1a45bc21f76549b0f",
-      "lockSha256": "2e09379b88df7612c40417236ff072d8556a74498250e1a58020ec548d9b82ae",
+      "lockSha256": "ac036a28e604cd0b02fce65260a815b690f8fdf5766e4b31ee7730ddd572860d",
       "checks": [
         "development: interaction, portal tokens, focus return, no errors/external requests",
         "production: interaction, portal tokens, focus return, no errors/external requests"
@@ -57,12 +60,15 @@
         },
         "dependencies": {
           "class-variance-authority": "0.7.1",
+          "cmdk": "1.1.1",
           "cn": "0.2.2",
+          "input-otp": "1.4.2",
           "lucide-react": "0.474.0",
           "next": "16.3.3",
           "radix-ui": "1.4.3",
           "react": "19.2.3",
-          "react-dom": "19.2.3"
+          "react-dom": "19.2.3",
+          "react-hook-form": "7.62.0"
         },
         "devDependencies": {
           "@tailwindcss/postcss": "4.3.0",
@@ -74,20 +80,20 @@
           "typescript": "5.9.2"
         }
       },
-      "installedComponents": 38,
+      "installedComponents": 43,
       "transitiveDialog": true,
       "identicalReinstall": true,
       "clientDirectiveDrift": "not applicable",
       "customizedFilePreserved": true,
       "cssSha256": "f56e867caadbb9efb0ec33f312949044a19ec352132bc8c1a45bc21f76549b0f",
-      "lockSha256": "14bf41fc00d47899bc52486592b3cf9255dfd10a243c11e8c2dd801469cf02fe",
+      "lockSha256": "67479fdf1141baef740e66e952d1fd8e8b5964b6eaa68c029e465c2fad32b348",
       "checks": [
         "development: interaction, portal tokens, focus return, no errors/external requests, SSR/hydration",
         "production: interaction, portal tokens, focus return, no errors/external requests, SSR/hydration"
       ]
     }
   ],
-  "sourceRevision": "M5.2; canonical sources and this report committed together",
+  "sourceRevision": "M5.3; canonical sources and this report committed together",
   "node": "24.15.0",
   "pnpm": "10.33.4",
   "browser": "Chromium 149.0.7827.55",

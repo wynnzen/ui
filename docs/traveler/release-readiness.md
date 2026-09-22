@@ -73,9 +73,12 @@ No serious finding has been silently disabled or presented as a clean scan.
 
 ## Scope after MVP
 
-The immutable MVP candidate remains at 20 components. M5.1–M5.2 add eighteen local
+The immutable MVP candidate remains at 20 components. M5.1–M5.3 add twenty-three local
 development items, including three helpers with no built-in visual surface;
-23 entries remain backlog. Their coverage and install evidence are tracked
+17 entries remain backlog; Combobox is explicitly deferred by the user. Their coverage and install evidence are tracked
 separately. M5 must verify or explicitly classify every remaining entry,
 including Date Picker/Data Table compositions. Do not infer full-library
 support from the completed MVP.
+
+M5.3 also reproduces a critical upstream cmdk empty-listbox finding; see
+[forms and command](advanced-forms.md). It remains a human accessibility gate.

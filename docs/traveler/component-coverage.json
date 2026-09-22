@@ -473,13 +473,16 @@
         "react"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "deferred",
+      "requiredStates": [
+        "Not applicable to this release: Base UI implementation deferred"
+      ],
+      "visual": "Deferred; no themed source or install item",
+      "interaction": "Deferred; original Base UI API is not advertised as supported",
+      "accessibility": "Deferred; no conformance claim",
+      "documentation": "User scope decision; see docs/traveler/advanced-forms.md",
+      "installation": "Not included in this release; no registry item",
+      "classification": "Explicitly deferred for this release by the user: pinned Combobox uses Base UI, outside the selected Radix primitive scope."
     },
     {
       "name": "command",
@@ -505,13 +508,21 @@
         "react"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "inline/Dialog",
+        "filter/empty/group/separator/shortcut",
+        "disabled/selected",
+        "keyboard/typeahead",
+        "controlled selection",
+        "modal naming/focus/close",
+        "Popover combobox recipe"
+      ],
+      "visual": "37 reviewed and reproduced screenshots; 320/768/1440px, small dialog, enlarged text and OTP forced colors",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 validation, native forms, synthetic paste, filtering and modal focus passed",
+      "accessibility": "No new axe violations; upstream critical empty cmdk listbox finding reproduced and retained; human AT/release QA pending",
+      "documentation": "examples/advanced-forms.html and docs/traveler/advanced-forms.md",
+      "installation": "Passed all 43 components in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, aliases, portals and safe reinstallation"
     },
     {
       "name": "context-menu",
@@ -732,13 +743,20 @@
         "react"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "legend/label variants",
+        "vertical/horizontal/responsive",
+        "group/content/title/description/separator",
+        "disabled/invalid",
+        "deduplicated errors",
+        "checkbox composition"
+      ],
+      "visual": "37 reviewed and reproduced screenshots; 320/768/1440px, small dialog, enlarged text and OTP forced colors",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 validation, native forms, synthetic paste, filtering and modal focus passed",
+      "accessibility": "No new axe violations; upstream critical empty cmdk listbox finding reproduced and retained; human AT/release QA pending",
+      "documentation": "examples/advanced-forms.html and docs/traveler/advanced-forms.md",
+      "installation": "Passed all 43 components in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, aliases, portals and safe reinstallation"
     },
     {
       "name": "form",
@@ -764,13 +782,19 @@
         "react-hook-form"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "FormProvider/Controller generics",
+        "label/description/error links",
+        "required/min-length validation",
+        "controlled native props",
+        "focus/submit/reset"
+      ],
+      "visual": "37 reviewed and reproduced screenshots; 320/768/1440px, small dialog, enlarged text and OTP forced colors",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 validation, native forms, synthetic paste, filtering and modal focus passed",
+      "accessibility": "No new axe violations; upstream critical empty cmdk listbox finding reproduced and retained; human AT/release QA pending",
+      "documentation": "examples/advanced-forms.html and docs/traveler/advanced-forms.md",
+      "installation": "Passed all 43 components in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, aliases, portals and safe reinstallation"
     },
     {
       "name": "hover-card",
@@ -810,13 +834,20 @@
         "react"
       ],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "four addon alignments",
+        "four button sizes",
+        "input/textarea",
+        "disabled/readonly/invalid",
+        "addon focus",
+        "button composition"
+      ],
+      "visual": "37 reviewed and reproduced screenshots; 320/768/1440px, small dialog, enlarged text and OTP forced colors",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 validation, native forms, synthetic paste, filtering and modal focus passed",
+      "accessibility": "No new axe violations; upstream critical empty cmdk listbox finding reproduced and retained; human AT/release QA pending",
+      "documentation": "examples/advanced-forms.html and docs/traveler/advanced-forms.md",
+      "installation": "Passed all 43 components in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, aliases, portals and safe reinstallation"
     },
     {
       "name": "input-otp",
@@ -831,13 +862,21 @@
       ],
       "dependencies": ["cn", "input-otp", "lucide-react", "react"],
       "milestone": "M5",
-      "status": "backlog",
-      "requiredStates": null,
-      "visual": "pending",
-      "interaction": "pending",
-      "accessibility": "pending",
-      "documentation": "pending",
-      "installation": "pending"
+      "status": "prototype",
+      "requiredStates": [
+        "controlled/default",
+        "six slots/separator",
+        "complete callback",
+        "numeric/paste/backspace",
+        "disabled/invalid",
+        "native form value",
+        "reduced motion"
+      ],
+      "visual": "37 reviewed and reproduced screenshots; 320/768/1440px, small dialog, enlarged text and OTP forced colors",
+      "interaction": "Chromium 149 / Firefox 151 / WebKit 26.5 validation, native forms, synthetic paste, filtering and modal focus passed",
+      "accessibility": "No new axe violations; upstream critical empty cmdk listbox finding reproduced and retained; human AT/release QA pending",
+      "documentation": "examples/advanced-forms.html and docs/traveler/advanced-forms.md",
+      "installation": "Passed all 43 components in fresh Vite 7.3.2 / Next 16.3.3 builds, dev+production, aliases, portals and safe reinstallation"
     },
     {
       "name": "input",

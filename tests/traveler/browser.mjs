@@ -681,6 +681,182 @@ try {
   await expect(page.locator("#pagination output")).toHaveText("Journal page 2.")
   await page.goto(
     new URL(
+      "advanced-forms.html",
+      process.env.TRAVELER_URL || "http://127.0.0.1:4173/"
+    ).href
+  )
+  const profileName = page.getByLabel("Traveller name", { exact: true })
+  await page
+    .getByRole("button", { name: "Save traveller profile", exact: true })
+    .click()
+  await expect(profileName).toHaveAttribute("aria-invalid", "true")
+  await expect(profileName).toBeFocused()
+  const profileId = await profileName.getAttribute("id")
+  await expect(profileName).toHaveAttribute(
+    "aria-describedby",
+    `${profileId}-description ${profileId}-message`
+  )
+  await expect(page.getByTestId("form-field-state")).toHaveText(
+    "Field nickname: invalid."
+  )
+  await profileName.fill("A")
+  await expect(
+    page.getByText("Use at least two characters.", { exact: true })
+  ).toBeVisible()
+  await profileName.fill("Ari")
+  await page
+    .getByLabel("Profile notes", { exact: true })
+    .fill("渡河前に地図を確認する。")
+  await expect(
+    page.getByLabel("Home region · readonly", { exact: true })
+  ).not.toBeEditable()
+  await expect(
+    page.getByLabel("Permit · disabled", { exact: true })
+  ).toBeDisabled()
+  await page
+    .getByRole("button", { name: "Save traveller profile", exact: true })
+    .click()
+  await expect
+    .poll(async () =>
+      JSON.parse(await page.locator("#profile-result").textContent())
+    )
+    .toEqual({
+      nickname: "Ari",
+      notes: "渡河前に地図を確認する。",
+      region: "North Hollow",
+    })
+  await page.getByRole("button", { name: "Reset profile", exact: true }).click()
+  await expect(profileName).toHaveValue("")
+  await expect(profileName).toHaveAttribute("aria-invalid", "false")
+  await expect(page.locator("#delivery-errors li")).toHaveCount(2)
+  await page
+    .getByRole("checkbox", { name: "Include a weather report", exact: true })
+    .uncheck()
+  await page
+    .getByRole("button", { name: "Save delivery preferences", exact: true })
+    .click()
+  assert.ok(
+    !JSON.parse(await page.locator("#delivery-result").textContent()).some(
+      ([key]) => key === "weather"
+    )
+  )
+  await page.getByText("Journal summary", { exact: true }).click()
+  await expect(page.getByLabel("Route summary", { exact: true })).toBeFocused()
+  await expect(page.locator("#summary-group")).toHaveCSS(
+    "outline-color",
+    "rgb(194, 215, 232)"
+  )
+  await page
+    .getByLabel("Route summary", { exact: true })
+    .fill("A new route note.")
+  await page.getByRole("button", { name: "Save summary", exact: true }).click()
+  await expect(page.locator("#command-result")).toHaveText(
+    "Saved summary: A new route note."
+  )
+  const clearQuery = page.getByRole("button", {
+    name: "Clear route query",
+    exact: true,
+  })
+  await clearQuery.click()
+  await expect(clearQuery).toBeFocused()
+  await expect(page.getByLabel("Route query", { exact: true })).toHaveValue("")
+  await expect(
+    page.getByLabel("Disabled route", { exact: true })
+  ).toBeDisabled()
+  const courierCode = page.getByLabel("Courier code", { exact: true })
+  await courierCode.pressSequentially("12a3456")
+  await expect(courierCode).toHaveValue("123456")
+  await expect(page.locator("#otp-complete")).toHaveText(
+    "Last complete code: 123456."
+  )
+  await courierCode.press("Backspace")
+  await expect(courierCode).toHaveValue("12345")
+  await courierCode.fill("")
+  await courierCode.evaluate((el) => {
+    const data = new DataTransfer()
+    data.setData("text/plain", "654-321")
+    // Firefox discards constructor clipboardData on untrusted ClipboardEvents.
+    // Supply the synthetic handler payload explicitly; this is not an OS clipboard test.
+    const event = new Event("paste", { bubbles: true, cancelable: true })
+    Object.defineProperty(event, "clipboardData", { value: data })
+    el.dispatchEvent(event)
+  })
+  await expect(courierCode).toHaveValue("654321")
+  await page
+    .getByRole("button", { name: "Record courier code", exact: true })
+    .click()
+  await expect(page.locator("#otp-result")).toHaveText("Recorded code: 654321.")
+  await expect(page.getByLabel("Locked code", { exact: true })).toBeDisabled()
+  const commandInput = page.getByRole("combobox", {
+    name: "Journey commands",
+    exact: true,
+  })
+  await commandInput.fill("lantern")
+  await page.keyboard.press("Enter")
+  await expect(page.locator("#command-result")).toHaveText("Selected: lantern.")
+  await commandInput.fill("no-route-matches-this")
+  await expect(
+    page.getByText("No matching journey commands.", { exact: true })
+  ).toBeVisible()
+  await commandInput.fill("")
+  await expect(
+    page.getByRole("option", { name: "Closed ferry", exact: true })
+  ).toHaveAttribute("aria-disabled", "true")
+  const commandTrigger = page.getByRole("button", {
+    name: "Open command palette",
+    exact: true,
+  })
+  await commandTrigger.click()
+  await expect(
+    page.getByRole("dialog", { name: "Command Palette", exact: true })
+  ).toBeVisible()
+  await expect(
+    page.getByRole("combobox", { name: "Command Palette", exact: true })
+  ).toBeFocused()
+  await page.keyboard.press("End")
+  await expect(
+    page.getByRole("option", { name: "Route 24", exact: true })
+  ).toHaveAttribute("aria-selected", "true")
+  await expect
+    .poll(() =>
+      page
+        .getByRole("dialog")
+        .locator("[data-slot=command-list]")
+        .evaluate((el) => el.scrollTop)
+    )
+    .toBeGreaterThan(0)
+  await page.keyboard.press("Enter")
+  await expect(page.getByRole("dialog")).toBeHidden()
+  await expect(commandTrigger).toBeFocused()
+  await commandTrigger.click()
+  await page.keyboard.press("Escape")
+  await expect(commandTrigger).toBeFocused()
+  const quickTrigger = page.getByRole("button", {
+    name: "Open quick search",
+    exact: true,
+  })
+  await quickTrigger.click()
+  await expect(
+    page.getByRole("dialog", { name: "Quick route search", exact: true })
+  ).toBeVisible()
+  await expect(
+    page.getByRole("button", { name: "Close", exact: true })
+  ).toHaveCount(0)
+  await page.keyboard.press("Escape")
+  await expect(quickTrigger).toBeFocused()
+  const destinationPicker = page.getByRole("combobox", {
+    name: "Destination picker",
+    exact: true,
+  })
+  await destinationPicker.click()
+  await page
+    .getByRole("combobox", { name: "Destination choices", exact: true })
+    .fill("Willow")
+  await page.keyboard.press("Enter")
+  await expect(destinationPicker).toHaveText("Willowmere")
+  await expect(destinationPicker).toBeFocused()
+  await page.goto(
+    new URL(
       "catalog.html",
       process.env.TRAVELER_URL || "http://127.0.0.1:4173/"
     ).href

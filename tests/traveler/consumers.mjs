@@ -415,7 +415,9 @@ try {
         })
         await expect(button).toHaveCSS("background-color", "rgb(228, 220, 203)")
         await button.click()
-        await expect(page.locator("output")).toHaveText("Recorded 1")
+        await expect(page.locator("#recorded-progress")).toHaveText(
+          "Recorded 1"
+        )
         await page
           .getByRole("button", { name: "Open journey", exact: true })
           .click()
@@ -476,6 +478,39 @@ try {
         await expect(
           page.getByRole("button", { name: "Pin route", exact: true })
         ).toHaveAttribute("aria-pressed", "true")
+        await page
+          .getByRole("button", { name: "Save consumer profile", exact: true })
+          .click()
+        await expect(
+          page.getByLabel("Consumer profile name", { exact: true })
+        ).toHaveAttribute("aria-invalid", "true")
+        await page
+          .getByLabel("Consumer profile name", { exact: true })
+          .fill("Ari")
+        await page
+          .getByRole("button", { name: "Save consumer profile", exact: true })
+          .click()
+        await expect(page.locator("#consumer-profile")).toHaveText("Ari")
+        await page.getByText("Summary addon", { exact: true }).click()
+        await expect(
+          page.getByLabel("Consumer summary", { exact: true })
+        ).toBeFocused()
+        await page
+          .getByLabel("Consumer courier code", { exact: true })
+          .fill("1234")
+        await expect(
+          page.getByLabel("Consumer courier code", { exact: true })
+        ).toHaveValue("1234")
+        const commandTrigger = page.getByRole("button", {
+          name: "Open consumer commands",
+          exact: true,
+        })
+        await commandTrigger.click()
+        await expect(
+          page.getByRole("dialog", { name: "Consumer commands", exact: true })
+        ).toBeVisible()
+        await page.keyboard.press("Escape")
+        await expect(commandTrigger).toBeFocused()
         assert.deepEqual(errors, [])
         assert.deepEqual(external, [])
         results.checks.push(

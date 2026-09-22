@@ -18,6 +18,13 @@ const sources = import.meta.glob<string>("../ui/*.tsx", {
   eager: true,
 })
 const pages: Record<string, string[]> = {
+  "advanced-forms.html": [
+    "form",
+    "field",
+    "input-group",
+    "input-otp",
+    "command",
+  ],
   "content.html": [
     "avatar",
     "breadcrumb",

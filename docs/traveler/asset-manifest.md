@@ -15,10 +15,13 @@ public naming and rights review remain release tasks.
 Other prototype dependencies retain their own notices: Radix and `cn` declare
 MIT; class-variance-authority declares Apache-2.0; React declares MIT. This table
 records inspected package metadata and is not a complete future release audit.
-The original shadcn MIT text is copied without modification. The 21 generated items
+The original shadcn MIT text is copied without modification. The development registry items
 contain only component source, foundation CSS and that notice. No gallery PNG,
 font or scenic asset is included. Final public-name/rights review is still required.
 
 M5.2 adds an original inline SVG diamond emblem in `examples/content.tsx` solely
 to exercise Avatar/Item image rendering. No component or registry payload requires
 this example asset; no external image or font request was added.
+
+M5.3 package metadata declares MIT for cmdk 1.1.1, input-otp 1.4.2 and
+react-hook-form 7.62.0. Their original notices remain with the dependencies.

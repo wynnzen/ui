@@ -54,3 +54,12 @@ Kbd fixes its dark-tooltip foreground. All other changes use existing visual
 recipes and logical geometry. The pinned CLI non-RSC directive regex limitation
 is documented in content.md; consumer tests decline replacement rather than
 patching upstream or enabling unattended overwrites.
+
+M5.3 adds Field, Form, Input Group, Input OTP and Command. Input Group text
+addons focus textarea as well as input. CommandDialog keeps its labels inside
+the modal and restores the prior focused element via Radix callbacks because
+it has no trigger wrapper; decorative separators are hidden. OTP's invisible
+native text opts out of forced color replacement while its visible slots retain
+system colors. Form/OTP/cmdk state and filtering stay in their existing libraries.
+The upstream empty-listbox axe finding is reproduced and retained for human QA.
+The user explicitly deferred the Base UI Combobox; no substitute API is claimed.

@@ -1,6 +1,12 @@
 "use client"
 
 import { useState } from "react"
+import { useForm } from "react-hook-form"
+import { Command, CommandDialog, CommandInput, CommandList, CommandItem } from "@fixture/components/ui/command"
+import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@fixture/components/ui/form"
+import { FieldSet, FieldLegend, Field, FieldLabel } from "@fixture/components/ui/field"
+import { InputGroup, InputGroupAddon, InputGroupText, InputGroupTextarea } from "@fixture/components/ui/input-group"
+import { InputOTP, InputOTPGroup, InputOTPSlot } from "@fixture/components/ui/input-otp"
 import { Avatar, AvatarFallback } from "@fixture/components/ui/avatar"
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbPage } from "@fixture/components/ui/breadcrumb"
 import { ButtonGroup, ButtonGroupText } from "@fixture/components/ui/button-group"
@@ -42,8 +48,11 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@fixtu
 
 export default function Consumer() {
   const [count, setCount] = useState(0)
+  const profileForm = useForm({defaultValues:{nickname:""}})
+  const [profile, setProfile] = useState("")
+  const [commandsOpen, setCommandsOpen] = useState(false)
   const [place, setPlace] = useState("eastbank")
-  return <TooltipProvider><main ref={(node) => { node?.setAttribute("data-hydrated", "true") }} className="mx-auto grid max-w-2xl gap-6 p-6"><h1 className="font-heading text-3xl">Traveler consumer</h1><Card><CardHeader><CardTitle>Ready for the road</CardTitle></CardHeader><CardContent className="grid gap-4"><Badge>Installed from the local registry</Badge><Button onClick={() => setCount(value=>value+1)}>Record progress</Button><output role="status">Recorded {count}</output><Progress aria-label="Preparation" value={count} max={4} /><Label htmlFor="name">Traveler name</Label><Input id="name" defaultValue="Ari" /><Label htmlFor="notes">Journey notes</Label><Textarea id="notes" defaultValue="Follow the river." /><Label><Checkbox defaultChecked />Packed</Label><RadioGroup aria-label="Travel pace" defaultValue="steady"><Label><RadioGroupItem value="steady" />Steady</Label><Label><RadioGroupItem value="swift" />Swift</Label></RadioGroup><Label><Switch />Share itinerary</Label></CardContent></Card><Separator />
+  return <TooltipProvider><main ref={(node) => { node?.setAttribute("data-hydrated", "true") }} className="mx-auto grid max-w-2xl gap-6 p-6"><h1 className="font-heading text-3xl">Traveler consumer</h1><Card><CardHeader><CardTitle>Ready for the road</CardTitle></CardHeader><CardContent className="grid gap-4"><Badge>Installed from the local registry</Badge><Button onClick={() => setCount(value=>value+1)}>Record progress</Button><output id="recorded-progress" role="status">Recorded {count}</output><Progress aria-label="Preparation" value={count} max={4} /><Label htmlFor="name">Traveler name</Label><Input id="name" defaultValue="Ari" /><Label htmlFor="notes">Journey notes</Label><Textarea id="notes" defaultValue="Follow the river." /><Label><Checkbox defaultChecked />Packed</Label><RadioGroup aria-label="Travel pace" defaultValue="steady"><Label><RadioGroupItem value="steady" />Steady</Label><Label><RadioGroupItem value="swift" />Swift</Label></RadioGroup><Label><Switch />Share itinerary</Label></CardContent></Card><Separator />
   <Dialog><DialogTrigger asChild><Button>Open journey</Button></DialogTrigger><DialogContent><DialogHeader><DialogTitle>Choose a destination</DialogTitle><DialogDescription>A themed Select inside a themed Dialog.</DialogDescription></DialogHeader><Label htmlFor="destination">Destination</Label><Select value={place} onValueChange={setPlace}><SelectTrigger id="destination"><SelectValue /></SelectTrigger><SelectContent position="popper"><SelectItem value="eastbank">Eastbank</SelectItem><SelectItem value="willowmere">Willowmere</SelectItem></SelectContent></Select></DialogContent></Dialog>
   <DropdownMenu><DropdownMenuTrigger asChild><Button variant="outline">Journey menu</Button></DropdownMenuTrigger><DropdownMenuContent><DropdownMenuItem>Open map</DropdownMenuItem></DropdownMenuContent></DropdownMenu>
   <AlertDialog><AlertDialogTrigger asChild><Button variant="destructive">Archive</Button></AlertDialogTrigger><AlertDialogContent><AlertDialogHeader><AlertDialogTitle>Archive journey?</AlertDialogTitle><AlertDialogDescription>Your notes will remain available.</AlertDialogDescription></AlertDialogHeader><AlertDialogFooter><AlertDialogCancel>Cancel</AlertDialogCancel><AlertDialogAction>Confirm</AlertDialogAction></AlertDialogFooter></AlertDialogContent></AlertDialog>
@@ -67,5 +76,10 @@ export default function Consumer() {
   <Toggle variant="outline">Pin route</Toggle>
   <ToggleGroup type="multiple" aria-label="Route layers"><ToggleGroupItem value="roads">Roads</ToggleGroupItem><ToggleGroupItem value="rivers">Rivers</ToggleGroupItem></ToggleGroup>
   <Pagination><PaginationContent><PaginationItem><PaginationLink href="#" isActive aria-label="Page 1">1</PaginationLink></PaginationItem></PaginationContent></Pagination>
+  <Form {...profileForm}><form onSubmit={profileForm.handleSubmit(values=>setProfile(values.nickname))}><FormField control={profileForm.control} name="nickname" rules={{required:"Enter your profile name."}} render={({field})=><FormItem><FormLabel>Consumer profile name</FormLabel><FormControl><Input {...field}/></FormControl><FormDescription>Your public journey name.</FormDescription><FormMessage/></FormItem>}/><Button type="submit">Save consumer profile</Button><output id="consumer-profile" role="status">{profile}</output></form></Form>
+  <FieldSet><FieldLegend>Consumer fields</FieldLegend><Field><FieldLabel htmlFor="consumer-summary">Consumer summary</FieldLabel><InputGroup><InputGroupAddon align="block-start"><InputGroupText>Summary addon</InputGroupText></InputGroupAddon><InputGroupTextarea id="consumer-summary" defaultValue="Follow the river."/></InputGroup></Field></FieldSet>
+  <Label htmlFor="consumer-code">Consumer courier code</Label><InputOTP id="consumer-code" maxLength={4}><InputOTPGroup>{[0,1,2,3].map(index=><InputOTPSlot key={index} index={index}/>)}</InputOTPGroup></InputOTP>
+  <Command label="Consumer inline commands"><CommandInput aria-label="Find consumer command"/><CommandList><CommandItem value="map">Open map</CommandItem></CommandList></Command>
+  <Button onClick={()=>setCommandsOpen(true)}>Open consumer commands</Button><CommandDialog open={commandsOpen} onOpenChange={setCommandsOpen} title="Consumer commands" description="Search the installed command list."><CommandInput aria-label="Consumer modal search"/><CommandList><CommandItem value="eastbank" onSelect={()=>setCommandsOpen(false)}>Eastbank</CommandItem></CommandList></CommandDialog>
   </main></TooltipProvider>
 }
